@@ -1,5 +1,6 @@
+*.pyc
 *.pem
-old_python/
+old*
 states/*
 logs/*
 nesterov*

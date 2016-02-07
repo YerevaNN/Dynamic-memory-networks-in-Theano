@@ -1,6 +1,7 @@
 import numpy as np
 
 def init_babi(fname):
+    print "==> Loading test from %s" % fname
     tasks = []
     task = None
     for i, line in enumerate(open(fname)):
@@ -19,9 +20,9 @@ def init_babi(fname):
             task["Q"] = line[:idx]
             task["A"] = tmp[1].strip()
             tasks.append(task.copy())
-            #lines.append({'refs': [int(x)-1 for x in tmp[2:][0].split(' ')]})
-        
+
     return tasks
+
 
 def get_babi_raw(id):
     babi_map = [
@@ -54,6 +55,7 @@ def get_babi_raw(id):
     babi_train_raw = init_babi('../babi-data/en/%s_train.txt' % babi_name)
     babi_test_raw = init_babi('../babi-data/en/%s_test.txt' % babi_name)
     return babi_train_raw, babi_test_raw
+
             
 def load_glove(dim):
     word2vec = {}
@@ -63,6 +65,7 @@ def load_glove(dim):
             l = line.split()
             word2vec[l[0]] = map(float, l[1:])
     return word2vec
+
 
 def create_vector(word, word2vec, word_vector_size, silent=False):
     # if the word is missing from Glove, create some fake vector and store in glove!
@@ -86,8 +89,8 @@ def process_word(word, word2vec, vocab, ivocab, word_vector_size, to_return="wor
     elif to_return == "index":
         return vocab[word]
     elif to_return == "onehot":
-        # es kashxati menak ete vocab@ arden el chi mecanalu!!!
-        return [1.0 if w==word else 0.0 for w in vocab]
+        raise Exception("to_return = 'onehot' is not implemented yet")
+
 
 def get_norm(x):
     x = np.array(x)

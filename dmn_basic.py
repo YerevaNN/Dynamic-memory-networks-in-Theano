@@ -18,7 +18,8 @@ floatX = theano.config.floatX
 class DMN_basic:
     
     def __init__(self, babi_train_raw, babi_test_raw, word2vec, word_vector_size, 
-                dim, mode, answer_module, input_mask_mode, memory_hops, l2, normalize_attention):
+                dim, mode, answer_module, input_mask_mode, memory_hops, l2, 
+                normalize_attention):
         
         self.vocab = {}
         self.ivocab = {}
@@ -30,17 +31,16 @@ class DMN_basic:
         self.answer_module = answer_module
         self.input_mask_mode = input_mask_mode
         self.memory_hops = memory_hops
-        self.batch_size = 1
         self.l2 = l2
         self.normalize_attention = normalize_attention
-
+        
         self.train_input, self.train_q, self.train_answer, self.train_input_mask = self._process_input(babi_train_raw)
         self.test_input, self.test_q, self.test_answer, self.test_input_mask = self._process_input(babi_test_raw)
         self.vocab_size = len(self.vocab)
 
-        self.inp_var = T.matrix('input_var')
+        self.input_var = T.matrix('input_var')
         self.q_var = T.matrix('question_var')
-        self.ans_var = T.iscalar('answer_var')
+        self.answer_var = T.iscalar('answer_var')
         self.input_mask_var = T.ivector('input_mask_var')
         
             
@@ -58,7 +58,7 @@ class DMN_basic:
         self.b_inp_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
         
         inp_c_history, _ = theano.scan(fn=self.input_gru_step, 
-                    sequences=self.inp_var,
+                    sequences=self.input_var,
                     outputs_info=T.zeros_like(self.b_inp_hid))
         
         self.inp_c = inp_c_history.take(self.input_mask_var, axis=0)
@@ -91,16 +91,15 @@ class DMN_basic:
         
 
         print "==> building episodic memory module (fixed number of steps: %d)" % self.memory_hops
-        memory = [self.q_q + T.zeros_like(self.q_q)]
+        memory = [self.q_q.copy()]
         for iter in range(1, self.memory_hops + 1):
             current_episode = self.new_episode(memory[iter - 1])
-            memory.append(self.GRU_update(memory[iter - 1], current_episode, # MERGE 
+            memory.append(self.GRU_update(memory[iter - 1], current_episode,
                                           self.W_mem_res_in, self.W_mem_res_hid, self.b_mem_res, 
                                           self.W_mem_upd_in, self.W_mem_upd_hid, self.b_mem_upd,
                                           self.W_mem_hid_in, self.W_mem_hid_hid, self.b_mem_hid))
-                                      
+        
         last_mem = memory[-1]
-
         
         print "==> building answer module"
         self.W_a = theano.shared(lasagne.init.Normal(0.1).sample((self.vocab_size, self.dim)), borrow=True)
@@ -132,9 +131,9 @@ class DMN_basic:
             
             # TODO: add conditional ending
             dummy = theano.shared(np.zeros((self.vocab_size, ), dtype=floatX))
-            results, updates = theano.scan(fn=self.answer_step,
+            results, updates = theano.scan(fn=answer_step,
                 outputs_info=[last_mem, T.zeros_like(dummy)],
-                n_steps=2)
+                n_steps=1)
             self.prediction = results[1][-1]
         
         else:
@@ -157,7 +156,7 @@ class DMN_basic:
         
         
         print "==> building loss layer and computing updates"
-        self.loss_ce = T.nnet.categorical_crossentropy(self.prediction.dimshuffle('x', 0), T.stack([self.ans_var]))[0]
+        self.loss_ce = T.nnet.categorical_crossentropy(self.prediction.dimshuffle('x', 0), T.stack([self.answer_var]))[0]
         if self.l2 > 0:
             self.loss_l2 = self.l2 * nn_utils.l2_reg(self.params)
         else:
@@ -169,19 +168,19 @@ class DMN_basic:
         
         if self.mode == 'train':
             print "==> compiling train_fn"
-            self.train_fn = theano.function(inputs=[self.inp_var, self.q_var, self.ans_var, self.input_mask_var], 
+            self.train_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var], 
                                        outputs=[self.prediction, self.loss],
                                        updates=updates)
         
         print "==> compiling test_fn"
-        self.test_fn = theano.function(inputs=[self.inp_var, self.q_var, self.ans_var, self.input_mask_var],
+        self.test_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var],
                                   outputs=[self.prediction, self.loss, self.inp_c, self.q_q, last_mem])
         
         
         if self.mode == 'train':
             print "==> computing gradients (for debugging)"
             gradient = T.grad(self.loss, self.params)
-            self.get_gradient_fn = theano.function(inputs=[self.inp_var, self.q_var, self.ans_var, self.input_mask_var], outputs=gradient)
+            self.get_gradient_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var], outputs=gradient)
 
     
     def GRU_update(self, h, x, W_res_in, W_res_hid, b_res,
@@ -262,14 +261,14 @@ class DMN_basic:
     
     
     def load_state(self, file_name):
-        print "==> loading model %s" % self.load_model
+        print "==> loading state %s" % file_name
         with open(file_name, 'r') as load_file:
             dict = pickle.load(load_file)
             loaded_params = dict['params']
             for (x, y) in zip(self.params, loaded_params):
                 x.set_value(y)
 
-
+    
     def _process_input(self, data_raw):
         questions = []
         inputs = []
@@ -303,7 +302,7 @@ class DMN_basic:
                                             ivocab = self.ivocab, 
                                             word_vector_size = self.word_vector_size, 
                                             to_return = "index"))
-            # TODO: here we assume the answer is one word! 
+            # NOTE: here we assume the answer is one word! 
             if self.input_mask_mode == 'word':
                 input_masks.append(np.array([index for index, w in enumerate(inp)], dtype=np.int32)) 
             elif self.input_mask_mode == 'sentence': 
@@ -314,10 +313,15 @@ class DMN_basic:
         return inputs, questions, answers, input_masks
 
     
-    def get_batches_per_epoch(self):
-        return len(self.train_input)
+    def get_batches_per_epoch(self, mode):
+        if (mode == 'train'):
+            return len(self.train_input)
+        elif (mode == 'test'):
+            return len(self.test_input)
+        else:
+            raise Exception("unknown mode")
     
-        
+    
     def step(self, batch_index, mode):
         if mode == "train" and self.mode == "test":
             raise Exception("Cannot train during test mode")
@@ -370,7 +374,3 @@ class DMN_basic:
                 "log": "",
                 }
         
-        
-        
-   
-    
