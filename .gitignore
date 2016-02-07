@@ -1,0 +1,10 @@
+*.pem
+old_python/
+states/*
+logs/*
+nesterov*
+change_19_task.py
+*debug*
+*.state
+*.sh
+for5*
