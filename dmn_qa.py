@@ -217,7 +217,7 @@ class DMN_qa:
         cWc_vecs = T.dot(T.ones((1, 4), dtype=floatX), T.dot(T.dot(ct.T, self.W_b), c_vecs) * T.eye(n=4, m=4, dtype=floatX))
         
         z = T.concatenate([ct, mem, q_q, c_vecs, ct * q_q, ct * mem, ct * c_vecs, 
-                           T.abs_(ct - q_q), T.abs_(ct - mem), T.abs_(ct - c_vecs), 
+                           ct - q_q, ct - mem, ct - c_vecs, 
                            cWq, cWm, cWc_vecs], axis=0)
         
         l_1 = T.dot(self.W_1, z) + self.b_1.dimshuffle(0, 'x')

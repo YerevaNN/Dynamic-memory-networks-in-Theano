@@ -260,7 +260,7 @@ class DMN_batch:
     def new_attention_step(self, ct, prev_g, mem, q_q):
         cWq = T.dot(T.ones((1, self.batch_size), dtype=floatX), T.dot(T.dot(ct.T, self.W_b), q_q) * T.eye(n=self.batch_size, m=self.batch_size, dtype=floatX))
         cWm = T.dot(T.ones((1, self.batch_size), dtype=floatX), T.dot(T.dot(ct.T, self.W_b), mem) * T.eye(n=self.batch_size, m=self.batch_size, dtype=floatX))
-        z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, T.abs_(ct - q_q), T.abs_(ct - mem), cWq, cWm], axis=0)
+        z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, ct - q_q, ct - mem, cWq, cWm], axis=0)
         
         l_1 = T.dot(self.W_1, z) + self.b_1.dimshuffle(0, 'x')
         l_1 = T.tanh(l_1)

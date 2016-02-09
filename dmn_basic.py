@@ -212,7 +212,7 @@ class DMN_basic:
     def new_attention_step(self, ct, prev_g, mem, q_q):
         cWq = T.stack([T.dot(T.dot(ct, self.W_b), q_q)])
         cWm = T.stack([T.dot(T.dot(ct, self.W_b), mem)])
-        z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, T.abs_(ct - q_q), T.abs_(ct - mem), cWq, cWm])
+        z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, ct - q_q, ct - mem, cWq, cWm])
         
         l_1 = T.dot(self.W_1, z) + self.b_1
         l_1 = T.tanh(l_1)
