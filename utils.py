@@ -49,7 +49,7 @@ def get_babi_raw(id):
         "../allen/ck12linesnoq",#21
         "MCTest",#22
         "19changed",#23
-        "all", #24,
+        "all_shuffled", #24,
     ]
     babi_name = babi_map[int(id) - 1]
     babi_train_raw = init_babi('../babi-data/en/%s_train.txt' % babi_name)

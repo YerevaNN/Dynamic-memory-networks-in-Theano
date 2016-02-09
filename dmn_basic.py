@@ -101,6 +101,7 @@ class DMN_basic:
         
         last_mem = memory[-1]
         
+        
         print "==> building answer module"
         self.W_a = theano.shared(lasagne.init.Normal(0.1).sample((self.vocab_size, self.dim)), borrow=True)
         
