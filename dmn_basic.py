@@ -1,3 +1,4 @@
+import random
 import numpy as np
 
 import theano
@@ -45,17 +46,17 @@ class DMN_basic:
         
             
         print "==> building input module"
-        self.W_inp_res_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.word_vector_size)), borrow=True)
-        self.W_inp_res_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_inp_res = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_inp_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
+        self.W_inp_res_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_inp_res = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_inp_upd_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.word_vector_size)), borrow=True)
-        self.W_inp_upd_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_inp_upd = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_inp_upd_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
+        self.W_inp_upd_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_inp_upd = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_inp_hid_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.word_vector_size)), borrow=True)
-        self.W_inp_hid_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_inp_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_inp_hid_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
+        self.W_inp_hid_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_inp_hid = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
         inp_c_history, _ = theano.scan(fn=self.input_gru_step, 
                     sequences=self.input_var,
@@ -71,24 +72,24 @@ class DMN_basic:
         
         
         print "==> creating parameters for memory module"
-        self.W_mem_res_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_mem_res_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_mem_res = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_mem_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_mem_res_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_mem_res = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_mem_upd_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_mem_upd_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_mem_upd = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_mem_upd_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_mem_upd_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_mem_upd = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_mem_hid_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_mem_hid_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_mem_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_mem_hid_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_mem_hid_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_mem_hid = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_b = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_1 = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, 7 * self.dim + 2)), borrow=True)
-        self.W_2 = theano.shared(lasagne.init.Normal(0.1).sample((1, self.dim)), borrow=True)
-        self.b_1 = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
-        self.b_2 = theano.shared(lasagne.init.Constant(0.0).sample((1,)), borrow=True)
-        
+        self.W_b = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_1 = nn_utils.normal_param(std=0.1, shape=(self.dim, 7 * self.dim + 0))
+        self.W_2 = nn_utils.normal_param(std=0.1, shape=(1, self.dim))
+        self.b_1 = nn_utils.constant_param(value=0.0, shape=(self.dim,))
+        self.b_2 = nn_utils.constant_param(value=0.0, shape=(1,))
+
 
         print "==> building episodic memory module (fixed number of steps: %d)" % self.memory_hops
         memory = [self.q_q.copy()]
@@ -102,23 +103,23 @@ class DMN_basic:
         last_mem = memory[-1]
         
         print "==> building answer module"
-        self.W_a = theano.shared(lasagne.init.Normal(0.1).sample((self.vocab_size, self.dim)), borrow=True)
+        self.W_a = nn_utils.normal_param(std=0.1, shape=(self.vocab_size, self.dim))
         
         if self.answer_module == 'feedforward':
             self.prediction = nn_utils.softmax(T.dot(self.W_a, last_mem))
         
         elif self.answer_module == 'recurrent':
-            self.W_ans_res_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim + self.vocab_size)), borrow=True)
-            self.W_ans_res_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-            self.b_ans_res = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+            self.W_ans_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim + self.vocab_size))
+            self.W_ans_res_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+            self.b_ans_res = nn_utils.constant_param(value=0.0, shape=(self.dim,))
             
-            self.W_ans_upd_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim + self.vocab_size)), borrow=True)
-            self.W_ans_upd_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-            self.b_ans_upd = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+            self.W_ans_upd_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim + self.vocab_size))
+            self.W_ans_upd_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+            self.b_ans_upd = nn_utils.constant_param(value=0.0, shape=(self.dim,))
             
-            self.W_ans_hid_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim + self.vocab_size)), borrow=True)
-            self.W_ans_hid_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-            self.b_ans_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+            self.W_ans_hid_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim + self.vocab_size))
+            self.W_ans_hid_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+            self.b_ans_hid = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
             def answer_step(prev_a, prev_y):
                 a = self.GRU_update(prev_a, T.concatenate([prev_y, self.q_q]),
@@ -146,8 +147,8 @@ class DMN_basic:
                   self.W_inp_hid_in, self.W_inp_hid_hid, self.b_inp_hid,
                   self.W_mem_res_in, self.W_mem_res_hid, self.b_mem_res, 
                   self.W_mem_upd_in, self.W_mem_upd_hid, self.b_mem_upd,
-                  self.W_mem_hid_in, self.W_mem_hid_hid, self.b_mem_hid,
-                  self.W_b, self.W_1, self.W_2, self.b_1, self.b_2, self.W_a]
+                  self.W_mem_hid_in, self.W_mem_hid_hid, self.b_mem_hid, #self.W_b
+                  self.W_1, self.W_2, self.b_1, self.b_2, self.W_a]
         
         if self.answer_module == 'recurrent':
             self.params = self.params + [self.W_ans_res_in, self.W_ans_res_hid, self.b_ans_res, 
@@ -156,7 +157,9 @@ class DMN_basic:
         
         
         print "==> building loss layer and computing updates"
-        self.loss_ce = T.nnet.categorical_crossentropy(self.prediction.dimshuffle('x', 0), T.stack([self.answer_var]))[0]
+        self.loss_ce = T.nnet.categorical_crossentropy(self.prediction.dimshuffle('x', 0), 
+                                                       T.stack([self.answer_var]))[0]
+
         if self.l2 > 0:
             self.loss_l2 = self.l2 * nn_utils.l2_reg(self.params)
         else:
@@ -169,19 +172,14 @@ class DMN_basic:
         if self.mode == 'train':
             print "==> compiling train_fn"
             self.train_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var], 
-                                       outputs=[self.prediction, self.loss],
-                                       updates=updates)
+                                            outputs=[self.prediction, self.loss],
+                                            updates=updates)
         
         print "==> compiling test_fn"
         self.test_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var],
-                                  outputs=[self.prediction, self.loss, self.inp_c, self.q_q, last_mem])
+                                       outputs=[self.prediction, self.loss, self.inp_c, 
+                                                self.q_q, last_mem])
         
-        
-        if self.mode == 'train':
-            print "==> computing gradients (for debugging)"
-            gradient = T.grad(self.loss, self.params)
-            self.get_gradient_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var], outputs=gradient)
-
     
     def GRU_update(self, h, x, W_res_in, W_res_hid, b_res,
                          W_upd_in, W_upd_hid, b_upd,
@@ -207,12 +205,12 @@ class DMN_basic:
         return self.GRU_update(prev_h, x, self.W_inp_res_in, self.W_inp_res_hid, self.b_inp_res, 
                                      self.W_inp_upd_in, self.W_inp_upd_hid, self.b_inp_upd,
                                      self.W_inp_hid_in, self.W_inp_hid_hid, self.b_inp_hid)
-    
+
     
     def new_attention_step(self, ct, prev_g, mem, q_q):
-        cWq = T.stack([T.dot(T.dot(ct, self.W_b), q_q)])
-        cWm = T.stack([T.dot(T.dot(ct, self.W_b), mem)])
-        z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, ct - q_q, ct - mem, cWq, cWm])
+        #cWq = T.stack([T.dot(T.dot(ct, self.W_b), q_q)])
+        #cWm = T.stack([T.dot(T.dot(ct, self.W_b), mem)])
+        z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, (ct - q_q) ** 2, (ct - mem) ** 2])#, cWq, cWm])
         
         l_1 = T.dot(self.W_1, z) + self.b_1
         l_1 = T.tanh(l_1)
@@ -320,6 +318,13 @@ class DMN_basic:
             return len(self.test_input)
         else:
             raise Exception("unknown mode")
+
+    
+    def shuffle_train_set(self):
+        print "==> Shuffling the train set"
+        combined = zip(self.train_input, self.train_q, self.train_answer, self.train_input_mask)
+        random.shuffle(combined)
+        self.train_input, self.train_q, self.train_answer, self.train_input_mask = zip(*combined)
     
     
     def step(self, batch_index, mode):
@@ -349,15 +354,6 @@ class DMN_basic:
         skipped = 0
         grad_norm = float('NaN')
         
-        if mode == 'train':
-            gradient_value = self.get_gradient_fn(inp, q, ans, input_mask)
-            grad_norm = np.max([utils.get_norm(x) for x in gradient_value])
-            
-            if (np.isnan(grad_norm)):
-                print "==> gradient is nan at index %d." % batch_index
-                print "==> skipping"
-                skipped = 1
-        
         if skipped == 0:
             ret = theano_fn(inp, q, ans, input_mask)
         else:
@@ -373,4 +369,3 @@ class DMN_basic:
                 "param_norm": param_norm,
                 "log": "",
                 }
-        

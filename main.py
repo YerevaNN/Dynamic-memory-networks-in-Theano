@@ -23,13 +23,17 @@ parser.add_argument('--batch_size', type=int, default=10, help='no commment')
 parser.add_argument('--babi_id', type=str, default="1", help='babi task ID')
 parser.add_argument('--l2', type=float, default=0, help='L2 regularization')
 parser.add_argument('--normalize_attention', type=bool, default=False, help='flag for enabling softmax on attention vector')
-parser.add_argument('--log_every', type=int, default=1, help='no commment')
+parser.add_argument('--log_every', type=int, default=1, help='print information every x iteration')
+parser.add_argument('--save_every', type=int, default=1, help='save state every x epoch')
+parser.add_argument('--prefix', type=str, default="", help='optional prefix of network name')
+parser.add_argument('--no-shuffle', dest='shuffle', action='store_false')
+parser.set_defaults(shuffle=True)
 args = parser.parse_args()
 
 assert args.word_vector_size in [50, 100, 200, 300]
 
-prefix = '%s.for%d.n%d%s.babi%s.adadelta' % (args.network, args.memory_hops, args.dim, 
-    ".na" if args.normalize_attention else "", args.babi_id)
+network_name = args.prefix + '%s.mh%d.n%d.bs%d%s.babi%s' % (args.network, args.memory_hops, args.dim, 
+    args.batch_size, ".na" if args.normalize_attention else "", args.babi_id)
 
 babi_train_raw, babi_test_raw = utils.get_babi_raw(args.babi_id)
 
@@ -146,17 +150,21 @@ def do_epoch(mode, epoch, skipped=0):
 if args.mode == 'train':
     print "==> training"   	
     skipped = 0
-    # TODO: shuffle!
     for epoch in range(args.epochs):
         start_time = time.time()
+        
+        if args.shuffle:
+            dmn.shuffle_train_set()
+        
         _, skipped = do_epoch('train', epoch, skipped)
         
-        epoch_loss, _ = do_epoch('test', epoch)
+        epoch_loss, skipped = do_epoch('test', epoch, skipped)
         
-        state_name = 'states/%s.epoch%d.test%.5f.state' % (prefix, epoch, epoch_loss)
-    
-        print "==> saving ... %s" % state_name
-        dmn.save_params(state_name, epoch)
+        state_name = 'states/%s.epoch%d.test%.5f.state' % (network_name, epoch, epoch_loss)
+
+        if (epoch % args.save_every == 0):    
+            print "==> saving ... %s" % state_name
+            dmn.save_params(state_name, epoch)
         
         print "epoch %d took %.3fs" % (epoch, float(time.time()) - start_time)
 
