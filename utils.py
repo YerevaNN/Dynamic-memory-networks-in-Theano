@@ -24,7 +24,7 @@ def init_babi(fname):
     return tasks
 
 
-def get_babi_raw(id):
+def get_babi_raw(id, test_id):
     babi_map = [
         "qa1_single-supporting-fact",
         "qa2_two-supporting-facts",
@@ -51,9 +51,12 @@ def get_babi_raw(id):
         "19changed",#23
         "all_shuffled", #24,
     ]
+    if (test_id == -1):
+        test_id = id 
     babi_name = babi_map[int(id) - 1]
+    babi_test_name = babi_map[int(test_id) - 1]
     babi_train_raw = init_babi('../babi-data/en/%s_train.txt' % babi_name)
-    babi_test_raw = init_babi('../babi-data/en/%s_test.txt' % babi_name)
+    babi_test_raw = init_babi('../babi-data/en/%s_test.txt' % babi_test_name)
     return babi_train_raw, babi_test_raw
 
             

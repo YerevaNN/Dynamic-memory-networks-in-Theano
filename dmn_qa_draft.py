@@ -17,8 +17,9 @@ floatX = theano.config.floatX
 class DMN_qa:
     
     def __init__(self, babi_train_raw, babi_test_raw, word2vec, word_vector_size, 
-                dim, mode, input_mask_mode, memory_hops, l2, normalize_attention):
+                dim, mode, input_mask_mode, memory_hops, l2, normalize_attention, **kwargs):
 
+        print "==> not used params in DMN class:", kwargs.keys()
         self.vocab = {}
         self.ivocab = {}
         
@@ -423,9 +424,7 @@ class DMN_qa:
                 "answers": np.array([ans]),
                 "current_loss": ret[1],
                 "skipped": skipped,
-                "grad_norm": grad_norm,
-                "param_norm": param_norm,
-                "log": "",
+                "log": "pn: %.3f \t gn: %.3f" % (param_norm, grad_norm)
                 }
         
         
