@@ -4,16 +4,14 @@ as described in the [paper by Kumar et al.](http://arxiv.org/abs/1506.07285)
 and to experiment with its various extensions.
 
 We will cover the process in a series of blog posts.
-* [The first post](http://yerevann.github.io/2016/02/05/implementing-dynamic-memory-networks/) 
-* describes the details of the basic architecture and presents our first results 
-* on [bAbI tasks](http://fb.ai/babi) v1.2.
+* [The first post](http://yerevann.github.io/2016/02/05/implementing-dynamic-memory-networks/) describes the details of the basic architecture and presents our first results on [bAbI tasks](http://fb.ai/babi) v1.2.
 
 ## Repository contents
 
 | file | description |
 | --- | --- |
 | `main.py` | the main entry point to train and test available network architectures on bAbI-like tasks |
-| `dmn_basic.py` | our baseline implementation. It is as close to the original paper as we could understand the paper, except the number of steps in the main memory GRU is fixed. Attention module uses `T.abs_` function as a distance between two vectors which causes gradients to become `NaN` randomly.  The results reported in [this blog post](http://yerevann.github.io/2016/02/05/implementing-dynamic-memory-networks/) are based on this network |
+| `dmn_basic.py` | our baseline implementation. It is as close to the original as we could understand the paper, except the number of steps in the main memory GRU is fixed. Attention module uses `T.abs_` function as a distance between two vectors which causes gradients to become `NaN` randomly.  The results reported in [this blog post](http://yerevann.github.io/2016/02/05/implementing-dynamic-memory-networks/) are based on this network |
 | `dmn_smooth.py` | uses the square of the Euclidean distance instead of `abs` in the attention module. Training is very stable. Performance on bAbI is slightly better |
 | `dmn_batch.py` | `dmn_smooth` with minibatch training support. The batch size cannot be set to `1` because of the [Theano bug](https://github.com/Theano/Theano/issues/1772) | 
 | `dmn_qa_draft.py` | draft version of a DMN designed for answering multiple choice questions | 
