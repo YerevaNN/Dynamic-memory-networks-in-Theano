@@ -1,11 +1,13 @@
-.swp
+*.swp
 *.pyc
 *.pem
 old*
-states/*
+data/*
 logs/*
-nesterov*
 *debug*
 *.state
 *.sh
+!fetch_babi_data.sh
+!fetch_glove_data.sh
 *deploy*
+*.png
