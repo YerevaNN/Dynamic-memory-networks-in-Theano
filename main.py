@@ -55,19 +55,22 @@ if args.network == 'dmn_batch':
 elif args.network == 'dmn_basic':
     import dmn_basic
     if (args.batch_size != 1):
-        raise Exception("no minibatch training, set batch_size=1")
+        print "==> no minibatch training, argument batch_size is useless"
+        args.batch_size = 1
     dmn = dmn_basic.DMN_basic(**args_dict)
 
 elif args.network == 'dmn_smooth':
     import dmn_smooth
     if (args.batch_size != 1):
-        raise Exception("no minibatch training, set batch_size=1")
+        print "==> no minibatch training, argument batch_size is useless"
+        args.batch_size = 1
     dmn = dmn_smooth.DMN_smooth(**args_dict)
 
 elif args.network == 'dmn_qa':
     import dmn_qa_draft
     if (args.batch_size != 1):
-        raise Exception("no minibatch training, set batch_size=1")
+        print "==> no minibatch training, argument batch_size is useless"
+        args.batch_size = 1
     dmn = dmn_qa_draft.DMN_qa(**args_dict)
 
 else: 
