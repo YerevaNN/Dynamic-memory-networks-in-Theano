@@ -13,6 +13,8 @@ import cPickle as pickle
 import utils
 import nn_utils
 
+import copy
+
 floatX = theano.config.floatX
 
 class DMN_batch:
@@ -37,8 +39,6 @@ class DMN_batch:
         self.l2 = l2
         self.normalize_attention = normalize_attention
 
-        self.max_fact_count = 0
-        
         self.train_input, self.train_q, self.train_answer, self.train_fact_count, self.train_input_mask = self._process_input(babi_train_raw)
         self.test_input, self.test_q, self.test_answer, self.test_fact_count, self.test_input_mask = self._process_input(babi_test_raw)
         self.vocab_size = len(self.vocab)
@@ -74,8 +74,8 @@ class DMN_batch:
         inp_c_mask_list = []
         for batch_index in range(self.batch_size):
             taken = inp_c_history_shuffled[batch_index].take(self.input_mask_var[batch_index, :self.fact_count_var[batch_index]], axis=0)
-            inp_c_list.append(T.concatenate([taken, T.zeros((self.max_fact_count - taken.shape[0], self.dim), floatX)]))
-            inp_c_mask_list.append(T.concatenate([T.ones((taken.shape[0],), np.int32), T.zeros((self.max_fact_count - taken.shape[0],), np.int32)]))
+            inp_c_list.append(T.concatenate([taken, T.zeros((self.input_mask_var.shape[1] - taken.shape[0], self.dim), floatX)]))
+            inp_c_mask_list.append(T.concatenate([T.ones((taken.shape[0],), np.int32), T.zeros((self.input_mask_var.shape[1] - taken.shape[0],), np.int32)]))
         
         self.inp_c = T.stack(inp_c_list).dimshuffle(1, 2, 0)
         inp_c_mask = T.stack(inp_c_mask_list).dimshuffle(1, 0)
@@ -185,6 +185,7 @@ class DMN_batch:
         self.loss = self.loss_ce + self.loss_l2
             
         updates = lasagne.updates.adadelta(self.loss, self.params)
+        #updates = lasagne.updates.momentum(self.loss, self.params, learning_rate=0.01)
         
         if self.mode == 'train':
             print "==> compiling train_fn"
@@ -231,9 +232,6 @@ class DMN_batch:
     
     
     def new_attention_step(self, ct, prev_g, mem, q_q):
-        #cWq = T.dot(T.ones((1, self.batch_size), dtype=floatX), T.dot(T.dot(ct.T, self.W_b), q_q) * T.eye(n=self.batch_size, m=self.batch_size, dtype=floatX))
-        #cWm = T.dot(T.ones((1, self.batch_size), dtype=floatX), T.dot(T.dot(ct.T, self.W_b), mem) * T.eye(n=self.batch_size, m=self.batch_size, dtype=floatX))
-        #z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, ct - q_q, ct - mem, cWq, cWm], axis=0)
         z = T.concatenate([ct, mem, q_q, ct * q_q, ct * mem, (ct - q_q) ** 2, (ct - mem) ** 2], axis=0)
         
         l_1 = T.dot(self.W_1, z) + self.b_1.dimshuffle(0, 'x')
@@ -294,27 +292,55 @@ class DMN_batch:
                 x.set_value(y)
     
     
-    def _process_input(self, data_raw):
+    def _process_batch(self, _inputs, _questions, _answers, _fact_counts, _input_masks):
+        inputs = copy.deepcopy(_inputs)
+        questions = copy.deepcopy(_questions)
+        answers = copy.deepcopy(_answers)
+        fact_counts = copy.deepcopy(_fact_counts)
+        input_masks = copy.deepcopy(_input_masks)
+        
+        zipped = zip(inputs, questions, answers, fact_counts, input_masks)
+        
         max_inp_len = 0
         max_q_len = 0
-        self.max_fact_count = 0
-        for x in data_raw:
-            inp = x["C"].lower().split(' ') 
-            inp = [w for w in inp if len(w) > 0]
-            q = x["Q"].lower().split(' ')
-            q = [w for w in q if len(w) > 0]
-            
-            if (self.input_mask_mode == 'word'):
-                fact_count = len(inp)
-            elif (self.input_mask_mode == 'sentence'):
-                fact_count = len([0 for w in inp if w == '.'])
-            else:
-                raise Exception("unknown input_mask_mode")
-            
+        max_fact_count = 0
+        for inp, q, ans, fact_count, input_mask in zipped:
             max_inp_len = max(max_inp_len, len(inp))
             max_q_len = max(max_q_len, len(q))
-            self.max_fact_count = max(self.max_fact_count, fact_count)
+            max_fact_count = max(max_fact_count, fact_count)
         
+        questions = []
+        inputs = []
+        answers = []
+        fact_counts = []
+        input_masks = []
+        
+        for inp, q, ans, fact_count, input_mask in zipped:
+            while(len(inp) < max_inp_len):
+                inp.append(self._empty_word_vector())
+            
+            while(len(q) < max_q_len):
+                q.append(self._empty_word_vector())
+    
+            while(len(input_mask) < max_fact_count):
+                input_mask.append(-1)
+            
+            inputs.append(inp)
+            questions.append(q)
+            answers.append(ans)
+            fact_counts.append(fact_count)
+            input_masks.append(input_mask)
+            
+        inputs = np.array(inputs).astype(floatX)
+        questions = np.array(questions).astype(floatX)
+        answers = np.array(answers).astype(np.int32)
+        fact_counts = np.array(fact_counts).astype(np.int32)
+        input_masks = np.array(input_masks).astype(np.int32)
+
+        return inputs, questions, answers, fact_counts, input_masks 
+    
+    
+    def _process_input(self, data_raw):
         questions = []
         inputs = []
         answers = []
@@ -327,20 +353,12 @@ class DMN_batch:
             q = x["Q"].lower().split(' ')
             q = [w for w in q if len(w) > 0]
             
-            if (self.input_mask_mode == 'word'):
-                fact_count = len(inp)
-            if (self.input_mask_mode == 'sentence'):
-                fact_count = len([0 for w in inp if w == '.'])
-             
             inp_vector = [utils.process_word(word = w, 
                                         word2vec = self.word2vec, 
                                         vocab = self.vocab, 
                                         ivocab = self.ivocab, 
                                         word_vector_size = self.word_vector_size, 
                                         to_return = "word2vec") for w in inp]
-            while(len(inp_vector) < max_inp_len):
-                inp_vector.append(self._empty_word_vector())
-    
     
             q_vector = [utils.process_word(word = w, 
                                         word2vec = self.word2vec, 
@@ -349,18 +367,14 @@ class DMN_batch:
                                         word_vector_size = self.word_vector_size, 
                                         to_return = "word2vec") for w in q]
             
-            while(len(q_vector) < max_q_len):
-                q_vector.append(self._empty_word_vector())
-    
-            
             if (self.input_mask_mode == 'word'):
                 input_mask = range(len(inp))
-            if (self.input_mask_mode == 'sentence'):
+            elif (self.input_mask_mode == 'sentence'):
                 input_mask = [index for index, w in enumerate(inp) if w == '.']
-
-            while(len(input_mask) < self.max_fact_count):
-                input_mask.append(-1)
-            
+            else:
+                raise Exception("unknown input_mask_mode")
+            fact_count = len(input_mask)
+    
             inputs.append(inp_vector)
             questions.append(q_vector)
             # NOTE: here we assume the answer is one word! 
@@ -372,13 +386,6 @@ class DMN_batch:
                                             to_return = "index"))
             fact_counts.append(fact_count)
             input_masks.append(input_mask)
-
-        
-        inputs = np.array(inputs).astype(floatX)
-        questions = np.array(questions).astype(floatX)
-        answers = np.array(answers).astype(np.int32)
-        fact_counts = np.array(fact_counts).astype(np.int32)
-        input_masks = np.array(input_masks).astype(np.int32)
         
         return inputs, questions, answers, fact_counts, input_masks 
     
@@ -425,6 +432,7 @@ class DMN_batch:
         fact_count = fact_counts[start_index:start_index+self.batch_size]
         input_mask = input_masks[start_index:start_index+self.batch_size]
 
+        inp, q, ans, fact_count, input_mask = self._process_batch(inp, q, ans, fact_count, input_mask)
         ret = theano_fn(inp, q, ans, fact_count, input_mask)
         param_norm = np.max([utils.get_norm(x.get_value()) for x in self.params])
         
