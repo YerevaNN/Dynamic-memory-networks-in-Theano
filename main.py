@@ -28,13 +28,22 @@ parser.add_argument('--save_every', type=int, default=1, help='save state every 
 parser.add_argument('--prefix', type=str, default="", help='optional prefix of network name')
 parser.add_argument('--no-shuffle', dest='shuffle', action='store_false')
 parser.add_argument('--babi_test_id', type=int, default=-1, help='babi_id of test set')
+parser.add_argument('--dropout', type=float, default=0.0, help='dropout rate (between 0 and 1)')
+parser.add_argument('--batch_norm', type=bool, default=False, help='batch normalization')
 parser.set_defaults(shuffle=True)
 args = parser.parse_args()
 
 assert args.word_vector_size in [50, 100, 200, 300]
 
-network_name = args.prefix + '%s.mh%d.n%d.bs%d%s.babi%s' % (args.network, args.memory_hops, args.dim, 
-    args.batch_size, ".na" if args.normalize_attention else "", args.babi_id)
+network_name = args.prefix + '%s.mh%d.n%d.bs%d%s%s%s.babi%s' % (
+    args.network, 
+    args.memory_hops, 
+    args.dim, 
+    args.batch_size, 
+    ".na" if args.normalize_attention else "", 
+    ".bn" if args.batch_norm else "", 
+    (".d" + str(args.dropout)) if args.dropout>0 else "",
+    args.babi_id)
 
 
 babi_train_raw, babi_test_raw = utils.get_babi_raw(args.babi_id, args.babi_test_id)
