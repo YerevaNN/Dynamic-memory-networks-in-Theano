@@ -25,36 +25,55 @@ def init_babi(fname):
 
 
 def get_babi_raw(id, test_id):
-    babi_map = [
-        "qa1_single-supporting-fact",
-        "qa2_two-supporting-facts",
-        "qa3_three-supporting-facts",
-        "qa4_two-arg-relations",
-        "qa5_three-arg-relations",
-        "qa6_yes-no-questions",
-        "qa7_counting",
-        "qa8_lists-sets",
-        "qa9_simple-negation",
-        "qa10_indefinite-knowledge",
-        "qa11_basic-coreference",
-        "qa12_conjunction",
-        "qa13_compound-coreference",
-        "qa14_time-reasoning",
-        "qa15_basic-deduction",
-        "qa16_basic-induction",
-        "qa17_positional-reasoning",
-        "qa18_size-reasoning",
-        "qa19_path-finding",
-        "qa20_agents-motivations",
-        "../allen/ck12linesnoq",#21
-        "MCTest",#22
-        "19changed",#23
-        "all_shuffled", #24,
-    ]
+    babi_map = {
+        "1": "qa1_single-supporting-fact",
+        "2": "qa2_two-supporting-facts",
+        "3": "qa3_three-supporting-facts",
+        "4": "qa4_two-arg-relations",
+        "5": "qa5_three-arg-relations",
+        "6": "qa6_yes-no-questions",
+        "7": "qa7_counting",
+        "8": "qa8_lists-sets",
+        "9": "qa9_simple-negation",
+        "10": "qa10_indefinite-knowledge",
+        "11": "qa11_basic-coreference",
+        "12": "qa12_conjunction",
+        "13": "qa13_compound-coreference",
+        "14": "qa14_time-reasoning",
+        "15": "qa15_basic-deduction",
+        "16": "qa16_basic-induction",
+        "17": "qa17_positional-reasoning",
+        "18": "qa18_size-reasoning",
+        "19": "qa19_path-finding",
+        "20": "qa20_agents-motivations",
+        "MCTest": "MCTest",
+        "19changed": "19changed",
+        "joint": "all_shuffled", 
+        "sh1": "../shuffled/qa1_single-supporting-fact",
+        "sh2": "../shuffled/qa2_two-supporting-facts",
+        "sh3": "../shuffled/qa3_three-supporting-facts",
+        "sh4": "../shuffled/qa4_two-arg-relations",
+        "sh5": "../shuffled/qa5_three-arg-relations",
+        "sh6": "../shuffled/qa6_yes-no-questions",
+        "sh7": "../shuffled/qa7_counting",
+        "sh8": "../shuffled/qa8_lists-sets",
+        "sh9": "../shuffled/qa9_simple-negation",
+        "sh10": "../shuffled/qa10_indefinite-knowledge",
+        "sh11": "../shuffled/qa11_basic-coreference",
+        "sh12": "../shuffled/qa12_conjunction",
+        "sh13": "../shuffled/qa13_compound-coreference",
+        "sh14": "../shuffled/qa14_time-reasoning",
+        "sh15": "../shuffled/qa15_basic-deduction",
+        "sh16": "../shuffled/qa16_basic-induction",
+        "sh17": "../shuffled/qa17_positional-reasoning",
+        "sh18": "../shuffled/qa18_size-reasoning",
+        "sh19": "../shuffled/qa19_path-finding",
+        "sh20": "../shuffled/qa20_agents-motivations",
+    }
     if (test_id == -1):
         test_id = id 
-    babi_name = babi_map[int(id) - 1]
-    babi_test_name = babi_map[int(test_id) - 1]
+    babi_name = babi_map[id]
+    babi_test_name = babi_map[test_id]
     babi_train_raw = init_babi('data/en/%s_train.txt' % babi_name)
     babi_test_raw = init_babi('data/en/%s_test.txt' % babi_test_name)
     return babi_train_raw, babi_test_raw
