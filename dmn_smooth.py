@@ -20,7 +20,7 @@ class DMN_smooth:
     
     def __init__(self, babi_train_raw, babi_test_raw, word2vec, word_vector_size, 
                 dim, mode, answer_module, input_mask_mode, memory_hops, l2, 
-                normalize_attention, **kwargs):
+                normalize_attention, batch_norm, dropout, **kwargs):
 
         print "==> not used params in DMN class:", kwargs.keys()
         self.vocab = {}
@@ -35,6 +35,8 @@ class DMN_smooth:
         self.memory_hops = memory_hops
         self.l2 = l2
         self.normalize_attention = normalize_attention
+        self.batch_norm = batch_norm
+        self.dropout = dropout
         
         self.train_input, self.train_q, self.train_answer, self.train_input_mask = self._process_input(babi_train_raw)
         self.test_input, self.test_q, self.test_answer, self.test_input_mask = self._process_input(babi_test_raw)
@@ -101,7 +103,12 @@ class DMN_smooth:
                                           self.W_mem_upd_in, self.W_mem_upd_hid, self.b_mem_upd,
                                           self.W_mem_hid_in, self.W_mem_hid_hid, self.b_mem_hid))
         
-        last_mem = memory[-1]
+        last_mem_raw = memory[-1].dimshuffle(('x', 0))
+        
+        net = layers.InputLayer(shape=(1, self.dim), input_var=last_mem_raw)
+        if self.dropout > 0 and self.mode == 'train':
+            net = layers.DropoutLayer(net, p=self.dropout)
+        last_mem = layers.get_output(net)[0]
         
         print "==> building answer module"
         self.W_a = nn_utils.normal_param(std=0.1, shape=(self.vocab_size, self.dim))
