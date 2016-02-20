@@ -21,7 +21,7 @@ class DMN_batch:
     
     def __init__(self, babi_train_raw, babi_test_raw, word2vec, word_vector_size, dim, 
                 mode, answer_module, input_mask_mode, memory_hops, batch_size, l2,
-                normalize_attention, **kwargs):
+                normalize_attention, batch_norm, dropout, **kwargs):
         
         print "==> not used params in DMN class:", kwargs.keys()
         
@@ -38,6 +38,8 @@ class DMN_batch:
         self.batch_size = batch_size
         self.l2 = l2
         self.normalize_attention = normalize_attention
+        self.batch_norm = batch_norm
+        self.dropout = dropout
 
         self.train_input, self.train_q, self.train_answer, self.train_fact_count, self.train_input_mask = self._process_input(babi_train_raw)
         self.test_input, self.test_q, self.test_answer, self.test_fact_count, self.test_input_mask = self._process_input(babi_test_raw)
@@ -117,7 +119,14 @@ class DMN_batch:
                                           self.W_mem_upd_in, self.W_mem_upd_hid, self.b_mem_upd,
                                           self.W_mem_hid_in, self.W_mem_hid_hid, self.b_mem_hid))                         
         
-        last_mem = memory[-1]
+        last_mem_raw = memory[-1].dimshuffle((1, 0))
+        
+        net = layers.InputLayer(shape=(self.batch_size, self.dim), input_var=last_mem_raw)
+        if self.batch_norm:
+            net = layers.BatchNormLayer(incoming=net)
+        if self.dropout > 0 and self.mode == 'train':
+            net = layers.DropoutLayer(net, p=self.dropout)
+        last_mem = layers.get_output(net).dimshuffle((1, 0))
         
         
         print "==> building answer module"
@@ -185,7 +194,7 @@ class DMN_batch:
         self.loss = self.loss_ce + self.loss_l2
             
         updates = lasagne.updates.adadelta(self.loss, self.params)
-        #updates = lasagne.updates.momentum(self.loss, self.params, learning_rate=0.01)
+        #updates = lasagne.updates.momentum(self.loss, self.params, learning_rate=0.001)
         
         if self.mode == 'train':
             print "==> compiling train_fn"
