@@ -33,6 +33,8 @@ parser.add_argument('--batch_norm', type=bool, default=False, help='batch normal
 parser.set_defaults(shuffle=True)
 args = parser.parse_args()
 
+print args
+
 assert args.word_vector_size in [50, 100, 200, 300]
 
 network_name = args.prefix + '%s.mh%d.n%d.bs%d%s%s%s.babi%s' % (
