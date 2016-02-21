@@ -47,6 +47,7 @@ class DMN_smooth:
         self.answer_var = T.iscalar('answer_var')
         self.input_mask_var = T.ivector('input_mask_var')
         
+        self.attentions = []
             
         print "==> building input module"
         self.W_inp_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
@@ -184,9 +185,10 @@ class DMN_smooth:
                                             outputs=[self.prediction, self.loss],
                                             updates=updates)
         
+        self.attentions = T.stack(self.attentions)
         print "==> compiling test_fn"
         self.test_fn = theano.function(inputs=[self.input_var, self.q_var, self.answer_var, self.input_mask_var],
-                                       outputs=[self.prediction, self.loss])
+                                       outputs=[self.prediction, self.loss, self.attentions])
         
     
     def GRU_update(self, h, x, W_res_in, W_res_hid, b_res,
@@ -245,6 +247,8 @@ class DMN_smooth:
         
         if (self.normalize_attention):
             g = nn_utils.softmax(g)
+
+        self.attentions.append(g)
         
         e, e_updates = theano.scan(fn=self.new_episode_step,
             sequences=[self.inp_c, g],
@@ -373,8 +377,8 @@ class DMN_smooth:
     def predict(self, data):
         # data is an array of objects like {"Q": "question", "C": "sentence ."}
         data[0]["A"] = "."
-        print data
+        print "==> predicting:", data
         inputs, questions, answers, input_masks = self._process_input(data)
-        ret = self.test_fn(inputs[0], questions[0], answers[0], input_masks[0])
-        return ret[0]
+        probabilities, loss, attentions = self.test_fn(inputs[0], questions[0], answers[0], input_masks[0])
+        return probabilities, attentions
 
