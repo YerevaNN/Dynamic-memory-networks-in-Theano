@@ -70,7 +70,7 @@ def get_babi_raw(id, test_id):
         "sh19": "../shuffled/qa19_path-finding",
         "sh20": "../shuffled/qa20_agents-motivations",
     }
-    if (test_id == -1):
+    if (test_id == ""):
         test_id = id 
     babi_name = babi_map[id]
     babi_test_name = babi_map[test_id]
@@ -94,7 +94,7 @@ def create_vector(word, word2vec, word_vector_size, silent=False):
     vector = np.random.uniform(0.0,1.0,(word_vector_size,))
     word2vec[word] = vector
     if (not silent):
-        print "%s is missing" % word
+        print "utils.py::create_vector => %s is missing" % word
     return vector
 
 

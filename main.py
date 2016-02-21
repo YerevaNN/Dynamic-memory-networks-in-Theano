@@ -3,6 +3,7 @@ import numpy as np
 import sklearn.metrics as metrics
 import argparse
 import time
+import json
 
 import utils
 import nn_utils
@@ -27,7 +28,7 @@ parser.add_argument('--log_every', type=int, default=1, help='print information 
 parser.add_argument('--save_every', type=int, default=1, help='save state every x epoch')
 parser.add_argument('--prefix', type=str, default="", help='optional prefix of network name')
 parser.add_argument('--no-shuffle', dest='shuffle', action='store_false')
-parser.add_argument('--babi_test_id', type=int, default=-1, help='babi_id of test set')
+parser.add_argument('--babi_test_id', type=str, default="", help='babi_id of test set (leave empty to use --babi_id)')
 parser.add_argument('--dropout', type=float, default=0.0, help='dropout rate (between 0 and 1)')
 parser.add_argument('--batch_norm', type=bool, default=False, help='batch normalization')
 parser.set_defaults(shuffle=True)
@@ -165,6 +166,8 @@ if args.mode == 'train':
         print "epoch %d took %.3fs" % (epoch, float(time.time()) - start_time)
 
 elif args.mode == 'test':
+    file = open('last_tested_model.json', 'w+')
+    json.dump(dict(args._get_kwargs()), file, indent=2)
     do_epoch('test', 0)
 
 else:
