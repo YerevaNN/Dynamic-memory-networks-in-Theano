@@ -176,6 +176,7 @@ class DMN_smooth:
         self.loss = self.loss_ce + self.loss_l2
         
         updates = lasagne.updates.adadelta(self.loss, self.params)
+        #updates = lasagne.updates.momentum(self.loss, self.params, learning_rate=0.0003)
         
         if self.mode == 'train':
             print "==> compiling train_fn"
@@ -301,7 +302,7 @@ class DMN_smooth:
             
             inputs.append(np.vstack(inp_vector).astype(floatX))
             questions.append(np.vstack(q_vector).astype(floatX))
-            answers.append(utils.process_word(word = x["A"], 
+            answers.append(utils.process_word(word = x["A"], # TODO: add .lower() here 
                                             word2vec = self.word2vec, 
                                             vocab = self.vocab, 
                                             ivocab = self.ivocab, 
@@ -367,3 +368,13 @@ class DMN_smooth:
                 "skipped": 0,
                 "log": "pn: %.3f" % param_norm,
                 }
+                
+                
+    def predict(self, data):
+        # data is an array of objects like {"Q": "question", "C": "sentence ."}
+        data[0]["A"] = "."
+        print data
+        inputs, questions, answers, input_masks = self._process_input(data)
+        ret = self.test_fn(inputs[0], questions[0], answers[0], input_masks[0])
+        return ret[0]
+
