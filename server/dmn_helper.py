@@ -78,5 +78,5 @@ def predict(code_path, babi_train_raw, babi_test_raw, word2vec, word_vector_size
         'answer': dmn.ivocab[probabilities.argmax()],
         'confidence': str(probabilities.max()),
         'episodes': attentions.tolist(),
-        'facts': context.split('.')
+        'facts': context.split(' . ')
     }

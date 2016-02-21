@@ -1,0 +1,5 @@
+{
+  "id": "dmn_smooth",
+  "name": "DMN Smooth",
+  "description": "DMN Smooth is a version of DMN where the attention is calculated based on memory, fact and question vectors and Euclidean distances between these vectors."
+}
