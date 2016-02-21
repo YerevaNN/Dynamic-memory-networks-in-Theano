@@ -1,3 +1,4 @@
+import os as os
 import numpy as np
 
 def init_babi(fname):
@@ -74,18 +75,22 @@ def get_babi_raw(id, test_id):
         test_id = id 
     babi_name = babi_map[id]
     babi_test_name = babi_map[test_id]
-    babi_train_raw = init_babi('data/en/%s_train.txt' % babi_name)
-    babi_test_raw = init_babi('data/en/%s_test.txt' % babi_test_name)
+    babi_train_raw = init_babi(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data/en/%s_train.txt' % babi_name))
+    babi_test_raw = init_babi(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data/en/%s_test.txt' % babi_test_name))
     return babi_train_raw, babi_test_raw
 
             
 def load_glove(dim):
     word2vec = {}
+    
     print "==> loading glove"
-    with open("data/glove/glove.6B." + str(dim) + "d.txt") as f:
+    with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "data/glove/glove.6B." + str(dim) + "d.txt")) as f:
         for line in f:    
             l = line.split()
             word2vec[l[0]] = map(float, l[1:])
+            
+    print "==> glove is loaded"
+    
     return word2vec
 
 
