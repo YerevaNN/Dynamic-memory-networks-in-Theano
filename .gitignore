@@ -1,11 +1,13 @@
+*.swp
 *.pyc
 *.pem
 old*
-states/*
+data/*
 logs/*
-nesterov*
-change_19_task.py
 *debug*
 *.state
 *.sh
-for5*
+!fetch_babi_data.sh
+!fetch_glove_data.sh
+*deploy*
+*.png

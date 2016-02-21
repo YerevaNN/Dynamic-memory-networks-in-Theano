@@ -1,3 +1,4 @@
+import random
 import numpy as np
 
 import theano
@@ -19,8 +20,9 @@ class DMN_basic:
     
     def __init__(self, babi_train_raw, babi_test_raw, word2vec, word_vector_size, 
                 dim, mode, answer_module, input_mask_mode, memory_hops, l2, 
-                normalize_attention):
-        
+                normalize_attention, **kwargs):
+
+        print "==> not used params in DMN class:", kwargs.keys()
         self.vocab = {}
         self.ivocab = {}
         
@@ -45,17 +47,17 @@ class DMN_basic:
         
             
         print "==> building input module"
-        self.W_inp_res_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.word_vector_size)), borrow=True)
-        self.W_inp_res_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_inp_res = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_inp_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
+        self.W_inp_res_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_inp_res = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_inp_upd_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.word_vector_size)), borrow=True)
-        self.W_inp_upd_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_inp_upd = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_inp_upd_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
+        self.W_inp_upd_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_inp_upd = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_inp_hid_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.word_vector_size)), borrow=True)
-        self.W_inp_hid_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_inp_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_inp_hid_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.word_vector_size))
+        self.W_inp_hid_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_inp_hid = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
         inp_c_history, _ = theano.scan(fn=self.input_gru_step, 
                     sequences=self.input_var,
@@ -71,23 +73,23 @@ class DMN_basic:
         
         
         print "==> creating parameters for memory module"
-        self.W_mem_res_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_mem_res_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_mem_res = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_mem_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_mem_res_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_mem_res = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_mem_upd_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_mem_upd_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_mem_upd = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_mem_upd_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_mem_upd_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_mem_upd = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_mem_hid_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_mem_hid_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.b_mem_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+        self.W_mem_hid_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_mem_hid_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.b_mem_hid = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
-        self.W_b = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-        self.W_1 = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, 7 * self.dim + 2)), borrow=True)
-        self.W_2 = theano.shared(lasagne.init.Normal(0.1).sample((1, self.dim)), borrow=True)
-        self.b_1 = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
-        self.b_2 = theano.shared(lasagne.init.Constant(0.0).sample((1,)), borrow=True)
+        self.W_b = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+        self.W_1 = nn_utils.normal_param(std=0.1, shape=(self.dim, 7 * self.dim + 2))
+        self.W_2 = nn_utils.normal_param(std=0.1, shape=(1, self.dim))
+        self.b_1 = nn_utils.constant_param(value=0.0, shape=(self.dim,))
+        self.b_2 = nn_utils.constant_param(value=0.0, shape=(1,))
         
 
         print "==> building episodic memory module (fixed number of steps: %d)" % self.memory_hops
@@ -102,23 +104,23 @@ class DMN_basic:
         last_mem = memory[-1]
         
         print "==> building answer module"
-        self.W_a = theano.shared(lasagne.init.Normal(0.1).sample((self.vocab_size, self.dim)), borrow=True)
+        self.W_a = nn_utils.normal_param(std=0.1, shape=(self.vocab_size, self.dim))
         
         if self.answer_module == 'feedforward':
             self.prediction = nn_utils.softmax(T.dot(self.W_a, last_mem))
         
         elif self.answer_module == 'recurrent':
-            self.W_ans_res_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim + self.vocab_size)), borrow=True)
-            self.W_ans_res_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-            self.b_ans_res = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+            self.W_ans_res_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim + self.vocab_size))
+            self.W_ans_res_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+            self.b_ans_res = nn_utils.constant_param(value=0.0, shape=(self.dim,))
             
-            self.W_ans_upd_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim + self.vocab_size)), borrow=True)
-            self.W_ans_upd_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-            self.b_ans_upd = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+            self.W_ans_upd_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim + self.vocab_size))
+            self.W_ans_upd_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+            self.b_ans_upd = nn_utils.constant_param(value=0.0, shape=(self.dim,))
             
-            self.W_ans_hid_in = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim + self.vocab_size)), borrow=True)
-            self.W_ans_hid_hid = theano.shared(lasagne.init.Normal(0.1).sample((self.dim, self.dim)), borrow=True)
-            self.b_ans_hid = theano.shared(lasagne.init.Constant(0.0).sample((self.dim,)), borrow=True)
+            self.W_ans_hid_in = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim + self.vocab_size))
+            self.W_ans_hid_hid = nn_utils.normal_param(std=0.1, shape=(self.dim, self.dim))
+            self.b_ans_hid = nn_utils.constant_param(value=0.0, shape=(self.dim,))
         
             def answer_step(prev_a, prev_y):
                 a = self.GRU_update(prev_a, T.concatenate([prev_y, self.q_q]),
@@ -322,6 +324,13 @@ class DMN_basic:
             raise Exception("unknown mode")
     
     
+    def shuffle_train_set(self):
+        print "==> Shuffling the train set"
+        combined = zip(self.train_input, self.train_q, self.train_answer, self.train_input_mask)
+        random.shuffle(combined)
+        self.train_input, self.train_q, self.train_answer, self.train_input_mask = zip(*combined)
+        
+    
     def step(self, batch_index, mode):
         if mode == "train" and self.mode == "test":
             raise Exception("Cannot train during test mode")
@@ -361,7 +370,7 @@ class DMN_basic:
         if skipped == 0:
             ret = theano_fn(inp, q, ans, input_mask)
         else:
-            ret = [float('NaN'), float('NaN')]
+            ret = [-1, -1]
         
         param_norm = np.max([utils.get_norm(x.get_value()) for x in self.params])
         
@@ -369,8 +378,6 @@ class DMN_basic:
                 "answers": np.array([ans]),
                 "current_loss": ret[1],
                 "skipped": skipped,
-                "grad_norm": grad_norm,
-                "param_norm": param_norm,
-                "log": "",
+                "log": "pn: %.3f \t gn: %.3f" % (param_norm, grad_norm)
                 }
         

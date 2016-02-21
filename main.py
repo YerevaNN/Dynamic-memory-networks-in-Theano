@@ -23,73 +23,73 @@ parser.add_argument('--batch_size', type=int, default=10, help='no commment')
 parser.add_argument('--babi_id', type=str, default="1", help='babi task ID')
 parser.add_argument('--l2', type=float, default=0, help='L2 regularization')
 parser.add_argument('--normalize_attention', type=bool, default=False, help='flag for enabling softmax on attention vector')
+parser.add_argument('--log_every', type=int, default=1, help='print information every x iteration')
+parser.add_argument('--save_every', type=int, default=1, help='save state every x epoch')
+parser.add_argument('--prefix', type=str, default="", help='optional prefix of network name')
+parser.add_argument('--no-shuffle', dest='shuffle', action='store_false')
+parser.add_argument('--babi_test_id', type=int, default=-1, help='babi_id of test set')
+parser.add_argument('--dropout', type=float, default=0.0, help='dropout rate (between 0 and 1)')
+parser.add_argument('--batch_norm', type=bool, default=False, help='batch normalization')
+parser.set_defaults(shuffle=True)
 args = parser.parse_args()
+
+print args
 
 assert args.word_vector_size in [50, 100, 200, 300]
 
-prefix = '%s.for%d.n%d%s.babi%s.adadelta' % (args.network, args.memory_hops, args.dim, 
-    ".na" if args.normalize_attention else "", args.babi_id)
+network_name = args.prefix + '%s.mh%d.n%d.bs%d%s%s%s.babi%s' % (
+    args.network, 
+    args.memory_hops, 
+    args.dim, 
+    args.batch_size, 
+    ".na" if args.normalize_attention else "", 
+    ".bn" if args.batch_norm else "", 
+    (".d" + str(args.dropout)) if args.dropout>0 else "",
+    args.babi_id)
 
-babi_train_raw, babi_test_raw = utils.get_babi_raw(args.babi_id)
+
+babi_train_raw, babi_test_raw = utils.get_babi_raw(args.babi_id, args.babi_test_id)
 
 word2vec = utils.load_glove(args.word_vector_size)
+
+args_dict = dict(args._get_kwargs())
+args_dict['babi_train_raw'] = babi_train_raw
+args_dict['babi_test_raw'] = babi_test_raw
+args_dict['word2vec'] = word2vec
+    
 
 # init class
 if args.network == 'dmn_batch':
     import dmn_batch
-    dmn = dmn_batch.DMN_batch(babi_train_raw = babi_train_raw,
-                                babi_test_raw = babi_test_raw,
-                                word2vec = word2vec,
-                                word_vector_size = args.word_vector_size,
-                                dim = args.dim,
-                                mode = args.mode,
-                                answer_module = args.answer_module,
-                                input_mask_mode = args.input_mask_mode,
-                                memory_hops = args.memory_hops,
-                                batch_size = args.batch_size,
-                                l2 = args.l2,
-                                normalize_attention = args.normalize_attention
-                                )
+    dmn = dmn_batch.DMN_batch(**args_dict)
+
 elif args.network == 'dmn_basic':
     import dmn_basic
     if (args.batch_size != 1):
-        raise Exception("no minibatch training, set batch_size=1")
-    
-    dmn = dmn_basic.DMN_basic(babi_train_raw = babi_train_raw,
-                                babi_test_raw = babi_test_raw,
-                                word2vec = word2vec,
-                                word_vector_size = args.word_vector_size,
-                                dim = args.dim,
-                                mode = args.mode,
-                                answer_module = args.answer_module,
-                                input_mask_mode = args.input_mask_mode,
-                                memory_hops = args.memory_hops,
-                                l2 = args.l2,
-                                normalize_attention = args.normalize_attention
-                                )
- 
-elif args.network == 'dmn_qa':
-    import dmn_qa
+        print "==> no minibatch training, argument batch_size is useless"
+        args.batch_size = 1
+    dmn = dmn_basic.DMN_basic(**args_dict)
+
+elif args.network == 'dmn_smooth':
+    import dmn_smooth
     if (args.batch_size != 1):
-        raise Exception("no minibatch training, set batch_size=1")
-    dmn = dmn_qa.DMN_qa(babi_train_raw = babi_train_raw,
-                            babi_test_raw = babi_test_raw,
-                            word2vec = word2vec,
-                            word_vector_size = args.word_vector_size,
-                            dim = args.dim,
-                            mode = args.mode,
-                            input_mask_mode = args.input_mask_mode,
-                            memory_hops = args.memory_hops,
-                            l2 = args.l2,
-                            normalize_attention = args.normalize_attention
-                            )
+        print "==> no minibatch training, argument batch_size is useless"
+        args.batch_size = 1
+    dmn = dmn_smooth.DMN_smooth(**args_dict)
+
+elif args.network == 'dmn_qa':
+    import dmn_qa_draft
+    if (args.batch_size != 1):
+        print "==> no minibatch training, argument batch_size is useless"
+        args.batch_size = 1
+    dmn = dmn_qa_draft.DMN_qa(**args_dict)
 
 else: 
     raise Exception("No such network known: " + args.network)
     
 
 if args.load_state != "":
-    dmn.load_state(args.load_state) # of our class
+    dmn.load_state(args.load_state)
 
 
 def do_epoch(mode, epoch, skipped=0):
@@ -97,6 +97,7 @@ def do_epoch(mode, epoch, skipped=0):
     y_true = []
     y_pred = []
     avg_loss = 0.0
+    prev_time = time.time()
     
     batches_per_epoch = dmn.get_batches_per_epoch(mode)
     
@@ -105,9 +106,7 @@ def do_epoch(mode, epoch, skipped=0):
         prediction = step_data["prediction"]
         answers = step_data["answers"]
         current_loss = step_data["current_loss"]
-        current_skip = step_data["skipped"]
-        grad_norm = step_data["grad_norm"]
-        param_norm = step_data["param_norm"]
+        current_skip = (step_data["skipped"] if "skipped" in step_data else 0)
         log = step_data["log"]
         
         skipped += current_skip
@@ -122,12 +121,15 @@ def do_epoch(mode, epoch, skipped=0):
                 y_pred.append(x)
             
             # TODO: save the state sometimes
-            print ("  %sing: %d.%03d / %d \t loss: %.3f \t avg_loss: %.3f \t pn: %.2f \t gn: %.2f \t skipped: %d \t %s" % 
-                (mode, epoch, i * args.batch_size, batches_per_epoch * args.batch_size, 
-                 current_loss, avg_loss / (i + 1), param_norm, grad_norm, skipped, log))
-            
-        if np.isnan(param_norm):
-            print "==> PARAM NORM IS NaN. This should never happen :) " 
+            if (i % args.log_every == 0):
+                cur_time = time.time()
+                print ("  %sing: %d.%d / %d \t loss: %.3f \t avg_loss: %.3f \t skipped: %d \t %s \t time: %.2fs" % 
+                    (mode, epoch, i * args.batch_size, batches_per_epoch * args.batch_size, 
+                     current_loss, avg_loss / (i + 1), skipped, log, cur_time - prev_time))
+                prev_time = cur_time
+        
+        if np.isnan(current_loss):
+            print "==> current loss IS NaN. This should never happen :) " 
             exit()
 
     avg_loss /= batches_per_epoch
@@ -135,7 +137,7 @@ def do_epoch(mode, epoch, skipped=0):
     print "confusion matrix:"
     print metrics.confusion_matrix(y_true, y_pred)
     
-    accuracy = sum([1 if t==p else 0 for t, p in zip(y_true, y_pred)])
+    accuracy = sum([1 if t == p else 0 for t, p in zip(y_true, y_pred)])
     print "accuracy: %.2f percent" % (accuracy * 100.0 / batches_per_epoch / args.batch_size)
     
     return avg_loss, skipped
@@ -144,17 +146,21 @@ def do_epoch(mode, epoch, skipped=0):
 if args.mode == 'train':
     print "==> training"   	
     skipped = 0
-    # TODO: shuffle!
     for epoch in range(args.epochs):
         start_time = time.time()
+        
+        if args.shuffle:
+            dmn.shuffle_train_set()
+        
         _, skipped = do_epoch('train', epoch, skipped)
         
-        epoch_loss, _ = do_epoch('test', epoch)
+        epoch_loss, skipped = do_epoch('test', epoch, skipped)
         
-        state_name = 'states/%s.epoch%d.test%.5f.state' % (prefix, epoch, epoch_loss)
-    
-        print "==> saving ... %s" % state_name
-        dmn.save_params(state_name, epoch)
+        state_name = 'states/%s.epoch%d.test%.5f.state' % (network_name, epoch, epoch_loss)
+
+        if (epoch % args.save_every == 0):    
+            print "==> saving ... %s" % state_name
+            dmn.save_params(state_name, epoch)
         
         print "epoch %d took %.3fs" % (epoch, float(time.time()) - start_time)
 
