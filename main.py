@@ -167,7 +167,12 @@ if args.mode == 'train':
 
 elif args.mode == 'test':
     file = open('last_tested_model.json', 'w+')
-    json.dump(dict(args._get_kwargs()), file, indent=2)
+    data = dict(args._get_kwargs())
+    data["id"] = network_name
+    data["name"] = network_name
+    data["description"] = ""
+    data["vocab"] = dmn.vocab.keys()
+    json.dump(data, file, indent=2)
     do_epoch('test', 0)
 
 else:
