@@ -1,7 +1,7 @@
 {
   "id":"smooth75",
   "name": "Joint100 75.05%",
-  "description": "dmn_smooth trained on all babi tasks using 100 dimensional internal representation with 5 episodic memory hops for 8 epochs. Solves 8 bAbI tasks out of 20. Average accuracy is 75.05%",
+  "description": "dmn_smooth trained on all babi tasks using 100 dimensional internal representation with 5 episodic memory hops for 11 epochs. Solves 8 bAbI tasks out of 20. Average accuracy is 75.05%",
   "input_mask_mode": "sentence", 
   "dim": 100, 
   "normalize_attention": false, 
