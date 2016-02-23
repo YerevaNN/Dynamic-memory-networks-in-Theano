@@ -22,206 +22,2118 @@
   "babi_test_id": -1, 
   "load_state": "../states/_from.ep1.from.ep5.dmn_smooth.mh5.n100.bs1.babi24.epoch2.test0.60241.state", 
   "batch_norm": false,
-  "samples": [{"Q": "Where is John", "A": "hallway", "C": "Sandra moved to the bedroom . John went to the hallway . "},
- {"Q": "Where is Sandra", "A": "office", "C": "Sandra moved to the office . Daniel moved to the kitchen . "},
- {"Q": "Where is John", "A": "kitchen", "C": "Daniel went to the bathroom . Mary travelled to the bathroom . John went to the office . John journeyed to the kitchen . Sandra went to the hallway . Sandra travelled to the garden . "},
- {"Q": "Where is Sandra", "A": "kitchen", "C": "Sandra moved to the hallway . Daniel went to the office . Sandra travelled to the kitchen . John moved to the office . Sandra went to the bathroom . Sandra moved to the kitchen . Sandra journeyed to the bedroom . Sandra went to the kitchen . "},
- {"Q": "Where is Sandra", "A": "bedroom", "C": "Sandra journeyed to the bathroom . John moved to the garden . Sandra went back to the garden . Daniel moved to the kitchen . Sandra travelled to the bedroom . John went to the bathroom . "},
- {"Q": "Where is Mary", "A": "bathroom", "C": "Daniel journeyed to the office . Daniel travelled to the bedroom . Sandra travelled to the bathroom . Mary journeyed to the bathroom . "},
- {"Q": "Where is John", "A": "garden", "C": "Mary moved to the office . John moved to the garden . Sandra moved to the bedroom . Sandra went back to the office . John went to the bedroom . John journeyed to the garden . "},
- {"Q": "Where is John", "A": "bathroom", "C": "John moved to the bathroom . Sandra moved to the garden . "},
- {"Q": "Where is John", "A": "bedroom", "C": "Sandra travelled to the bedroom . Daniel went to the bedroom . Sandra journeyed to the garden . Daniel went back to the hallway . Sandra travelled to the office . John travelled to the bathroom . Mary went to the bedroom . John moved to the bedroom . "},
- {"Q": "Where is Sandra", "A": "kitchen", "C": "Sandra moved to the garden . John went to the bedroom . John moved to the bathroom . John went to the garden . John journeyed to the bedroom . Sandra went to the office . Sandra went to the bathroom . Sandra moved to the kitchen . "},
- {"Q": "Where is the apple", "A": "bedroom", "C": "Mary picked up the football there . Mary dropped the football . Sandra journeyed to the hallway . Mary moved to the bathroom . Daniel travelled to the kitchen . Sandra journeyed to the bedroom . Daniel went back to the office . Sandra picked up the apple there . John moved to the garden . Sandra moved to the kitchen . Mary moved to the hallway . Sandra travelled to the office . Sandra dropped the apple . Daniel grabbed the apple there . Sandra went back to the kitchen . Sandra travelled to the bathroom . Mary moved to the office . Daniel travelled to the hallway . Mary travelled to the kitchen . Sandra moved to the hallway . Sandra went to the garden . John got the football there . Daniel journeyed to the bedroom . John went to the bedroom . Daniel dropped the apple . Daniel moved to the kitchen . "},
- {"Q": "Where is the football", "A": "garden", "C": "Sandra journeyed to the hallway . John journeyed to the bathroom . Sandra grabbed the football there . Daniel travelled to the bedroom . John got the milk there . John dropped the milk . Sandra moved to the garden . Daniel went back to the hallway . Sandra discarded the football . John moved to the hallway . John went back to the garden . Sandra went to the kitchen . Daniel moved to the bedroom . Sandra journeyed to the hallway . Sandra moved to the kitchen . John travelled to the office . Sandra went to the garden . Sandra grabbed the football there . Sandra put down the football there . Daniel went back to the kitchen . "},
- {"Q": "Where is the apple", "A": "garden", "C": "Daniel grabbed the football there . John travelled to the office . Mary moved to the garden . Mary got the apple there . John went to the hallway . Mary dropped the apple . "},
- {"Q": "Where is the apple", "A": "garden", "C": "Daniel journeyed to the hallway . Sandra journeyed to the bathroom . Mary moved to the bedroom . Sandra took the football there . Daniel went back to the bedroom . Daniel journeyed to the kitchen . Daniel took the apple there . Sandra moved to the garden . Sandra went back to the kitchen . Daniel journeyed to the garden . Sandra went back to the bathroom . Sandra discarded the football . Sandra grabbed the football there . Daniel dropped the apple there . John travelled to the bathroom . Daniel moved to the bathroom . "},
- {"Q": "Where is the apple", "A": "bathroom", "C": "Daniel went back to the garden . Mary went to the garden . Sandra journeyed to the garden . Daniel journeyed to the bedroom . Sandra got the milk there . Mary travelled to the office . Mary took the apple there . Mary left the apple . Sandra discarded the milk there . Sandra moved to the bathroom . John went back to the kitchen . Sandra went to the office . John moved to the garden . Mary picked up the apple there . John picked up the milk there . Sandra went back to the kitchen . John went back to the bathroom . Mary went back to the hallway . Mary went to the bathroom . Daniel travelled to the hallway . Mary discarded the apple . Mary went back to the bedroom . "},
- {"Q": "Where is the football", "A": "kitchen", "C": "Daniel travelled to the hallway . Mary moved to the kitchen . John grabbed the football there . John discarded the football . Sandra journeyed to the kitchen . Sandra picked up the milk there . Daniel moved to the office . John took the football there . John went to the kitchen . Mary moved to the office . "},
- {"Q": "Where is the football", "A": "kitchen", "C": "John took the apple there . John dropped the apple . Daniel went back to the bathroom . John grabbed the apple there . Mary travelled to the kitchen . Sandra went back to the garden . John dropped the apple . John took the apple there . John dropped the apple . Daniel travelled to the office . Sandra journeyed to the hallway . John got the apple there . Sandra journeyed to the bathroom . Daniel took the milk there . John discarded the apple . John moved to the kitchen . Daniel left the milk there . Daniel went back to the bathroom . Sandra journeyed to the garden . Mary got the football there . Mary discarded the football . John journeyed to the bathroom . "},
- {"Q": "Where is the apple", "A": "hallway", "C": "John moved to the hallway . Sandra went to the office . Daniel went to the bathroom . John journeyed to the kitchen . Sandra took the apple there . Sandra took the football there . Sandra left the football . Sandra travelled to the hallway . John went back to the bedroom . Sandra dropped the apple there . Sandra grabbed the apple there . John picked up the milk there . Sandra went to the bathroom . Sandra went back to the hallway . "},
- {"Q": "Where is the football", "A": "bathroom", "C": "Sandra grabbed the football there . Sandra discarded the football . Daniel travelled to the office . Sandra grabbed the football there . Mary travelled to the kitchen . Sandra went to the bathroom . Sandra dropped the football . Sandra took the football there . Daniel journeyed to the kitchen . Sandra discarded the football . "},
- {"Q": "Where is the apple", "A": "office", "C": "John picked up the apple there . John moved to the office . Mary went to the office . John discarded the apple . "},
- {"Q": "Where was the football before the hallway", "A": "office", "C": "John moved to the hallway . Sandra travelled to the bedroom . Sandra moved to the hallway . Sandra went back to the kitchen . Sandra went back to the bedroom . John travelled to the bathroom . Daniel journeyed to the bathroom . Daniel went back to the bedroom . Daniel went to the kitchen . Sandra travelled to the office . Daniel grabbed the milk there . John went to the kitchen . Sandra travelled to the bedroom . Mary moved to the hallway . Daniel left the milk . John grabbed the milk there . John discarded the milk . John grabbed the milk there . Daniel travelled to the hallway . Sandra went to the garden . Daniel went back to the bathroom . Sandra picked up the football there . John travelled to the bathroom . Sandra picked up the apple . John went to the office . Mary went to the bathroom . John went to the bedroom . John went to the kitchen . Sandra journeyed to the office . Daniel went back to the kitchen . John went back to the bathroom . Sandra left the apple . Sandra left the football there . John left the milk . Sandra got the apple there . Mary picked up the milk . Sandra grabbed the football . Sandra travelled to the bathroom . John went to the office . Sandra moved to the hallway . Sandra left the football . Sandra got the football . John journeyed to the kitchen . Sandra discarded the football . Daniel journeyed to the garden . Sandra left the apple . Sandra got the apple . Mary dropped the milk . Sandra dropped the apple . Sandra went to the kitchen . John went back to the bedroom . Sandra moved to the bathroom . Mary went back to the kitchen . Daniel travelled to the office . Sandra went back to the hallway . Daniel went back to the garden . Mary journeyed to the office . Sandra got the football . Daniel travelled to the kitchen . Sandra took the apple there . Mary went to the kitchen . Sandra went to the garden . Sandra dropped the football . John went to the kitchen . John travelled to the hallway . Daniel moved to the bathroom . Daniel journeyed to the hallway . Mary went to the garden . Sandra put down the apple . Mary journeyed to the hallway . John moved to the bathroom . Daniel went back to the bathroom . John grabbed the milk . Daniel moved to the office . Daniel went to the hallway . Daniel journeyed to the office . Mary travelled to the bedroom . Sandra picked up the football . Sandra went to the office . John left the milk . Mary went to the office . Mary moved to the kitchen . John travelled to the bedroom . Sandra went to the hallway . Mary went back to the hallway . John journeyed to the kitchen . Sandra left the football . John went back to the garden . "},
- {"Q": "Where was the football before the bedroom", "A": "garden", "C": "John went back to the bedroom . John went back to the garden . John went back to the kitchen . Sandra took the football . Sandra travelled to the garden . Sandra journeyed to the bedroom . John journeyed to the office . John grabbed the milk . Sandra left the football there . Daniel journeyed to the garden . Daniel went to the office . Daniel moved to the kitchen . "},
- {"Q": "Where was the milk before the garden", "A": "bedroom", "C": "Mary went back to the bedroom . Daniel got the apple . Sandra went back to the office . Daniel put down the apple . Sandra picked up the apple . Mary journeyed to the office . John went back to the office . John travelled to the kitchen . Mary travelled to the bedroom . John travelled to the garden . Daniel went to the garden . Daniel took the milk . Sandra put down the apple . Daniel journeyed to the bathroom . Daniel dropped the milk . Sandra got the apple . Sandra left the apple . John travelled to the hallway . Daniel picked up the milk . John moved to the kitchen . Mary went back to the kitchen . Sandra took the apple . Sandra dropped the apple . John journeyed to the bathroom . Daniel dropped the milk . Sandra moved to the kitchen . John picked up the milk there . John discarded the milk . John went to the kitchen . Sandra travelled to the bedroom . Daniel grabbed the milk . Daniel travelled to the bedroom . Daniel journeyed to the garden . Daniel put down the milk . "},
- {"Q": "Where was the football before the bedroom", "A": "garden", "C": "Sandra moved to the bedroom . Daniel travelled to the bathroom . Sandra journeyed to the office . John went back to the garden . John got the milk . Mary journeyed to the garden . Mary moved to the kitchen . John travelled to the hallway . Sandra moved to the bathroom . John grabbed the football . Daniel went back to the bedroom . Mary journeyed to the bathroom . Mary journeyed to the bedroom . Mary went back to the bathroom . Mary moved to the office . Mary went back to the bathroom . John moved to the kitchen . Daniel went to the bathroom . Daniel went to the hallway . Mary went back to the office . Sandra moved to the bedroom . John went back to the garden . Sandra got the apple . Daniel journeyed to the kitchen . Mary went back to the hallway . Sandra dropped the apple . Mary went back to the kitchen . Sandra travelled to the office . John moved to the bedroom . John discarded the milk . John took the milk . John travelled to the office . Daniel moved to the bedroom . Daniel took the apple . Daniel dropped the apple . Daniel travelled to the hallway . Daniel travelled to the garden . John left the football . Daniel went to the bedroom . Daniel travelled to the garden . John put down the milk . Sandra got the milk . "},
- {"Q": "Where was the apple before the hallway", "A": "garden", "C": "Daniel moved to the office . John moved to the kitchen . John grabbed the apple . Daniel got the milk there . Daniel discarded the milk . John went to the bedroom . John dropped the apple . Daniel got the milk . John went back to the kitchen . John went to the bathroom . Daniel put down the milk . John travelled to the bedroom . Sandra went back to the kitchen . Sandra moved to the office . John took the apple . Daniel journeyed to the bathroom . Daniel moved to the kitchen . Sandra went back to the garden . John left the apple there . John picked up the apple . John went back to the bathroom . John put down the apple . Mary moved to the garden . John picked up the apple . Daniel travelled to the hallway . Mary travelled to the kitchen . Sandra journeyed to the bathroom . John travelled to the kitchen . Sandra moved to the bedroom . Sandra travelled to the office . John put down the apple . John went back to the office . Sandra went back to the garden . Mary picked up the apple . Mary travelled to the bathroom . Mary discarded the apple there . Sandra went back to the hallway . Mary went to the garden . Daniel went to the kitchen . John grabbed the milk . Sandra went to the garden . John went to the bedroom . Sandra went to the bathroom . Sandra moved to the bedroom . John picked up the football there . Sandra went to the office . John dropped the milk there . John got the milk . John went to the office . Daniel travelled to the office . Daniel travelled to the garden . Sandra journeyed to the bathroom . Mary journeyed to the kitchen . John dropped the milk . John took the milk . John left the milk there . John put down the football . Daniel journeyed to the office . John grabbed the milk . Sandra travelled to the bedroom . Daniel grabbed the football . Daniel travelled to the hallway . John left the milk there . Daniel travelled to the bathroom . John took the milk . Mary went back to the garden . Daniel picked up the apple . John went to the hallway . Daniel dropped the football . Daniel travelled to the kitchen . Daniel travelled to the hallway . Sandra went to the garden . Daniel moved to the garden . John went back to the bathroom . Sandra travelled to the hallway . Mary travelled to the hallway . John grabbed the football . Sandra travelled to the bedroom . John dropped the football . Sandra went back to the garden . John went back to the hallway . John journeyed to the bedroom . John dropped the milk . John travelled to the office . Mary moved to the bedroom . Mary grabbed the milk . Mary discarded the milk . Mary grabbed the milk . Sandra went to the bedroom . Mary moved to the hallway . John moved to the garden . John moved to the hallway . Mary went back to the office . Daniel travelled to the hallway . Mary travelled to the bathroom . Daniel left the apple . "},
- {"Q": "Where was the football before the garden", "A": "bathroom", "C": "Mary went to the office . Mary went to the kitchen . Sandra travelled to the hallway . John took the football . Mary grabbed the milk there . Mary left the milk . John grabbed the milk . Daniel went to the bedroom . Daniel went back to the kitchen . Sandra travelled to the bedroom . John dropped the football . Mary went to the hallway . John discarded the milk . Daniel went back to the bathroom . Sandra moved to the kitchen . Sandra took the football . John picked up the milk . John put down the milk . Mary moved to the office . Daniel travelled to the bedroom . John picked up the milk . John dropped the milk there . Sandra put down the football . Daniel moved to the bathroom . John grabbed the football . Mary travelled to the bathroom . John went to the bathroom . Daniel travelled to the bedroom . Daniel took the apple there . Sandra travelled to the hallway . John moved to the hallway . Mary journeyed to the bedroom . Daniel dropped the apple . Daniel travelled to the garden . Mary got the apple . John put down the football . John took the football . John moved to the bathroom . Mary left the apple . John left the football . Sandra went back to the bedroom . Mary took the apple there . John got the football . Sandra travelled to the hallway . John journeyed to the garden . Sandra went back to the kitchen . Daniel journeyed to the kitchen . John dropped the football . Mary travelled to the garden . Daniel got the milk . Mary took the football . Mary left the football . John grabbed the football . Daniel went to the bedroom . Daniel dropped the milk there . Daniel went to the office . Mary dropped the apple . John travelled to the bathroom . John moved to the garden . John took the apple . Daniel moved to the hallway . John left the apple . Sandra moved to the office . Mary travelled to the bathroom . John grabbed the apple . Mary journeyed to the hallway . Daniel went back to the garden . Daniel moved to the kitchen . Sandra went to the kitchen . John went back to the bedroom . John got the milk . Sandra moved to the bedroom . Daniel went to the bedroom . Daniel went back to the kitchen . Sandra went to the garden . Daniel went to the garden . Sandra went to the bathroom . Sandra moved to the office . John dropped the apple . Daniel journeyed to the kitchen . Mary went back to the office . John left the football there . John went to the garden . Daniel went to the office . John discarded the milk . John journeyed to the bathroom . "},
- {"Q": "Where was the milk before the bedroom", "A": "garden", "C": "Daniel moved to the kitchen . Sandra went to the hallway . Daniel got the milk . Mary moved to the hallway . Daniel went to the office . Mary went back to the garden . Sandra moved to the garden . John moved to the hallway . Daniel put down the milk . Daniel went to the garden . John journeyed to the garden . Mary went back to the kitchen . Mary journeyed to the bedroom . Daniel journeyed to the office . Daniel travelled to the bathroom . John went to the hallway . John moved to the bathroom . Sandra moved to the hallway . Sandra picked up the apple there . Sandra discarded the apple there . Mary went back to the garden . Sandra grabbed the apple . Sandra dropped the apple . Sandra got the apple . Sandra moved to the bedroom . Sandra left the apple . Mary travelled to the office . Sandra went back to the hallway . Mary took the milk . Daniel journeyed to the office . John moved to the office . Mary got the football . Sandra moved to the kitchen . Mary travelled to the garden . Daniel went back to the bedroom . Mary went to the bedroom . Mary put down the football there . Daniel went back to the bathroom . Sandra went to the hallway . Daniel moved to the garden . Mary got the apple . John travelled to the kitchen . Daniel went to the bathroom . John went to the bedroom . John journeyed to the office . John went back to the bedroom . John picked up the football . Daniel travelled to the bedroom . Mary left the apple . Sandra journeyed to the kitchen . Daniel took the apple . Mary dropped the milk . John moved to the garden . Daniel left the apple . "},
- {"Q": "Where was the football before the bathroom", "A": "garden", "C": "John travelled to the kitchen . John went to the bedroom . Sandra got the milk . Sandra discarded the milk . Sandra got the milk . Sandra journeyed to the garden . John went to the hallway . John travelled to the kitchen . Sandra travelled to the office . John went back to the bedroom . Sandra dropped the milk . John went to the kitchen . John went to the garden . Mary went to the office . Sandra moved to the bathroom . Sandra went back to the hallway . Daniel picked up the apple . Mary took the milk . John journeyed to the office . John went to the hallway . Mary moved to the bathroom . Daniel travelled to the bathroom . John journeyed to the bedroom . Mary left the milk . Mary journeyed to the office . John got the football there . Daniel left the apple . Daniel got the milk . Daniel put down the milk there . Mary journeyed to the bathroom . Mary travelled to the office . Mary went back to the bathroom . John travelled to the kitchen . Mary went back to the office . Daniel took the milk . Daniel got the apple . Daniel left the apple . Daniel went to the garden . Sandra went to the bedroom . Daniel moved to the office . Daniel moved to the garden . John went back to the garden . Mary journeyed to the kitchen . John moved to the bathroom . Daniel went to the office . Sandra travelled to the hallway . Sandra travelled to the bathroom . John went to the office . John moved to the kitchen . Daniel dropped the milk . John put down the football there . Sandra moved to the bedroom . "},
- {"Q": "Where was the apple before the office", "A": "hallway", "C": "John journeyed to the kitchen . Mary journeyed to the garden . Mary went to the kitchen . Sandra travelled to the bedroom . Daniel went back to the kitchen . Mary journeyed to the hallway . Daniel journeyed to the hallway . John went back to the hallway . Daniel went to the bedroom . Mary went back to the kitchen . John moved to the bedroom . John went to the office . Daniel travelled to the hallway . Sandra travelled to the office . John journeyed to the kitchen . Daniel went to the kitchen . Sandra moved to the bathroom . Daniel journeyed to the office . Sandra went to the office . Sandra travelled to the bathroom . Sandra got the apple there . John went back to the bathroom . Daniel took the football . Sandra journeyed to the hallway . Sandra went to the office . Daniel discarded the football there . Daniel got the football there . Sandra discarded the apple . "},
- {"Q": "Where was the football before the garden", "A": "hallway", "C": "John went back to the bathroom . Mary moved to the kitchen . Mary went to the hallway . Mary travelled to the office . John travelled to the bedroom . Sandra went back to the kitchen . Mary travelled to the bedroom . Daniel moved to the bedroom . Daniel went back to the hallway . Mary moved to the hallway . John went back to the bathroom . Sandra moved to the garden . John went to the bedroom . John moved to the bathroom . Sandra grabbed the milk . John grabbed the football . Sandra travelled to the bedroom . John left the football . Daniel went to the bathroom . Sandra went back to the kitchen . Mary travelled to the office . Mary moved to the garden . Mary got the apple . John travelled to the kitchen . John journeyed to the bedroom . Sandra discarded the milk . Daniel took the football there . Daniel went to the garden . John travelled to the office . Sandra took the milk . Sandra left the milk . Sandra grabbed the milk . Daniel travelled to the bathroom . Daniel put down the football there . Sandra journeyed to the bathroom . Sandra got the football . Daniel moved to the kitchen . Sandra moved to the hallway . Mary put down the apple there . Mary grabbed the apple . Mary dropped the apple there . Sandra travelled to the garden . Sandra discarded the football there . Sandra put down the milk . "},
- {"Q": "What is the bedroom north of", "A": "garden", "C": "The kitchen is north of the bedroom . The garden is south of the bedroom . "},
- {"Q": "What is north of the office", "A": "garden", "C": "The bathroom is south of the office . The garden is north of the office . "},
- {"Q": "What is west of the kitchen", "A": "bedroom", "C": "The hallway is east of the kitchen . The bedroom is west of the kitchen . "},
- {"Q": "What is north of the kitchen", "A": "hallway", "C": "The hallway is north of the kitchen . The office is north of the hallway . "},
- {"Q": "What is east of the kitchen", "A": "garden", "C": "The garden is east of the kitchen . The garden is west of the bedroom . "},
- {"Q": "What is the bedroom west of", "A": "office", "C": "The bedroom is east of the bathroom . The office is east of the bedroom . "},
- {"Q": "What is north of the kitchen", "A": "bathroom", "C": "The bathroom is north of the kitchen . The bathroom is south of the garden . "},
- {"Q": "What is the office north of", "A": "garden", "C": "The bedroom is north of the office . The garden is south of the office . "},
- {"Q": "What is the bathroom west of", "A": "kitchen", "C": "The office is west of the bathroom . The kitchen is east of the bathroom . "},
- {"Q": "What is east of the bathroom", "A": "office", "C": "The kitchen is west of the bathroom . The office is east of the bathroom . "},
- {"Q": "What did Mary give to Fred", "A": "milk", "C": "Jeff went back to the office . Jeff travelled to the bedroom . Mary took the football there . Mary went back to the hallway . Bill went back to the kitchen . Mary got the milk there . Fred went back to the hallway . Bill journeyed to the bathroom . Mary left the football there . Mary passed the milk to Fred . Mary picked up the football there . Mary dropped the football . Mary picked up the football there . Mary put down the football there . "},
- {"Q": "Who did Mary give the apple to", "A": "Bill", "C": "Bill moved to the bedroom . Fred went to the hallway . Jeff went to the garden . Fred travelled to the office . Mary took the apple there . Mary passed the apple to Bill . Bill gave the apple to Mary . Mary passed the apple to Bill . "},
- {"Q": "What did Jeff give to Bill", "A": "milk", "C": "Mary moved to the hallway . Jeff moved to the office . Jeff grabbed the football there . Bill moved to the bathroom . Mary travelled to the bathroom . Mary went to the kitchen . Bill travelled to the hallway . Jeff put down the football . Mary moved to the bathroom . Jeff journeyed to the garden . Jeff travelled to the bathroom . Fred went to the hallway . Fred went to the bedroom . Bill grabbed the milk there . Fred travelled to the office . Bill put down the milk . Fred picked up the football there . Bill got the milk there . Jeff went back to the hallway . Bill handed the milk to Jeff . Fred travelled to the garden . Jeff passed the milk to Bill . Fred put down the football . Bill left the milk . "},
- {"Q": "What did Fred give to Bill", "A": "milk", "C": "Mary got the football there . Fred got the milk there . Jeff got the apple there . Mary left the football . Jeff dropped the apple there . Fred passed the milk to Bill . Bill went back to the garden . Jeff took the apple there . Fred journeyed to the bathroom . Bill dropped the milk there . "},
- {"Q": "What did Jeff give to Mary", "A": "milk", "C": "Bill grabbed the apple there . Bill travelled to the bedroom . Fred moved to the garden . Fred moved to the office . Mary picked up the milk there . Bill discarded the apple . Mary left the milk . Jeff went to the office . Mary got the milk there . Bill travelled to the office . Jeff went back to the bathroom . Mary passed the milk to Jeff . Jeff passed the milk to Mary . Mary put down the milk there . "},
- {"Q": "Who gave the apple", "A": "Fred", "C": "Mary moved to the office . Bill got the milk there . Bill discarded the milk . Bill moved to the bedroom . Fred took the apple there . Bill travelled to the hallway . Jeff travelled to the garden . Fred moved to the garden . Bill moved to the kitchen . Mary went back to the garden . Fred handed the apple to Mary . Mary took the milk there . "},
- {"Q": "What did Mary give to Fred", "A": "milk", "C": "Fred picked up the football there . Jeff travelled to the hallway . Bill went back to the kitchen . Bill went to the hallway . Fred travelled to the garden . Fred grabbed the milk there . Bill travelled to the office . Fred put down the milk there . Fred put down the football . Bill journeyed to the hallway . Fred journeyed to the kitchen . Jeff travelled to the garden . Jeff picked up the milk there . Mary went back to the office . Mary moved to the kitchen . Jeff grabbed the football there . Bill travelled to the garden . Fred went to the office . Fred went to the kitchen . Jeff dropped the milk . Jeff picked up the milk there . Jeff went to the bedroom . Jeff left the football . Jeff dropped the milk . Jeff grabbed the milk there . Jeff journeyed to the kitchen . Jeff passed the milk to Mary . Mary passed the milk to Fred . Fred discarded the milk . Jeff got the milk there . "},
- {"Q": "Who did Bill give the apple to", "A": "Mary", "C": "Bill grabbed the apple there . Bill handed the apple to Mary . Jeff went back to the garden . Fred travelled to the bedroom . "},
- {"Q": "Who gave the apple", "A": "Fred", "C": "Bill moved to the kitchen . Bill moved to the hallway . Jeff journeyed to the bathroom . Fred went to the office . Bill moved to the office . Fred went to the bedroom . Mary went to the hallway . Jeff went back to the garden . Fred went back to the bathroom . Jeff went back to the kitchen . Bill journeyed to the garden . Mary travelled to the bedroom . Jeff travelled to the bathroom . Jeff journeyed to the kitchen . Bill took the apple there . Bill put down the apple . Bill grabbed the apple there . Mary went to the hallway . Bill discarded the apple . Mary moved to the garden . Bill went to the hallway . Fred journeyed to the bedroom . Mary moved to the kitchen . Bill moved to the bathroom . Fred went back to the office . Mary moved to the hallway . Mary went back to the bedroom . Bill went back to the office . Jeff took the football there . Mary went back to the bathroom . Jeff went back to the hallway . Fred went back to the bathroom . Bill went to the kitchen . Jeff put down the football . Bill went to the bathroom . Jeff moved to the garden . Jeff went back to the bathroom . Bill went back to the garden . Bill journeyed to the kitchen . Fred went to the office . Mary travelled to the bedroom . Fred went back to the bathroom . Fred journeyed to the kitchen . Fred went back to the garden . Bill journeyed to the bedroom . Bill moved to the garden . Fred picked up the apple there . Mary went to the office . Fred gave the apple to Bill . Fred went to the bedroom . Mary travelled to the kitchen . Fred went to the bathroom . "},
- {"Q": "Who gave the apple", "A": "Mary", "C": "Jeff grabbed the apple there . Jeff gave the apple to Mary . Mary gave the apple to Fred . Fred passed the apple to Mary . Fred went to the bedroom . Mary handed the apple to Bill . "},
- {"Q": "Is Daniel in the garden", "A": "yes", "C": "Mary grabbed the apple there . Daniel travelled to the garden . Daniel grabbed the milk there . Daniel discarded the milk . "},
- {"Q": "Is Daniel in the bathroom", "A": "no", "C": "John went back to the bathroom . John travelled to the hallway . Daniel moved to the garden . Daniel moved to the hallway . "},
- {"Q": "Is Mary in the hallway", "A": "no", "C": "Daniel got the football there . Sandra grabbed the apple there . Daniel journeyed to the bathroom . Sandra dropped the apple . Daniel discarded the football there . Mary got the football there . Mary moved to the kitchen . Sandra travelled to the bathroom . "},
- {"Q": "Is Daniel in the office", "A": "yes", "C": "Daniel grabbed the apple there . Mary went back to the office . Daniel dropped the apple . John journeyed to the office . Daniel went back to the bathroom . Mary journeyed to the garden . Daniel journeyed to the office . Sandra travelled to the bathroom . "},
- {"Q": "Is Mary in the office", "A": "yes", "C": "Sandra went to the garden . Mary got the apple there . Sandra travelled to the bedroom . Mary travelled to the hallway . John journeyed to the hallway . Mary went to the garden . Mary journeyed to the office . Sandra moved to the hallway . "},
- {"Q": "Is John in the bathroom", "A": "yes", "C": "Mary grabbed the milk there . Sandra took the football there . Daniel grabbed the apple there . John went to the bathroom . "},
- {"Q": "Is Mary in the office", "A": "yes", "C": "Mary moved to the office . Sandra took the apple there . John went to the hallway . Sandra left the apple . "},
- {"Q": "Is John in the bedroom", "A": "no", "C": "Mary picked up the milk there . John travelled to the hallway . John went back to the bedroom . John moved to the hallway . "},
- {"Q": "Is Daniel in the garden", "A": "yes", "C": "Mary went back to the hallway . Sandra travelled to the kitchen . John journeyed to the garden . Sandra journeyed to the bathroom . Daniel moved to the garden . Sandra went back to the hallway . "},
- {"Q": "Is Daniel in the office", "A": "yes", "C": "John travelled to the garden . Daniel moved to the kitchen . Daniel went to the office . Mary got the apple there . "},
- {"Q": "How many objects is John carrying", "A": "two", "C": "Sandra went to the hallway . John went to the garden . John moved to the hallway . John went back to the bathroom . John got the apple there . Daniel went to the bathroom . John handed the apple to Daniel . Daniel passed the apple to John . Daniel went to the garden . Sandra moved to the bathroom . John journeyed to the bedroom . Daniel went back to the hallway . John picked up the football there . John travelled to the office . "},
- {"Q": "How many objects is Sandra carrying", "A": "one", "C": "Daniel went back to the garden . John travelled to the bedroom . Sandra journeyed to the garden . Sandra picked up the milk there . "},
- {"Q": "How many objects is Mary carrying", "A": "none", "C": "John moved to the garden . Mary took the apple there . John moved to the bedroom . Mary discarded the apple . "},
- {"Q": "How many objects is John carrying", "A": "none", "C": "Daniel went to the kitchen . Sandra moved to the garden . Mary journeyed to the garden . John went to the office . Daniel went back to the bedroom . Sandra picked up the milk there . Sandra passed the milk to Mary . Sandra journeyed to the bathroom . Daniel travelled to the office . Sandra journeyed to the office . Sandra travelled to the kitchen . John took the football there . John handed the football to Daniel . Mary left the milk there . "},
- {"Q": "How many objects is Sandra carrying", "A": "none", "C": "John journeyed to the kitchen . Sandra grabbed the apple there . Sandra handed the apple to Daniel . Daniel discarded the apple . "},
- {"Q": "How many objects is Sandra carrying", "A": "one", "C": "John went back to the garden . John travelled to the bathroom . Daniel took the milk there . Sandra moved to the bathroom . Daniel left the milk . Daniel journeyed to the kitchen . Mary went to the bedroom . Daniel went to the bathroom . Sandra travelled to the hallway . Sandra picked up the milk there . "},
- {"Q": "How many objects is Mary carrying", "A": "two", "C": "Mary went to the garden . Sandra went back to the bathroom . Sandra went to the kitchen . Sandra went back to the bedroom . Mary got the apple there . Mary left the apple . Sandra went back to the kitchen . Mary got the apple there . Mary moved to the bedroom . Mary journeyed to the hallway . Daniel went to the bedroom . Mary got the milk there . "},
- {"Q": "How many objects is Daniel carrying", "A": "none", "C": "Daniel grabbed the milk there . John moved to the bedroom . Sandra travelled to the bedroom . Mary took the apple there . Sandra travelled to the bathroom . Daniel went to the bathroom . Daniel put down the milk there . Daniel journeyed to the bedroom . Sandra picked up the football there . Mary travelled to the office . "},
- {"Q": "How many objects is Daniel carrying", "A": "one", "C": "Sandra picked up the apple there . Sandra dropped the apple . Sandra got the football there . John journeyed to the bathroom . Sandra handed the football to John . Sandra went back to the garden . Daniel went back to the kitchen . Daniel got the milk there . John got the apple there . John dropped the apple . "},
- {"Q": "How many objects is Daniel carrying", "A": "one", "C": "Daniel got the football there . Daniel went to the garden . "},
- {"Q": "What is Sandra carrying", "A": "nothing", "C": "Mary went back to the office . Sandra travelled to the garden . Mary journeyed to the garden . John went to the kitchen . John went to the office . Sandra went back to the office . John journeyed to the garden . Sandra moved to the kitchen . Mary went to the bedroom . Sandra journeyed to the hallway . Daniel travelled to the garden . Mary went back to the hallway . Sandra got the football there . Daniel travelled to the bathroom . Sandra dropped the football . Daniel went back to the garden . Sandra picked up the football there . Daniel went to the office . Sandra put down the football . Sandra travelled to the office . Mary went back to the garden . Mary went back to the kitchen . "},
- {"Q": "What is John carrying", "A": "football", "C": "Daniel travelled to the hallway . Daniel travelled to the kitchen . Mary journeyed to the office . Daniel moved to the hallway . Daniel travelled to the office . John moved to the office . John took the football there . Mary went back to the hallway . Daniel journeyed to the hallway . John moved to the garden . "},
- {"Q": "What is Mary carrying", "A": "football", "C": "Daniel got the apple there . Mary picked up the football there . Sandra went to the bathroom . Daniel left the apple . "},
- {"Q": "What is Mary carrying", "A": "football,milk", "C": "Sandra went back to the office . Sandra moved to the hallway . Daniel travelled to the bathroom . John travelled to the bedroom . Mary got the football there . Mary picked up the milk there . "},
- {"Q": "What is Daniel carrying", "A": "apple", "C": "Mary journeyed to the office . John went to the bedroom . Sandra went to the bedroom . Sandra went back to the bathroom . Daniel moved to the garden . John went back to the bathroom . John journeyed to the office . Daniel went back to the kitchen . Daniel got the apple there . Daniel dropped the apple . Daniel got the apple there . Daniel dropped the apple . Mary went to the bathroom . Daniel took the apple there . Sandra moved to the office . John moved to the garden . Mary travelled to the hallway . Mary went to the kitchen . "},
- {"Q": "What is Daniel carrying", "A": "milk", "C": "Sandra went to the hallway . John travelled to the kitchen . Daniel travelled to the bathroom . John went back to the office . John moved to the bathroom . Daniel picked up the milk there . John went back to the kitchen . Mary went to the bathroom . Daniel went back to the kitchen . Sandra went to the kitchen . "},
- {"Q": "What is Sandra carrying", "A": "apple", "C": "Sandra took the apple there . Sandra left the apple . Mary went back to the garden . John picked up the milk there . Daniel moved to the office . John grabbed the football there . Sandra got the apple there . Sandra went back to the garden . Daniel journeyed to the bathroom . Mary went back to the office . "},
- {"Q": "What is Daniel carrying", "A": "nothing", "C": "Sandra moved to the hallway . John went back to the hallway . Daniel grabbed the milk there . Sandra went to the kitchen . John went back to the garden . John picked up the football there . Daniel dropped the milk . Sandra journeyed to the office . John got the apple there . Sandra went to the kitchen . "},
- {"Q": "What is Mary carrying", "A": "football", "C": "John went back to the office . Sandra went back to the office . Mary got the football there . Sandra travelled to the garden . "},
- {"Q": "What is John carrying", "A": "nothing", "C": "John went back to the bedroom . John grabbed the apple there . John journeyed to the kitchen . Daniel travelled to the bedroom . Daniel moved to the bathroom . John put down the apple . "},
- {"Q": "Is John in the hallway", "A": "no", "C": "John is in the hallway . Mary is no longer in the garden . John is no longer in the hallway . Daniel is in the garden . "},
- {"Q": "Is John in the garden", "A": "no", "C": "Sandra is in the bedroom . Mary went back to the hallway . Mary is not in the hallway . Mary went back to the kitchen . Sandra is in the garden . John moved to the garden . Sandra is no longer in the garden . John is not in the garden . "},
- {"Q": "Is Daniel in the garden", "A": "yes", "C": "Mary travelled to the kitchen . Daniel is in the garden . "},
- {"Q": "Is Daniel in the bedroom", "A": "no", "C": "Mary is not in the office . John went to the bedroom . Mary is no longer in the bedroom . Sandra is not in the kitchen . Daniel is not in the bathroom . Daniel is not in the bedroom . "},
- {"Q": "Is John in the garden", "A": "yes", "C": "Daniel travelled to the office . Mary journeyed to the bedroom . Mary is no longer in the bedroom . John is in the kitchen . Mary is in the kitchen . Sandra is in the bedroom . Sandra is no longer in the bedroom . Daniel is in the bathroom . Sandra is no longer in the hallway . John journeyed to the garden . "},
- {"Q": "Is Sandra in the garden", "A": "no", "C": "Mary is in the bathroom . Daniel is in the bathroom . John is in the bedroom . John is not in the bedroom . Mary went to the hallway . Mary is in the garden . John travelled to the hallway . Daniel is not in the bathroom . Sandra journeyed to the garden . Sandra moved to the hallway . "},
- {"Q": "Is Mary in the bathroom", "A": "no", "C": "Mary moved to the office . John is in the bathroom . "},
- {"Q": "Is Sandra in the kitchen", "A": "no", "C": "Sandra is not in the kitchen . Sandra is in the kitchen . Daniel is in the kitchen . Sandra is not in the kitchen . "},
- {"Q": "Is Daniel in the garden", "A": "yes", "C": "Daniel went to the office . Mary went back to the garden . Daniel is no longer in the office . Daniel moved to the bedroom . Sandra is in the hallway . Mary is no longer in the garden . Sandra travelled to the garden . John is in the kitchen . John is in the bedroom . Daniel is in the garden . "},
- {"Q": "Is Daniel in the hallway", "A": "no", "C": "Daniel moved to the office . Mary is no longer in the bedroom . "},
- {"Q": "Is Bill in the school", "A": "maybe", "C": "Mary journeyed to the school . Mary journeyed to the kitchen . Julie went to the office . Bill journeyed to the bedroom . Bill is in the cinema . Bill is either in the kitchen or the school . "},
- {"Q": "Is Bill in the kitchen", "A": "yes", "C": "Mary went to the school . Fred travelled to the school . Julie travelled to the office . Mary moved to the kitchen . Mary is either in the park or the bedroom . Fred moved to the cinema . Fred is either in the school or the bedroom . Bill is in the kitchen . "},
- {"Q": "Is Fred in the park", "A": "yes", "C": "Bill went to the park . Fred journeyed to the park . Julie is in the park . Mary is in the bedroom . "},
- {"Q": "Is Bill in the bedroom", "A": "yes", "C": "Fred is either in the school or the kitchen . Julie is in the kitchen . Fred is either in the school or the cinema . Mary went back to the office . Bill is either in the park or the kitchen . Fred went to the office . Mary is in the cinema . Fred went back to the kitchen . Bill went back to the school . Bill is in the bedroom . "},
- {"Q": "Is Fred in the kitchen", "A": "no", "C": "Fred is in the park . Mary is either in the park or the office . Julie went back to the park . Mary is either in the office or the bedroom . Mary went back to the cinema . Julie is either in the kitchen or the bedroom . Julie journeyed to the bedroom . Fred is either in the office or the kitchen . Mary travelled to the kitchen . Fred is either in the school or the park . "},
- {"Q": "Is Mary in the cinema", "A": "no", "C": "Fred is in the bedroom . Mary moved to the park . "},
- {"Q": "Is Bill in the cinema", "A": "no", "C": "Fred went back to the school . Bill journeyed to the office . Fred moved to the park . Julie journeyed to the office . Bill went to the bedroom . Mary moved to the cinema . "},
- {"Q": "Is Bill in the kitchen", "A": "no", "C": "Bill travelled to the bedroom . Fred is in the kitchen . Julie is in the park . Julie travelled to the kitchen . Julie is either in the school or the school . Bill went to the office . Bill went to the school . Julie moved to the bedroom . "},
- {"Q": "Is Mary in the bedroom", "A": "yes", "C": "Bill went back to the office . Fred is either in the cinema or the cinema . Julie is either in the cinema or the bedroom . Bill travelled to the kitchen . Mary is either in the park or the kitchen . Julie is in the office . Fred is in the park . Mary is in the bedroom . "},
- {"Q": "Is Bill in the cinema", "A": "maybe", "C": "Mary moved to the kitchen . Fred moved to the kitchen . Mary travelled to the cinema . Bill is either in the bedroom or the cinema . "},
- {"Q": "Where is Mary", "A": "office", "C": "Mary went back to the kitchen . Then she journeyed to the office . "},
- {"Q": "Where is John", "A": "bedroom", "C": "John journeyed to the kitchen . After that he went to the bedroom . "},
- {"Q": "Where is Mary", "A": "office", "C": "Mary went back to the kitchen . Then she journeyed to the office . Sandra journeyed to the bathroom . Following that she moved to the hallway . Sandra moved to the bathroom . Afterwards she travelled to the garden . Mary journeyed to the hallway . Following that she went to the office . "},
- {"Q": "Where is John", "A": "bedroom", "C": "John went to the garden . Afterwards he travelled to the bedroom . "},
- {"Q": "Where is Mary", "A": "bedroom", "C": "Daniel moved to the kitchen . Following that he went back to the bedroom . Mary went back to the hallway . After that she went back to the office . Mary journeyed to the kitchen . Following that she moved to the bedroom . Daniel went to the garden . Following that he went back to the bedroom . "},
- {"Q": "Where is Sandra", "A": "garden", "C": "Mary travelled to the bathroom . Following that she journeyed to the office . Sandra went to the kitchen . After that she journeyed to the bedroom . Daniel journeyed to the hallway . Afterwards he went back to the bathroom . Sandra went back to the garden . Following that she went to the bedroom . Sandra went to the kitchen . Afterwards she went to the garden . "},
- {"Q": "Where is Mary", "A": "kitchen", "C": "John travelled to the hallway . After that he moved to the bathroom . Mary went to the bathroom . Then she journeyed to the bedroom . Mary went back to the office . Following that she travelled to the hallway . Mary went back to the bedroom . Afterwards she travelled to the kitchen . "},
- {"Q": "Where is Daniel", "A": "kitchen", "C": "Daniel went to the bathroom . Following that he went back to the kitchen . "},
- {"Q": "Where is Mary", "A": "bedroom", "C": "Mary went to the garden . Following that she journeyed to the bedroom . "},
- {"Q": "Where is Mary", "A": "kitchen", "C": "Mary went back to the bathroom . Afterwards she went back to the kitchen . "},
- {"Q": "Where is Mary", "A": "hallway", "C": "Daniel and John moved to the garden . Sandra and Mary moved to the hallway . "},
- {"Q": "Where is John", "A": "bathroom", "C": "John and Sandra went to the bedroom . Sandra and John moved to the garden . John and Daniel moved to the kitchen . Mary and Sandra journeyed to the office . Sandra and John travelled to the bedroom . Mary and John moved to the kitchen . John and Sandra went back to the bathroom . Daniel and Mary moved to the garden . "},
- {"Q": "Where is Daniel", "A": "bathroom", "C": "Mary and Sandra journeyed to the kitchen . Sandra and John journeyed to the hallway . John and Daniel went back to the office . Sandra and Mary moved to the bathroom . Mary and John moved to the kitchen . Daniel and Mary went back to the bathroom . "},
- {"Q": "Where is John", "A": "garden", "C": "Mary and John journeyed to the hallway . Sandra and John travelled to the office . Sandra and Daniel moved to the hallway . Mary and John journeyed to the bedroom . Sandra and John went to the kitchen . John and Mary went back to the garden . "},
- {"Q": "Where is Daniel", "A": "kitchen", "C": "Daniel and Mary journeyed to the bedroom . Sandra and John went back to the bedroom . Sandra and Daniel went to the kitchen . Daniel and Sandra went to the hallway . Mary and Sandra moved to the bathroom . Daniel and Sandra went back to the kitchen . "},
- {"Q": "Where is Sandra", "A": "hallway", "C": "Mary and John journeyed to the bedroom . Daniel and John travelled to the bathroom . Sandra and Daniel moved to the kitchen . Mary and Sandra moved to the hallway . John and Mary went to the office . Daniel and John journeyed to the bedroom . "},
- {"Q": "Where is Daniel", "A": "hallway", "C": "Daniel and Mary moved to the bedroom . John and Sandra went to the hallway . John and Mary moved to the kitchen . John and Sandra travelled to the garden . Daniel and John moved to the hallway . John and Daniel travelled to the garden . Mary and Daniel went to the office . John and Daniel moved to the hallway . John and Mary moved to the garden . John and Sandra went back to the bathroom . "},
- {"Q": "Where is John", "A": "office", "C": "Mary and Sandra went back to the kitchen . Sandra and John travelled to the garden . Daniel and Sandra went to the hallway . John and Mary went back to the bathroom . Daniel and John travelled to the bedroom . Daniel and Mary journeyed to the hallway . Daniel and Sandra journeyed to the office . Mary and John went back to the office . John and Sandra went to the garden . Sandra and John went to the office . "},
- {"Q": "Where is Mary", "A": "office", "C": "Sandra and Daniel journeyed to the bedroom . John and Mary went back to the bedroom . Mary and Sandra journeyed to the office . Daniel and Mary moved to the bathroom . Sandra and Mary travelled to the garden . John and Daniel journeyed to the office . Mary and Daniel travelled to the kitchen . Mary and Daniel went back to the office . "},
- {"Q": "Where is Sandra", "A": "garden", "C": "John and Daniel went back to the bedroom . Sandra and Mary went back to the garden . "},
- {"Q": "Where is John", "A": "bedroom", "C": "Mary and Sandra went to the office . Following that they moved to the bedroom . John and Sandra went to the office . After that they went to the garden . Sandra and Daniel went back to the hallway . Following that they went back to the kitchen . Daniel and Sandra went to the bathroom . Then they travelled to the kitchen . John and Sandra moved to the bathroom . Afterwards they went to the bedroom . "},
- {"Q": "Where is Mary", "A": "office", "C": "Daniel and Mary travelled to the bedroom . After that they went to the bathroom . Mary and Daniel journeyed to the hallway . Afterwards they went back to the office . "},
- {"Q": "Where is John", "A": "bathroom", "C": "Daniel and Sandra moved to the kitchen . Following that they went back to the garden . Daniel and Mary travelled to the kitchen . Afterwards they moved to the hallway . Daniel and John went to the garden . Following that they travelled to the bathroom . Mary and Sandra journeyed to the office . Following that they went to the bedroom . "},
- {"Q": "Where is Sandra", "A": "hallway", "C": "John and Mary went to the office . Following that they travelled to the bedroom . Sandra and Daniel travelled to the bathroom . After that they journeyed to the hallway . "},
- {"Q": "Where is Daniel", "A": "office", "C": "Daniel and Mary travelled to the hallway . After that they went to the garden . Mary and Daniel went to the hallway . Following that they journeyed to the office . Mary and Sandra moved to the hallway . Afterwards they went to the office . "},
- {"Q": "Where is Sandra", "A": "garden", "C": "Sandra and Daniel went back to the kitchen . Afterwards they went back to the garden . "},
- {"Q": "Where is Sandra", "A": "kitchen", "C": "Sandra and Daniel moved to the bedroom . Afterwards they went to the kitchen . "},
- {"Q": "Where is Daniel", "A": "bathroom", "C": "Mary and John went to the bathroom . Following that they moved to the garden . John and Mary journeyed to the hallway . Then they went back to the bedroom . Daniel and Mary moved to the hallway . Afterwards they moved to the bathroom . "},
- {"Q": "Where is Daniel", "A": "office", "C": "Mary and John went back to the office . Following that they moved to the hallway . Sandra and Mary moved to the bedroom . Afterwards they went back to the kitchen . Mary and Sandra went back to the bathroom . Following that they journeyed to the hallway . Sandra and Daniel travelled to the bedroom . Afterwards they journeyed to the office . Daniel and John went to the bedroom . Afterwards they went to the office . "},
- {"Q": "Where is Sandra", "A": "garden", "C": "Sandra and John journeyed to the office . Then they went to the garden . "},
- {"Q": "Where was Mary before the park", "A": "school", "C": "This morning Mary journeyed to the park . Yesterday Mary moved to the school . "},
- {"Q": "Where was Fred before the school", "A": "bedroom", "C": "This morning Mary journeyed to the park . Yesterday Mary moved to the school . This morning Fred moved to the cinema . Fred journeyed to the kitchen yesterday . Fred went back to the school this evening . Fred travelled to the bedroom this afternoon . "},
- {"Q": "Where was Fred before the park", "A": "bedroom", "C": "Mary went to the bedroom yesterday . Yesterday Fred journeyed to the bedroom . This morning Fred went back to the park . Yesterday Bill journeyed to the kitchen . "},
- {"Q": "Where was Fred before the cinema", "A": "school", "C": "Mary went back to the park this morning . Yesterday Mary moved to the cinema . Bill went to the office yesterday . Julie moved to the kitchen yesterday . Yesterday Fred travelled to the park . Mary went to the school this afternoon . This afternoon Fred went to the cinema . Fred journeyed to the school this morning . This evening Mary went to the office . Fred went back to the park this evening . "},
- {"Q": "Where was Julie before the cinema", "A": "kitchen", "C": "This morning Julie went to the cinema . Julie journeyed to the kitchen yesterday . Fred travelled to the cinema yesterday . Bill travelled to the office yesterday . "},
- {"Q": "Where was Julie before the cinema", "A": "bedroom", "C": "Yesterday Bill went back to the bedroom . Yesterday Julie went to the bedroom . Mary journeyed to the bedroom this morning . Mary moved to the kitchen yesterday . This afternoon Mary went back to the kitchen . Julie journeyed to the cinema this morning . "},
- {"Q": "Where was Fred before the bedroom", "A": "kitchen", "C": "Mary went to the cinema yesterday . Bill journeyed to the office this morning . Bill journeyed to the school yesterday . Yesterday Fred travelled to the kitchen . Bill went to the cinema this evening . Bill went back to the kitchen this afternoon . Julie went to the cinema this morning . Yesterday Julie went back to the park . Julie moved to the school this afternoon . This morning Fred moved to the bedroom . This morning Mary journeyed to the kitchen . Fred went to the kitchen this afternoon . "},
- {"Q": "Where was Mary before the kitchen", "A": "bedroom", "C": "Mary went back to the school yesterday . Mary went back to the bedroom this morning . This afternoon Mary journeyed to the kitchen . Fred went to the school yesterday . Julie went back to the kitchen yesterday . Fred journeyed to the kitchen this morning . "},
- {"Q": "Where was Fred before the kitchen", "A": "school", "C": "This morning Mary travelled to the kitchen . Mary went back to the park yesterday . Bill journeyed to the school yesterday . Yesterday Julie moved to the park . This afternoon Bill moved to the school . This morning Bill travelled to the park . Bill moved to the office this evening . Yesterday Fred went to the kitchen . This afternoon Fred moved to the kitchen . Fred travelled to the school this morning . This afternoon Julie went back to the school . This morning Julie travelled to the office . "},
- {"Q": "Where was Bill before the cinema", "A": "kitchen", "C": "This morning Mary went to the office . Mary moved to the kitchen yesterday . Bill journeyed to the office this morning . Bill travelled to the cinema yesterday . This evening Bill moved to the cinema . Bill went back to the kitchen this afternoon . Mary travelled to the park this afternoon . Fred journeyed to the school yesterday . "},
- {"Q": "What is jessica afraid of", "A": "cat", "C": "Cats are afraid of wolves . Mice are afraid of cats . Jessica is a mouse . Sheep are afraid of wolves . Winona is a sheep . Emily is a sheep . Wolves are afraid of sheep . Gertrude is a sheep . "},
- {"Q": "What is winona afraid of", "A": "cat", "C": "Cats are afraid of wolves . Wolves are afraid of cats . Jessica is a cat . Winona is a wolf . Sheep are afraid of cats . Mice are afraid of sheep . Gertrude is a wolf . Emily is a cat . "},
- {"Q": "What is gertrude afraid of", "A": "mouse", "C": "Cats are afraid of mice . Sheep are afraid of cats . Mice are afraid of sheep . Emily is a sheep . Gertrude is a cat . Wolves are afraid of cats . Winona is a wolf . Jessica is a mouse . "},
- {"Q": "What is gertrude afraid of", "A": "cat", "C": "Cats are afraid of mice . Emily is a cat . Wolves are afraid of sheep . Mice are afraid of cats . Jessica is a wolf . Sheep are afraid of cats . Winona is a sheep . Gertrude is a sheep . "},
- {"Q": "What is winona afraid of", "A": "wolf", "C": "Cats are afraid of wolves . Emily is a cat . Wolves are afraid of mice . Gertrude is a cat . Mice are afraid of sheep . Winona is a cat . Sheep are afraid of cats . Jessica is a wolf . "},
- {"Q": "What is jessica afraid of", "A": "cat", "C": "Cats are afraid of sheep . Mice are afraid of cats . Sheep are afraid of cats . Jessica is a sheep . Emily is a mouse . Wolves are afraid of sheep . Winona is a mouse . Gertrude is a mouse . "},
- {"Q": "What is winona afraid of", "A": "mouse", "C": "Cats are afraid of wolves . Wolves are afraid of mice . Sheep are afraid of cats . Winona is a wolf . Gertrude is a wolf . Mice are afraid of sheep . Jessica is a sheep . Emily is a cat . "},
- {"Q": "What is emily afraid of", "A": "cat", "C": "Wolves are afraid of cats . Mice are afraid of wolves . Cats are afraid of sheep . Sheep are afraid of cats . Gertrude is a mouse . Jessica is a mouse . Emily is a sheep . Winona is a wolf . "},
- {"Q": "What is emily afraid of", "A": "sheep", "C": "Cats are afraid of mice . Mice are afraid of sheep . Winona is a cat . Emily is a mouse . Wolves are afraid of mice . Jessica is a cat . Gertrude is a wolf . Sheep are afraid of wolves . "},
- {"Q": "What is jessica afraid of", "A": "wolf", "C": "Cats are afraid of wolves . Sheep are afraid of wolves . Mice are afraid of cats . Winona is a mouse . Jessica is a cat . Wolves are afraid of sheep . Emily is a cat . Gertrude is a sheep . "},
- {"Q": "What color is Julius", "A": "white", "C": "Lily is a swan . Bernhard is a swan . Lily is green . Greg is a lion . Bernhard is green . Brian is a swan . Brian is white . Greg is green . Julius is a swan . "},
- {"Q": "What color is Lily", "A": "gray", "C": "Julius is a swan . Greg is a lion . Julius is gray . Lily is a swan . Greg is green . Bernhard is a frog . Brian is a frog . Brian is green . Bernhard is green . "},
- {"Q": "What color is Brian", "A": "white", "C": "Bernhard is a frog . Greg is a frog . Bernhard is green . Lily is a rhino . Lily is white . Julius is a swan . Greg is green . Brian is a rhino . Julius is white . "},
- {"Q": "What color is Brian", "A": "gray", "C": "Julius is a rhino . Greg is a rhino . Greg is gray . Bernhard is a swan . Julius is gray . Bernhard is gray . Lily is a frog . Lily is gray . Brian is a frog . "},
- {"Q": "What color is Bernhard", "A": "gray", "C": "Greg is a frog . Brian is a lion . Julius is a frog . Bernhard is a frog . Julius is gray . Lily is a frog . Brian is white . Greg is gray . Lily is gray . "},
- {"Q": "What color is Greg", "A": "green", "C": "Julius is a frog . Lily is a rhino . Julius is green . Bernhard is a swan . Brian is a frog . Bernhard is green . Lily is green . Greg is a swan . Brian is gray . "},
- {"Q": "What color is Brian", "A": "gray", "C": "Greg is a frog . Greg is white . Lily is a swan . Julius is a frog . Julius is white . Bernhard is a frog . Bernhard is white . Lily is gray . Brian is a swan . "},
- {"Q": "What color is Bernhard", "A": "gray", "C": "Brian is a swan . Brian is white . Greg is a lion . Lily is a rhino . Bernhard is a lion . Julius is a rhino . Julius is yellow . Greg is gray . Lily is yellow . "},
- {"Q": "What color is Julius", "A": "yellow", "C": "Bernhard is a lion . Greg is a swan . Brian is a rhino . Greg is white . Brian is yellow . Bernhard is gray . Lily is a frog . Julius is a rhino . Lily is gray . "},
- {"Q": "What color is Lily", "A": "green", "C": "Bernhard is a rhino . Lily is a frog . Greg is a frog . Greg is green . Bernhard is green . Julius is a rhino . Brian is a swan . Julius is green . Brian is green . "},
- {"Q": "Is the triangle above the pink rectangle", "A": "yes", "C": "The triangle is above the red square . The red square is above the pink rectangle . "},
- {"Q": "Is the triangle to the right of the pink rectangle", "A": "no", "C": "The pink rectangle is below the red square . The triangle is to the left of the red square . "},
- {"Q": "Is the red square above the red sphere", "A": "no", "C": "The blue square is to the left of the red square . The red sphere is to the left of the blue square . "},
- {"Q": "Is the pink rectangle to the left of the red square", "A": "yes", "C": "The red sphere is below the red square . The pink rectangle is to the left of the red sphere . "},
- {"Q": "Is the pink rectangle to the right of the triangle", "A": "yes", "C": "The red square is to the right of the triangle . The pink rectangle is below the red square . "},
- {"Q": "Is the red square to the right of the pink rectangle", "A": "no", "C": "The yellow square is below the red square . The pink rectangle is below the yellow square . "},
- {"Q": "Is the yellow square below the red square", "A": "no", "C": "The triangle is to the left of the yellow square . The red square is to the left of the triangle . "},
- {"Q": "Is the red square below the pink rectangle", "A": "yes", "C": "The red square is below the red sphere . The red sphere is to the left of the pink rectangle . "},
- {"Q": "Is the red sphere to the left of the blue square", "A": "no", "C": "The blue square is above the red square . The red square is to the left of the red sphere . "},
- {"Q": "Is the pink rectangle below the red square", "A": "yes", "C": "The red sphere is below the red square . The pink rectangle is to the left of the red sphere . "},
- {"Q": "Does the suitcase fit in the box of chocolates", "A": "no", "C": "The box of chocolates fits inside the chest . The container is bigger than the box . The chest fits inside the suitcase . The container is bigger than the box . The box of chocolates is bigger than the chocolate . "},
- {"Q": "Does the box of chocolates fit in the box", "A": "yes", "C": "The suitcase fits inside the box . The chest fits inside the box . The chocolate fits inside the box . The box is bigger than the container . The suitcase is bigger than the box of chocolates . "},
- {"Q": "Does the container fit in the suitcase", "A": "yes", "C": "The box of chocolates fits inside the chest . The box is bigger than the container . The chest is bigger than the container . The chest is bigger than the chocolate . The suitcase is bigger than the box . "},
- {"Q": "Does the chest fit in the suitcase", "A": "no", "C": "The suitcase fits inside the container . The chest is bigger than the chocolate . The container fits inside the chest . The suitcase fits inside the box . The chest is bigger than the suitcase . "},
- {"Q": "Does the chocolate fit in the box", "A": "yes", "C": "The box is bigger than the box of chocolates . The box is bigger than the chocolate . The chest is bigger than the chocolate . The box is bigger than the box of chocolates . The chocolate fits inside the chest . The box is bigger than the suitcase . The chest is bigger than the suitcase . The box is bigger than the box of chocolates . The box is bigger than the suitcase . The container is bigger than the suitcase . The box is bigger than the chest . The box of chocolates fits inside the container . The box of chocolates fits inside the box . The chest is bigger than the box of chocolates . The box of chocolates fits inside the chest . "},
- {"Q": "Does the chocolate fit in the box", "A": "yes", "C": "The box is bigger than the box of chocolates . The box is bigger than the chocolate . The chest is bigger than the chocolate . The box is bigger than the box of chocolates . The chocolate fits inside the chest . The box is bigger than the suitcase . The chest is bigger than the suitcase . The box is bigger than the box of chocolates . The box is bigger than the suitcase . The container is bigger than the suitcase . The box is bigger than the chest . The box of chocolates fits inside the container . The box of chocolates fits inside the box . The chest is bigger than the box of chocolates . The box of chocolates fits inside the chest . "},
- {"Q": "Does the chest fit in the chocolate", "A": "no", "C": "The chest is bigger than the chocolate . The chest is bigger than the suitcase . The chocolate fits inside the suitcase . The suitcase fits inside the box . The box is bigger than the suitcase . "},
- {"Q": "Is the chest bigger than the box", "A": "yes", "C": "The chest is bigger than the box . The chest is bigger than the chocolate . The chest is bigger than the chocolate . The chest is bigger than the container . The container is bigger than the box . "},
- {"Q": "Does the box of chocolates fit in the suitcase", "A": "yes", "C": "The suitcase is bigger than the chocolate . The box of chocolates fits inside the chest . The box is bigger than the box of chocolates . The suitcase is bigger than the chest . The suitcase is bigger than the chocolate . "},
- {"Q": "Does the suitcase fit in the box of chocolates", "A": "no", "C": "The chest fits inside the suitcase . The box is bigger than the chest . The box is bigger than the chocolate . The box is bigger than the chocolate . The chest fits inside the suitcase . The chest is bigger than the box of chocolates . The chest is bigger than the chocolate . The box fits inside the suitcase . The box is bigger than the chocolate . The suitcase is bigger than the box . "},
- {"Q": "How do you go from the kitchen to the bathroom", "A": "w,s", "C": "The hallway is east of the kitchen . The bathroom is west of the office . The bedroom is west of the kitchen . The bathroom is east of the garden . The bedroom is north of the bathroom . "},
- {"Q": "How do you go from the garden to the hallway", "A": "n,n", "C": "The hallway is west of the bathroom . The kitchen is south of the garden . The hallway is north of the bedroom . The garden is south of the bedroom . The office is east of the garden . "},
- {"Q": "How do you go from the hallway to the kitchen", "A": "w,s", "C": "The bedroom is north of the bathroom . The bathroom is west of the hallway . The garden is east of the hallway . The bathroom is east of the office . The bathroom is north of the kitchen . "},
- {"Q": "How do you go from the hallway to the office", "A": "n,w", "C": "The kitchen is south of the hallway . The garden is south of the office . The bedroom is east of the hallway . The bathroom is north of the hallway . The bathroom is east of the office . "},
- {"Q": "How do you go from the office to the bedroom", "A": "w,s", "C": "The bathroom is east of the bedroom . The bedroom is south of the hallway . The garden is north of the office . The hallway is west of the office . The bedroom is north of the kitchen . "},
- {"Q": "How do you go from the bathroom to the garden", "A": "s,e", "C": "The bedroom is east of the bathroom . The hallway is west of the kitchen . The bathroom is south of the office . The garden is east of the kitchen . The bathroom is north of the kitchen . "},
- {"Q": "How do you go from the bedroom to the hallway", "A": "e,e", "C": "The bedroom is west of the office . The bedroom is north of the kitchen . The bathroom is south of the hallway . The office is west of the hallway . The garden is north of the hallway . "},
- {"Q": "How do you go from the office to the bathroom", "A": "e,s", "C": "The hallway is west of the office . The kitchen is east of the garden . The garden is north of the bathroom . The bedroom is north of the garden . The office is west of the garden . "},
- {"Q": "How do you go from the hallway to the bedroom", "A": "w,w", "C": "The bathroom is south of the bedroom . The bedroom is west of the kitchen . The garden is east of the hallway . The kitchen is west of the hallway . The office is south of the hallway . "},
- {"Q": "How do you go from the office to the garden", "A": "n,w", "C": "The garden is west of the hallway . The office is north of the kitchen . The bathroom is north of the hallway . The bedroom is east of the office . The office is south of the hallway . "},
- {"Q": "Why did sumit get the milk", "A": "thirsty", "C": "Jason is tired . Yann is bored . Sumit is thirsty . Antoine is hungry . Sumit travelled to the kitchen . Yann moved to the garden . Yann grabbed the football there . Sumit took the milk there . "},
- {"Q": "Why did antoine get the pajamas", "A": "tired", "C": "Antoine is tired . Antoine went back to the bedroom . Sumit is hungry . Yann is bored . Sumit journeyed to the kitchen . Sumit picked up the apple there . Antoine picked up the pajamas there . "},
- {"Q": "Why did antoine get the apple", "A": "hungry", "C": "Jason is tired . Jason moved to the bedroom . Sumit is thirsty . Antoine is hungry . Antoine journeyed to the kitchen . Sumit journeyed to the kitchen . Jason grabbed the pajamas there . Antoine got the apple there . "},
- {"Q": "Where will sumit go", "A": "garden", "C": "Yann is tired . Antoine is thirsty . Sumit is bored . "},
- {"Q": "Why did antoine go to the kitchen", "A": "hungry", "C": "Sumit is thirsty . Antoine is hungry . Yann is thirsty . Sumit travelled to the kitchen . Yann journeyed to the kitchen . Jason is tired . Yann took the milk there . Jason went back to the bedroom . Antoine went back to the kitchen . "},
- {"Q": "Why did sumit go to the garden", "A": "bored", "C": "Sumit is bored . Sumit moved to the garden . "},
- {"Q": "Why did yann get the milk", "A": "thirsty", "C": "Yann is thirsty . Antoine is bored . Yann went back to the kitchen . Yann grabbed the milk there . "},
- {"Q": "Why did antoine get the milk", "A": "thirsty", "C": "Yann is bored . Sumit is tired . Antoine is thirsty . Jason is tired . Sumit journeyed to the bedroom . Antoine travelled to the kitchen . Yann travelled to the garden . Sumit grabbed the pajamas there . Yann grabbed the football there . Jason journeyed to the bedroom . Antoine took the milk there . "},
- {"Q": "Why did sumit go to the kitchen", "A": "thirsty", "C": "Jason is tired . Jason moved to the bedroom . Antoine is hungry . Yann is hungry . Yann moved to the kitchen . Sumit is thirsty . Antoine went to the kitchen . Jason took the pajamas there . Sumit travelled to the kitchen . "},
- {"Q": "Where will yann go", "A": "garden", "C": "Sumit is tired . Jason is thirsty . Sumit went back to the bedroom . Jason moved to the kitchen . Sumit got the pajamas there . Antoine is tired . Antoine went to the bedroom . Yann is bored . "}],
+  "samples": [{"Q": "Where is John", "A": "hallway", "C": "Sandra moved to the bedroom.
+John went to the hallway.
+"},
+ {"Q": "Where is Sandra", "A": "office", "C": "Sandra moved to the office.
+Daniel moved to the kitchen.
+"},
+ {"Q": "Where is John", "A": "kitchen", "C": "Daniel went to the bathroom.
+Mary travelled to the bathroom.
+John went to the office.
+John journeyed to the kitchen.
+Sandra went to the hallway.
+Sandra travelled to the garden.
+"},
+ {"Q": "Where is Sandra", "A": "kitchen", "C": "Sandra moved to the hallway.
+Daniel went to the office.
+Sandra travelled to the kitchen.
+John moved to the office.
+Sandra went to the bathroom.
+Sandra moved to the kitchen.
+Sandra journeyed to the bedroom.
+Sandra went to the kitchen.
+"},
+ {"Q": "Where is Sandra", "A": "bedroom", "C": "Sandra journeyed to the bathroom.
+John moved to the garden.
+Sandra went back to the garden.
+Daniel moved to the kitchen.
+Sandra travelled to the bedroom.
+John went to the bathroom.
+"},
+ {"Q": "Where is Mary", "A": "bathroom", "C": "Daniel journeyed to the office.
+Daniel travelled to the bedroom.
+Sandra travelled to the bathroom.
+Mary journeyed to the bathroom.
+"},
+ {"Q": "Where is John", "A": "garden", "C": "Mary moved to the office.
+John moved to the garden.
+Sandra moved to the bedroom.
+Sandra went back to the office.
+John went to the bedroom.
+John journeyed to the garden.
+"},
+ {"Q": "Where is John", "A": "bathroom", "C": "John moved to the bathroom.
+Sandra moved to the garden.
+"},
+ {"Q": "Where is John", "A": "bedroom", "C": "Sandra travelled to the bedroom.
+Daniel went to the bedroom.
+Sandra journeyed to the garden.
+Daniel went back to the hallway.
+Sandra travelled to the office.
+John travelled to the bathroom.
+Mary went to the bedroom.
+John moved to the bedroom.
+"},
+ {"Q": "Where is Sandra", "A": "kitchen", "C": "Sandra moved to the garden.
+John went to the bedroom.
+John moved to the bathroom.
+John went to the garden.
+John journeyed to the bedroom.
+Sandra went to the office.
+Sandra went to the bathroom.
+Sandra moved to the kitchen.
+"},
+ {"Q": "Where is the apple", "A": "bedroom", "C": "Mary picked up the football there.
+Mary dropped the football.
+Sandra journeyed to the hallway.
+Mary moved to the bathroom.
+Daniel travelled to the kitchen.
+Sandra journeyed to the bedroom.
+Daniel went back to the office.
+Sandra picked up the apple there.
+John moved to the garden.
+Sandra moved to the kitchen.
+Mary moved to the hallway.
+Sandra travelled to the office.
+Sandra dropped the apple.
+Daniel grabbed the apple there.
+Sandra went back to the kitchen.
+Sandra travelled to the bathroom.
+Mary moved to the office.
+Daniel travelled to the hallway.
+Mary travelled to the kitchen.
+Sandra moved to the hallway.
+Sandra went to the garden.
+John got the football there.
+Daniel journeyed to the bedroom.
+John went to the bedroom.
+Daniel dropped the apple.
+Daniel moved to the kitchen.
+"},
+ {"Q": "Where is the football", "A": "garden", "C": "Sandra journeyed to the hallway.
+John journeyed to the bathroom.
+Sandra grabbed the football there.
+Daniel travelled to the bedroom.
+John got the milk there.
+John dropped the milk.
+Sandra moved to the garden.
+Daniel went back to the hallway.
+Sandra discarded the football.
+John moved to the hallway.
+John went back to the garden.
+Sandra went to the kitchen.
+Daniel moved to the bedroom.
+Sandra journeyed to the hallway.
+Sandra moved to the kitchen.
+John travelled to the office.
+Sandra went to the garden.
+Sandra grabbed the football there.
+Sandra put down the football there.
+Daniel went back to the kitchen.
+"},
+ {"Q": "Where is the apple", "A": "garden", "C": "Daniel grabbed the football there.
+John travelled to the office.
+Mary moved to the garden.
+Mary got the apple there.
+John went to the hallway.
+Mary dropped the apple.
+"},
+ {"Q": "Where is the apple", "A": "garden", "C": "Daniel journeyed to the hallway.
+Sandra journeyed to the bathroom.
+Mary moved to the bedroom.
+Sandra took the football there.
+Daniel went back to the bedroom.
+Daniel journeyed to the kitchen.
+Daniel took the apple there.
+Sandra moved to the garden.
+Sandra went back to the kitchen.
+Daniel journeyed to the garden.
+Sandra went back to the bathroom.
+Sandra discarded the football.
+Sandra grabbed the football there.
+Daniel dropped the apple there.
+John travelled to the bathroom.
+Daniel moved to the bathroom.
+"},
+ {"Q": "Where is the apple", "A": "bathroom", "C": "Daniel went back to the garden.
+Mary went to the garden.
+Sandra journeyed to the garden.
+Daniel journeyed to the bedroom.
+Sandra got the milk there.
+Mary travelled to the office.
+Mary took the apple there.
+Mary left the apple.
+Sandra discarded the milk there.
+Sandra moved to the bathroom.
+John went back to the kitchen.
+Sandra went to the office.
+John moved to the garden.
+Mary picked up the apple there.
+John picked up the milk there.
+Sandra went back to the kitchen.
+John went back to the bathroom.
+Mary went back to the hallway.
+Mary went to the bathroom.
+Daniel travelled to the hallway.
+Mary discarded the apple.
+Mary went back to the bedroom.
+"},
+ {"Q": "Where is the football", "A": "kitchen", "C": "Daniel travelled to the hallway.
+Mary moved to the kitchen.
+John grabbed the football there.
+John discarded the football.
+Sandra journeyed to the kitchen.
+Sandra picked up the milk there.
+Daniel moved to the office.
+John took the football there.
+John went to the kitchen.
+Mary moved to the office.
+"},
+ {"Q": "Where is the football", "A": "kitchen", "C": "John took the apple there.
+John dropped the apple.
+Daniel went back to the bathroom.
+John grabbed the apple there.
+Mary travelled to the kitchen.
+Sandra went back to the garden.
+John dropped the apple.
+John took the apple there.
+John dropped the apple.
+Daniel travelled to the office.
+Sandra journeyed to the hallway.
+John got the apple there.
+Sandra journeyed to the bathroom.
+Daniel took the milk there.
+John discarded the apple.
+John moved to the kitchen.
+Daniel left the milk there.
+Daniel went back to the bathroom.
+Sandra journeyed to the garden.
+Mary got the football there.
+Mary discarded the football.
+John journeyed to the bathroom.
+"},
+ {"Q": "Where is the apple", "A": "hallway", "C": "John moved to the hallway.
+Sandra went to the office.
+Daniel went to the bathroom.
+John journeyed to the kitchen.
+Sandra took the apple there.
+Sandra took the football there.
+Sandra left the football.
+Sandra travelled to the hallway.
+John went back to the bedroom.
+Sandra dropped the apple there.
+Sandra grabbed the apple there.
+John picked up the milk there.
+Sandra went to the bathroom.
+Sandra went back to the hallway.
+"},
+ {"Q": "Where is the football", "A": "bathroom", "C": "Sandra grabbed the football there.
+Sandra discarded the football.
+Daniel travelled to the office.
+Sandra grabbed the football there.
+Mary travelled to the kitchen.
+Sandra went to the bathroom.
+Sandra dropped the football.
+Sandra took the football there.
+Daniel journeyed to the kitchen.
+Sandra discarded the football.
+"},
+ {"Q": "Where is the apple", "A": "office", "C": "John picked up the apple there.
+John moved to the office.
+Mary went to the office.
+John discarded the apple.
+"},
+ {"Q": "Where was the football before the hallway", "A": "office", "C": "John moved to the hallway.
+Sandra travelled to the bedroom.
+Sandra moved to the hallway.
+Sandra went back to the kitchen.
+Sandra went back to the bedroom.
+John travelled to the bathroom.
+Daniel journeyed to the bathroom.
+Daniel went back to the bedroom.
+Daniel went to the kitchen.
+Sandra travelled to the office.
+Daniel grabbed the milk there.
+John went to the kitchen.
+Sandra travelled to the bedroom.
+Mary moved to the hallway.
+Daniel left the milk.
+John grabbed the milk there.
+John discarded the milk.
+John grabbed the milk there.
+Daniel travelled to the hallway.
+Sandra went to the garden.
+Daniel went back to the bathroom.
+Sandra picked up the football there.
+John travelled to the bathroom.
+Sandra picked up the apple.
+John went to the office.
+Mary went to the bathroom.
+John went to the bedroom.
+John went to the kitchen.
+Sandra journeyed to the office.
+Daniel went back to the kitchen.
+John went back to the bathroom.
+Sandra left the apple.
+Sandra left the football there.
+John left the milk.
+Sandra got the apple there.
+Mary picked up the milk.
+Sandra grabbed the football.
+Sandra travelled to the bathroom.
+John went to the office.
+Sandra moved to the hallway.
+Sandra left the football.
+Sandra got the football.
+John journeyed to the kitchen.
+Sandra discarded the football.
+Daniel journeyed to the garden.
+Sandra left the apple.
+Sandra got the apple.
+Mary dropped the milk.
+Sandra dropped the apple.
+Sandra went to the kitchen.
+John went back to the bedroom.
+Sandra moved to the bathroom.
+Mary went back to the kitchen.
+Daniel travelled to the office.
+Sandra went back to the hallway.
+Daniel went back to the garden.
+Mary journeyed to the office.
+Sandra got the football.
+Daniel travelled to the kitchen.
+Sandra took the apple there.
+Mary went to the kitchen.
+Sandra went to the garden.
+Sandra dropped the football.
+John went to the kitchen.
+John travelled to the hallway.
+Daniel moved to the bathroom.
+Daniel journeyed to the hallway.
+Mary went to the garden.
+Sandra put down the apple.
+Mary journeyed to the hallway.
+John moved to the bathroom.
+Daniel went back to the bathroom.
+John grabbed the milk.
+Daniel moved to the office.
+Daniel went to the hallway.
+Daniel journeyed to the office.
+Mary travelled to the bedroom.
+Sandra picked up the football.
+Sandra went to the office.
+John left the milk.
+Mary went to the office.
+Mary moved to the kitchen.
+John travelled to the bedroom.
+Sandra went to the hallway.
+Mary went back to the hallway.
+John journeyed to the kitchen.
+Sandra left the football.
+John went back to the garden.
+"},
+ {"Q": "Where was the football before the bedroom", "A": "garden", "C": "John went back to the bedroom.
+John went back to the garden.
+John went back to the kitchen.
+Sandra took the football.
+Sandra travelled to the garden.
+Sandra journeyed to the bedroom.
+John journeyed to the office.
+John grabbed the milk.
+Sandra left the football there.
+Daniel journeyed to the garden.
+Daniel went to the office.
+Daniel moved to the kitchen.
+"},
+ {"Q": "Where was the milk before the garden", "A": "bedroom", "C": "Mary went back to the bedroom.
+Daniel got the apple.
+Sandra went back to the office.
+Daniel put down the apple.
+Sandra picked up the apple.
+Mary journeyed to the office.
+John went back to the office.
+John travelled to the kitchen.
+Mary travelled to the bedroom.
+John travelled to the garden.
+Daniel went to the garden.
+Daniel took the milk.
+Sandra put down the apple.
+Daniel journeyed to the bathroom.
+Daniel dropped the milk.
+Sandra got the apple.
+Sandra left the apple.
+John travelled to the hallway.
+Daniel picked up the milk.
+John moved to the kitchen.
+Mary went back to the kitchen.
+Sandra took the apple.
+Sandra dropped the apple.
+John journeyed to the bathroom.
+Daniel dropped the milk.
+Sandra moved to the kitchen.
+John picked up the milk there.
+John discarded the milk.
+John went to the kitchen.
+Sandra travelled to the bedroom.
+Daniel grabbed the milk.
+Daniel travelled to the bedroom.
+Daniel journeyed to the garden.
+Daniel put down the milk.
+"},
+ {"Q": "Where was the football before the bedroom", "A": "garden", "C": "Sandra moved to the bedroom.
+Daniel travelled to the bathroom.
+Sandra journeyed to the office.
+John went back to the garden.
+John got the milk.
+Mary journeyed to the garden.
+Mary moved to the kitchen.
+John travelled to the hallway.
+Sandra moved to the bathroom.
+John grabbed the football.
+Daniel went back to the bedroom.
+Mary journeyed to the bathroom.
+Mary journeyed to the bedroom.
+Mary went back to the bathroom.
+Mary moved to the office.
+Mary went back to the bathroom.
+John moved to the kitchen.
+Daniel went to the bathroom.
+Daniel went to the hallway.
+Mary went back to the office.
+Sandra moved to the bedroom.
+John went back to the garden.
+Sandra got the apple.
+Daniel journeyed to the kitchen.
+Mary went back to the hallway.
+Sandra dropped the apple.
+Mary went back to the kitchen.
+Sandra travelled to the office.
+John moved to the bedroom.
+John discarded the milk.
+John took the milk.
+John travelled to the office.
+Daniel moved to the bedroom.
+Daniel took the apple.
+Daniel dropped the apple.
+Daniel travelled to the hallway.
+Daniel travelled to the garden.
+John left the football.
+Daniel went to the bedroom.
+Daniel travelled to the garden.
+John put down the milk.
+Sandra got the milk.
+"},
+ {"Q": "Where was the apple before the hallway", "A": "garden", "C": "Daniel moved to the office.
+John moved to the kitchen.
+John grabbed the apple.
+Daniel got the milk there.
+Daniel discarded the milk.
+John went to the bedroom.
+John dropped the apple.
+Daniel got the milk.
+John went back to the kitchen.
+John went to the bathroom.
+Daniel put down the milk.
+John travelled to the bedroom.
+Sandra went back to the kitchen.
+Sandra moved to the office.
+John took the apple.
+Daniel journeyed to the bathroom.
+Daniel moved to the kitchen.
+Sandra went back to the garden.
+John left the apple there.
+John picked up the apple.
+John went back to the bathroom.
+John put down the apple.
+Mary moved to the garden.
+John picked up the apple.
+Daniel travelled to the hallway.
+Mary travelled to the kitchen.
+Sandra journeyed to the bathroom.
+John travelled to the kitchen.
+Sandra moved to the bedroom.
+Sandra travelled to the office.
+John put down the apple.
+John went back to the office.
+Sandra went back to the garden.
+Mary picked up the apple.
+Mary travelled to the bathroom.
+Mary discarded the apple there.
+Sandra went back to the hallway.
+Mary went to the garden.
+Daniel went to the kitchen.
+John grabbed the milk.
+Sandra went to the garden.
+John went to the bedroom.
+Sandra went to the bathroom.
+Sandra moved to the bedroom.
+John picked up the football there.
+Sandra went to the office.
+John dropped the milk there.
+John got the milk.
+John went to the office.
+Daniel travelled to the office.
+Daniel travelled to the garden.
+Sandra journeyed to the bathroom.
+Mary journeyed to the kitchen.
+John dropped the milk.
+John took the milk.
+John left the milk there.
+John put down the football.
+Daniel journeyed to the office.
+John grabbed the milk.
+Sandra travelled to the bedroom.
+Daniel grabbed the football.
+Daniel travelled to the hallway.
+John left the milk there.
+Daniel travelled to the bathroom.
+John took the milk.
+Mary went back to the garden.
+Daniel picked up the apple.
+John went to the hallway.
+Daniel dropped the football.
+Daniel travelled to the kitchen.
+Daniel travelled to the hallway.
+Sandra went to the garden.
+Daniel moved to the garden.
+John went back to the bathroom.
+Sandra travelled to the hallway.
+Mary travelled to the hallway.
+John grabbed the football.
+Sandra travelled to the bedroom.
+John dropped the football.
+Sandra went back to the garden.
+John went back to the hallway.
+John journeyed to the bedroom.
+John dropped the milk.
+John travelled to the office.
+Mary moved to the bedroom.
+Mary grabbed the milk.
+Mary discarded the milk.
+Mary grabbed the milk.
+Sandra went to the bedroom.
+Mary moved to the hallway.
+John moved to the garden.
+John moved to the hallway.
+Mary went back to the office.
+Daniel travelled to the hallway.
+Mary travelled to the bathroom.
+Daniel left the apple.
+"},
+ {"Q": "Where was the football before the garden", "A": "bathroom", "C": "Mary went to the office.
+Mary went to the kitchen.
+Sandra travelled to the hallway.
+John took the football.
+Mary grabbed the milk there.
+Mary left the milk.
+John grabbed the milk.
+Daniel went to the bedroom.
+Daniel went back to the kitchen.
+Sandra travelled to the bedroom.
+John dropped the football.
+Mary went to the hallway.
+John discarded the milk.
+Daniel went back to the bathroom.
+Sandra moved to the kitchen.
+Sandra took the football.
+John picked up the milk.
+John put down the milk.
+Mary moved to the office.
+Daniel travelled to the bedroom.
+John picked up the milk.
+John dropped the milk there.
+Sandra put down the football.
+Daniel moved to the bathroom.
+John grabbed the football.
+Mary travelled to the bathroom.
+John went to the bathroom.
+Daniel travelled to the bedroom.
+Daniel took the apple there.
+Sandra travelled to the hallway.
+John moved to the hallway.
+Mary journeyed to the bedroom.
+Daniel dropped the apple.
+Daniel travelled to the garden.
+Mary got the apple.
+John put down the football.
+John took the football.
+John moved to the bathroom.
+Mary left the apple.
+John left the football.
+Sandra went back to the bedroom.
+Mary took the apple there.
+John got the football.
+Sandra travelled to the hallway.
+John journeyed to the garden.
+Sandra went back to the kitchen.
+Daniel journeyed to the kitchen.
+John dropped the football.
+Mary travelled to the garden.
+Daniel got the milk.
+Mary took the football.
+Mary left the football.
+John grabbed the football.
+Daniel went to the bedroom.
+Daniel dropped the milk there.
+Daniel went to the office.
+Mary dropped the apple.
+John travelled to the bathroom.
+John moved to the garden.
+John took the apple.
+Daniel moved to the hallway.
+John left the apple.
+Sandra moved to the office.
+Mary travelled to the bathroom.
+John grabbed the apple.
+Mary journeyed to the hallway.
+Daniel went back to the garden.
+Daniel moved to the kitchen.
+Sandra went to the kitchen.
+John went back to the bedroom.
+John got the milk.
+Sandra moved to the bedroom.
+Daniel went to the bedroom.
+Daniel went back to the kitchen.
+Sandra went to the garden.
+Daniel went to the garden.
+Sandra went to the bathroom.
+Sandra moved to the office.
+John dropped the apple.
+Daniel journeyed to the kitchen.
+Mary went back to the office.
+John left the football there.
+John went to the garden.
+Daniel went to the office.
+John discarded the milk.
+John journeyed to the bathroom.
+"},
+ {"Q": "Where was the milk before the bedroom", "A": "garden", "C": "Daniel moved to the kitchen.
+Sandra went to the hallway.
+Daniel got the milk.
+Mary moved to the hallway.
+Daniel went to the office.
+Mary went back to the garden.
+Sandra moved to the garden.
+John moved to the hallway.
+Daniel put down the milk.
+Daniel went to the garden.
+John journeyed to the garden.
+Mary went back to the kitchen.
+Mary journeyed to the bedroom.
+Daniel journeyed to the office.
+Daniel travelled to the bathroom.
+John went to the hallway.
+John moved to the bathroom.
+Sandra moved to the hallway.
+Sandra picked up the apple there.
+Sandra discarded the apple there.
+Mary went back to the garden.
+Sandra grabbed the apple.
+Sandra dropped the apple.
+Sandra got the apple.
+Sandra moved to the bedroom.
+Sandra left the apple.
+Mary travelled to the office.
+Sandra went back to the hallway.
+Mary took the milk.
+Daniel journeyed to the office.
+John moved to the office.
+Mary got the football.
+Sandra moved to the kitchen.
+Mary travelled to the garden.
+Daniel went back to the bedroom.
+Mary went to the bedroom.
+Mary put down the football there.
+Daniel went back to the bathroom.
+Sandra went to the hallway.
+Daniel moved to the garden.
+Mary got the apple.
+John travelled to the kitchen.
+Daniel went to the bathroom.
+John went to the bedroom.
+John journeyed to the office.
+John went back to the bedroom.
+John picked up the football.
+Daniel travelled to the bedroom.
+Mary left the apple.
+Sandra journeyed to the kitchen.
+Daniel took the apple.
+Mary dropped the milk.
+John moved to the garden.
+Daniel left the apple.
+"},
+ {"Q": "Where was the football before the bathroom", "A": "garden", "C": "John travelled to the kitchen.
+John went to the bedroom.
+Sandra got the milk.
+Sandra discarded the milk.
+Sandra got the milk.
+Sandra journeyed to the garden.
+John went to the hallway.
+John travelled to the kitchen.
+Sandra travelled to the office.
+John went back to the bedroom.
+Sandra dropped the milk.
+John went to the kitchen.
+John went to the garden.
+Mary went to the office.
+Sandra moved to the bathroom.
+Sandra went back to the hallway.
+Daniel picked up the apple.
+Mary took the milk.
+John journeyed to the office.
+John went to the hallway.
+Mary moved to the bathroom.
+Daniel travelled to the bathroom.
+John journeyed to the bedroom.
+Mary left the milk.
+Mary journeyed to the office.
+John got the football there.
+Daniel left the apple.
+Daniel got the milk.
+Daniel put down the milk there.
+Mary journeyed to the bathroom.
+Mary travelled to the office.
+Mary went back to the bathroom.
+John travelled to the kitchen.
+Mary went back to the office.
+Daniel took the milk.
+Daniel got the apple.
+Daniel left the apple.
+Daniel went to the garden.
+Sandra went to the bedroom.
+Daniel moved to the office.
+Daniel moved to the garden.
+John went back to the garden.
+Mary journeyed to the kitchen.
+John moved to the bathroom.
+Daniel went to the office.
+Sandra travelled to the hallway.
+Sandra travelled to the bathroom.
+John went to the office.
+John moved to the kitchen.
+Daniel dropped the milk.
+John put down the football there.
+Sandra moved to the bedroom.
+"},
+ {"Q": "Where was the apple before the office", "A": "hallway", "C": "John journeyed to the kitchen.
+Mary journeyed to the garden.
+Mary went to the kitchen.
+Sandra travelled to the bedroom.
+Daniel went back to the kitchen.
+Mary journeyed to the hallway.
+Daniel journeyed to the hallway.
+John went back to the hallway.
+Daniel went to the bedroom.
+Mary went back to the kitchen.
+John moved to the bedroom.
+John went to the office.
+Daniel travelled to the hallway.
+Sandra travelled to the office.
+John journeyed to the kitchen.
+Daniel went to the kitchen.
+Sandra moved to the bathroom.
+Daniel journeyed to the office.
+Sandra went to the office.
+Sandra travelled to the bathroom.
+Sandra got the apple there.
+John went back to the bathroom.
+Daniel took the football.
+Sandra journeyed to the hallway.
+Sandra went to the office.
+Daniel discarded the football there.
+Daniel got the football there.
+Sandra discarded the apple.
+"},
+ {"Q": "Where was the football before the garden", "A": "hallway", "C": "John went back to the bathroom.
+Mary moved to the kitchen.
+Mary went to the hallway.
+Mary travelled to the office.
+John travelled to the bedroom.
+Sandra went back to the kitchen.
+Mary travelled to the bedroom.
+Daniel moved to the bedroom.
+Daniel went back to the hallway.
+Mary moved to the hallway.
+John went back to the bathroom.
+Sandra moved to the garden.
+John went to the bedroom.
+John moved to the bathroom.
+Sandra grabbed the milk.
+John grabbed the football.
+Sandra travelled to the bedroom.
+John left the football.
+Daniel went to the bathroom.
+Sandra went back to the kitchen.
+Mary travelled to the office.
+Mary moved to the garden.
+Mary got the apple.
+John travelled to the kitchen.
+John journeyed to the bedroom.
+Sandra discarded the milk.
+Daniel took the football there.
+Daniel went to the garden.
+John travelled to the office.
+Sandra took the milk.
+Sandra left the milk.
+Sandra grabbed the milk.
+Daniel travelled to the bathroom.
+Daniel put down the football there.
+Sandra journeyed to the bathroom.
+Sandra got the football.
+Daniel moved to the kitchen.
+Sandra moved to the hallway.
+Mary put down the apple there.
+Mary grabbed the apple.
+Mary dropped the apple there.
+Sandra travelled to the garden.
+Sandra discarded the football there.
+Sandra put down the milk.
+"},
+ {"Q": "What is the bedroom north of", "A": "garden", "C": "The kitchen is north of the bedroom.
+The garden is south of the bedroom.
+"},
+ {"Q": "What is north of the office", "A": "garden", "C": "The bathroom is south of the office.
+The garden is north of the office.
+"},
+ {"Q": "What is west of the kitchen", "A": "bedroom", "C": "The hallway is east of the kitchen.
+The bedroom is west of the kitchen.
+"},
+ {"Q": "What is north of the kitchen", "A": "hallway", "C": "The hallway is north of the kitchen.
+The office is north of the hallway.
+"},
+ {"Q": "What is east of the kitchen", "A": "garden", "C": "The garden is east of the kitchen.
+The garden is west of the bedroom.
+"},
+ {"Q": "What is the bedroom west of", "A": "office", "C": "The bedroom is east of the bathroom.
+The office is east of the bedroom.
+"},
+ {"Q": "What is north of the kitchen", "A": "bathroom", "C": "The bathroom is north of the kitchen.
+The bathroom is south of the garden.
+"},
+ {"Q": "What is the office north of", "A": "garden", "C": "The bedroom is north of the office.
+The garden is south of the office.
+"},
+ {"Q": "What is the bathroom west of", "A": "kitchen", "C": "The office is west of the bathroom.
+The kitchen is east of the bathroom.
+"},
+ {"Q": "What is east of the bathroom", "A": "office", "C": "The kitchen is west of the bathroom.
+The office is east of the bathroom.
+"},
+ {"Q": "What did Mary give to Fred", "A": "milk", "C": "Jeff went back to the office.
+Jeff travelled to the bedroom.
+Mary took the football there.
+Mary went back to the hallway.
+Bill went back to the kitchen.
+Mary got the milk there.
+Fred went back to the hallway.
+Bill journeyed to the bathroom.
+Mary left the football there.
+Mary passed the milk to Fred.
+Mary picked up the football there.
+Mary dropped the football.
+Mary picked up the football there.
+Mary put down the football there.
+"},
+ {"Q": "Who did Mary give the apple to", "A": "Bill", "C": "Bill moved to the bedroom.
+Fred went to the hallway.
+Jeff went to the garden.
+Fred travelled to the office.
+Mary took the apple there.
+Mary passed the apple to Bill.
+Bill gave the apple to Mary.
+Mary passed the apple to Bill.
+"},
+ {"Q": "What did Jeff give to Bill", "A": "milk", "C": "Mary moved to the hallway.
+Jeff moved to the office.
+Jeff grabbed the football there.
+Bill moved to the bathroom.
+Mary travelled to the bathroom.
+Mary went to the kitchen.
+Bill travelled to the hallway.
+Jeff put down the football.
+Mary moved to the bathroom.
+Jeff journeyed to the garden.
+Jeff travelled to the bathroom.
+Fred went to the hallway.
+Fred went to the bedroom.
+Bill grabbed the milk there.
+Fred travelled to the office.
+Bill put down the milk.
+Fred picked up the football there.
+Bill got the milk there.
+Jeff went back to the hallway.
+Bill handed the milk to Jeff.
+Fred travelled to the garden.
+Jeff passed the milk to Bill.
+Fred put down the football.
+Bill left the milk.
+"},
+ {"Q": "What did Fred give to Bill", "A": "milk", "C": "Mary got the football there.
+Fred got the milk there.
+Jeff got the apple there.
+Mary left the football.
+Jeff dropped the apple there.
+Fred passed the milk to Bill.
+Bill went back to the garden.
+Jeff took the apple there.
+Fred journeyed to the bathroom.
+Bill dropped the milk there.
+"},
+ {"Q": "What did Jeff give to Mary", "A": "milk", "C": "Bill grabbed the apple there.
+Bill travelled to the bedroom.
+Fred moved to the garden.
+Fred moved to the office.
+Mary picked up the milk there.
+Bill discarded the apple.
+Mary left the milk.
+Jeff went to the office.
+Mary got the milk there.
+Bill travelled to the office.
+Jeff went back to the bathroom.
+Mary passed the milk to Jeff.
+Jeff passed the milk to Mary.
+Mary put down the milk there.
+"},
+ {"Q": "Who gave the apple", "A": "Fred", "C": "Mary moved to the office.
+Bill got the milk there.
+Bill discarded the milk.
+Bill moved to the bedroom.
+Fred took the apple there.
+Bill travelled to the hallway.
+Jeff travelled to the garden.
+Fred moved to the garden.
+Bill moved to the kitchen.
+Mary went back to the garden.
+Fred handed the apple to Mary.
+Mary took the milk there.
+"},
+ {"Q": "What did Mary give to Fred", "A": "milk", "C": "Fred picked up the football there.
+Jeff travelled to the hallway.
+Bill went back to the kitchen.
+Bill went to the hallway.
+Fred travelled to the garden.
+Fred grabbed the milk there.
+Bill travelled to the office.
+Fred put down the milk there.
+Fred put down the football.
+Bill journeyed to the hallway.
+Fred journeyed to the kitchen.
+Jeff travelled to the garden.
+Jeff picked up the milk there.
+Mary went back to the office.
+Mary moved to the kitchen.
+Jeff grabbed the football there.
+Bill travelled to the garden.
+Fred went to the office.
+Fred went to the kitchen.
+Jeff dropped the milk.
+Jeff picked up the milk there.
+Jeff went to the bedroom.
+Jeff left the football.
+Jeff dropped the milk.
+Jeff grabbed the milk there.
+Jeff journeyed to the kitchen.
+Jeff passed the milk to Mary.
+Mary passed the milk to Fred.
+Fred discarded the milk.
+Jeff got the milk there.
+"},
+ {"Q": "Who did Bill give the apple to", "A": "Mary", "C": "Bill grabbed the apple there.
+Bill handed the apple to Mary.
+Jeff went back to the garden.
+Fred travelled to the bedroom.
+"},
+ {"Q": "Who gave the apple", "A": "Fred", "C": "Bill moved to the kitchen.
+Bill moved to the hallway.
+Jeff journeyed to the bathroom.
+Fred went to the office.
+Bill moved to the office.
+Fred went to the bedroom.
+Mary went to the hallway.
+Jeff went back to the garden.
+Fred went back to the bathroom.
+Jeff went back to the kitchen.
+Bill journeyed to the garden.
+Mary travelled to the bedroom.
+Jeff travelled to the bathroom.
+Jeff journeyed to the kitchen.
+Bill took the apple there.
+Bill put down the apple.
+Bill grabbed the apple there.
+Mary went to the hallway.
+Bill discarded the apple.
+Mary moved to the garden.
+Bill went to the hallway.
+Fred journeyed to the bedroom.
+Mary moved to the kitchen.
+Bill moved to the bathroom.
+Fred went back to the office.
+Mary moved to the hallway.
+Mary went back to the bedroom.
+Bill went back to the office.
+Jeff took the football there.
+Mary went back to the bathroom.
+Jeff went back to the hallway.
+Fred went back to the bathroom.
+Bill went to the kitchen.
+Jeff put down the football.
+Bill went to the bathroom.
+Jeff moved to the garden.
+Jeff went back to the bathroom.
+Bill went back to the garden.
+Bill journeyed to the kitchen.
+Fred went to the office.
+Mary travelled to the bedroom.
+Fred went back to the bathroom.
+Fred journeyed to the kitchen.
+Fred went back to the garden.
+Bill journeyed to the bedroom.
+Bill moved to the garden.
+Fred picked up the apple there.
+Mary went to the office.
+Fred gave the apple to Bill.
+Fred went to the bedroom.
+Mary travelled to the kitchen.
+Fred went to the bathroom.
+"},
+ {"Q": "Who gave the apple", "A": "Mary", "C": "Jeff grabbed the apple there.
+Jeff gave the apple to Mary.
+Mary gave the apple to Fred.
+Fred passed the apple to Mary.
+Fred went to the bedroom.
+Mary handed the apple to Bill.
+"},
+ {"Q": "Is Daniel in the garden", "A": "yes", "C": "Mary grabbed the apple there.
+Daniel travelled to the garden.
+Daniel grabbed the milk there.
+Daniel discarded the milk.
+"},
+ {"Q": "Is Daniel in the bathroom", "A": "no", "C": "John went back to the bathroom.
+John travelled to the hallway.
+Daniel moved to the garden.
+Daniel moved to the hallway.
+"},
+ {"Q": "Is Mary in the hallway", "A": "no", "C": "Daniel got the football there.
+Sandra grabbed the apple there.
+Daniel journeyed to the bathroom.
+Sandra dropped the apple.
+Daniel discarded the football there.
+Mary got the football there.
+Mary moved to the kitchen.
+Sandra travelled to the bathroom.
+"},
+ {"Q": "Is Daniel in the office", "A": "yes", "C": "Daniel grabbed the apple there.
+Mary went back to the office.
+Daniel dropped the apple.
+John journeyed to the office.
+Daniel went back to the bathroom.
+Mary journeyed to the garden.
+Daniel journeyed to the office.
+Sandra travelled to the bathroom.
+"},
+ {"Q": "Is Mary in the office", "A": "yes", "C": "Sandra went to the garden.
+Mary got the apple there.
+Sandra travelled to the bedroom.
+Mary travelled to the hallway.
+John journeyed to the hallway.
+Mary went to the garden.
+Mary journeyed to the office.
+Sandra moved to the hallway.
+"},
+ {"Q": "Is John in the bathroom", "A": "yes", "C": "Mary grabbed the milk there.
+Sandra took the football there.
+Daniel grabbed the apple there.
+John went to the bathroom.
+"},
+ {"Q": "Is Mary in the office", "A": "yes", "C": "Mary moved to the office.
+Sandra took the apple there.
+John went to the hallway.
+Sandra left the apple.
+"},
+ {"Q": "Is John in the bedroom", "A": "no", "C": "Mary picked up the milk there.
+John travelled to the hallway.
+John went back to the bedroom.
+John moved to the hallway.
+"},
+ {"Q": "Is Daniel in the garden", "A": "yes", "C": "Mary went back to the hallway.
+Sandra travelled to the kitchen.
+John journeyed to the garden.
+Sandra journeyed to the bathroom.
+Daniel moved to the garden.
+Sandra went back to the hallway.
+"},
+ {"Q": "Is Daniel in the office", "A": "yes", "C": "John travelled to the garden.
+Daniel moved to the kitchen.
+Daniel went to the office.
+Mary got the apple there.
+"},
+ {"Q": "How many objects is John carrying", "A": "two", "C": "Sandra went to the hallway.
+John went to the garden.
+John moved to the hallway.
+John went back to the bathroom.
+John got the apple there.
+Daniel went to the bathroom.
+John handed the apple to Daniel.
+Daniel passed the apple to John.
+Daniel went to the garden.
+Sandra moved to the bathroom.
+John journeyed to the bedroom.
+Daniel went back to the hallway.
+John picked up the football there.
+John travelled to the office.
+"},
+ {"Q": "How many objects is Sandra carrying", "A": "one", "C": "Daniel went back to the garden.
+John travelled to the bedroom.
+Sandra journeyed to the garden.
+Sandra picked up the milk there.
+"},
+ {"Q": "How many objects is Mary carrying", "A": "none", "C": "John moved to the garden.
+Mary took the apple there.
+John moved to the bedroom.
+Mary discarded the apple.
+"},
+ {"Q": "How many objects is John carrying", "A": "none", "C": "Daniel went to the kitchen.
+Sandra moved to the garden.
+Mary journeyed to the garden.
+John went to the office.
+Daniel went back to the bedroom.
+Sandra picked up the milk there.
+Sandra passed the milk to Mary.
+Sandra journeyed to the bathroom.
+Daniel travelled to the office.
+Sandra journeyed to the office.
+Sandra travelled to the kitchen.
+John took the football there.
+John handed the football to Daniel.
+Mary left the milk there.
+"},
+ {"Q": "How many objects is Sandra carrying", "A": "none", "C": "John journeyed to the kitchen.
+Sandra grabbed the apple there.
+Sandra handed the apple to Daniel.
+Daniel discarded the apple.
+"},
+ {"Q": "How many objects is Sandra carrying", "A": "one", "C": "John went back to the garden.
+John travelled to the bathroom.
+Daniel took the milk there.
+Sandra moved to the bathroom.
+Daniel left the milk.
+Daniel journeyed to the kitchen.
+Mary went to the bedroom.
+Daniel went to the bathroom.
+Sandra travelled to the hallway.
+Sandra picked up the milk there.
+"},
+ {"Q": "How many objects is Mary carrying", "A": "two", "C": "Mary went to the garden.
+Sandra went back to the bathroom.
+Sandra went to the kitchen.
+Sandra went back to the bedroom.
+Mary got the apple there.
+Mary left the apple.
+Sandra went back to the kitchen.
+Mary got the apple there.
+Mary moved to the bedroom.
+Mary journeyed to the hallway.
+Daniel went to the bedroom.
+Mary got the milk there.
+"},
+ {"Q": "How many objects is Daniel carrying", "A": "none", "C": "Daniel grabbed the milk there.
+John moved to the bedroom.
+Sandra travelled to the bedroom.
+Mary took the apple there.
+Sandra travelled to the bathroom.
+Daniel went to the bathroom.
+Daniel put down the milk there.
+Daniel journeyed to the bedroom.
+Sandra picked up the football there.
+Mary travelled to the office.
+"},
+ {"Q": "How many objects is Daniel carrying", "A": "one", "C": "Sandra picked up the apple there.
+Sandra dropped the apple.
+Sandra got the football there.
+John journeyed to the bathroom.
+Sandra handed the football to John.
+Sandra went back to the garden.
+Daniel went back to the kitchen.
+Daniel got the milk there.
+John got the apple there.
+John dropped the apple.
+"},
+ {"Q": "How many objects is Daniel carrying", "A": "one", "C": "Daniel got the football there.
+Daniel went to the garden.
+"},
+ {"Q": "What is Sandra carrying", "A": "nothing", "C": "Mary went back to the office.
+Sandra travelled to the garden.
+Mary journeyed to the garden.
+John went to the kitchen.
+John went to the office.
+Sandra went back to the office.
+John journeyed to the garden.
+Sandra moved to the kitchen.
+Mary went to the bedroom.
+Sandra journeyed to the hallway.
+Daniel travelled to the garden.
+Mary went back to the hallway.
+Sandra got the football there.
+Daniel travelled to the bathroom.
+Sandra dropped the football.
+Daniel went back to the garden.
+Sandra picked up the football there.
+Daniel went to the office.
+Sandra put down the football.
+Sandra travelled to the office.
+Mary went back to the garden.
+Mary went back to the kitchen.
+"},
+ {"Q": "What is John carrying", "A": "football", "C": "Daniel travelled to the hallway.
+Daniel travelled to the kitchen.
+Mary journeyed to the office.
+Daniel moved to the hallway.
+Daniel travelled to the office.
+John moved to the office.
+John took the football there.
+Mary went back to the hallway.
+Daniel journeyed to the hallway.
+John moved to the garden.
+"},
+ {"Q": "What is Mary carrying", "A": "football", "C": "Daniel got the apple there.
+Mary picked up the football there.
+Sandra went to the bathroom.
+Daniel left the apple.
+"},
+ {"Q": "What is Mary carrying", "A": "football,milk", "C": "Sandra went back to the office.
+Sandra moved to the hallway.
+Daniel travelled to the bathroom.
+John travelled to the bedroom.
+Mary got the football there.
+Mary picked up the milk there.
+"},
+ {"Q": "What is Daniel carrying", "A": "apple", "C": "Mary journeyed to the office.
+John went to the bedroom.
+Sandra went to the bedroom.
+Sandra went back to the bathroom.
+Daniel moved to the garden.
+John went back to the bathroom.
+John journeyed to the office.
+Daniel went back to the kitchen.
+Daniel got the apple there.
+Daniel dropped the apple.
+Daniel got the apple there.
+Daniel dropped the apple.
+Mary went to the bathroom.
+Daniel took the apple there.
+Sandra moved to the office.
+John moved to the garden.
+Mary travelled to the hallway.
+Mary went to the kitchen.
+"},
+ {"Q": "What is Daniel carrying", "A": "milk", "C": "Sandra went to the hallway.
+John travelled to the kitchen.
+Daniel travelled to the bathroom.
+John went back to the office.
+John moved to the bathroom.
+Daniel picked up the milk there.
+John went back to the kitchen.
+Mary went to the bathroom.
+Daniel went back to the kitchen.
+Sandra went to the kitchen.
+"},
+ {"Q": "What is Sandra carrying", "A": "apple", "C": "Sandra took the apple there.
+Sandra left the apple.
+Mary went back to the garden.
+John picked up the milk there.
+Daniel moved to the office.
+John grabbed the football there.
+Sandra got the apple there.
+Sandra went back to the garden.
+Daniel journeyed to the bathroom.
+Mary went back to the office.
+"},
+ {"Q": "What is Daniel carrying", "A": "nothing", "C": "Sandra moved to the hallway.
+John went back to the hallway.
+Daniel grabbed the milk there.
+Sandra went to the kitchen.
+John went back to the garden.
+John picked up the football there.
+Daniel dropped the milk.
+Sandra journeyed to the office.
+John got the apple there.
+Sandra went to the kitchen.
+"},
+ {"Q": "What is Mary carrying", "A": "football", "C": "John went back to the office.
+Sandra went back to the office.
+Mary got the football there.
+Sandra travelled to the garden.
+"},
+ {"Q": "What is John carrying", "A": "nothing", "C": "John went back to the bedroom.
+John grabbed the apple there.
+John journeyed to the kitchen.
+Daniel travelled to the bedroom.
+Daniel moved to the bathroom.
+John put down the apple.
+"},
+ {"Q": "Is John in the hallway", "A": "no", "C": "John is in the hallway.
+Mary is no longer in the garden.
+John is no longer in the hallway.
+Daniel is in the garden.
+"},
+ {"Q": "Is John in the garden", "A": "no", "C": "Sandra is in the bedroom.
+Mary went back to the hallway.
+Mary is not in the hallway.
+Mary went back to the kitchen.
+Sandra is in the garden.
+John moved to the garden.
+Sandra is no longer in the garden.
+John is not in the garden.
+"},
+ {"Q": "Is Daniel in the garden", "A": "yes", "C": "Mary travelled to the kitchen.
+Daniel is in the garden.
+"},
+ {"Q": "Is Daniel in the bedroom", "A": "no", "C": "Mary is not in the office.
+John went to the bedroom.
+Mary is no longer in the bedroom.
+Sandra is not in the kitchen.
+Daniel is not in the bathroom.
+Daniel is not in the bedroom.
+"},
+ {"Q": "Is John in the garden", "A": "yes", "C": "Daniel travelled to the office.
+Mary journeyed to the bedroom.
+Mary is no longer in the bedroom.
+John is in the kitchen.
+Mary is in the kitchen.
+Sandra is in the bedroom.
+Sandra is no longer in the bedroom.
+Daniel is in the bathroom.
+Sandra is no longer in the hallway.
+John journeyed to the garden.
+"},
+ {"Q": "Is Sandra in the garden", "A": "no", "C": "Mary is in the bathroom.
+Daniel is in the bathroom.
+John is in the bedroom.
+John is not in the bedroom.
+Mary went to the hallway.
+Mary is in the garden.
+John travelled to the hallway.
+Daniel is not in the bathroom.
+Sandra journeyed to the garden.
+Sandra moved to the hallway.
+"},
+ {"Q": "Is Mary in the bathroom", "A": "no", "C": "Mary moved to the office.
+John is in the bathroom.
+"},
+ {"Q": "Is Sandra in the kitchen", "A": "no", "C": "Sandra is not in the kitchen.
+Sandra is in the kitchen.
+Daniel is in the kitchen.
+Sandra is not in the kitchen.
+"},
+ {"Q": "Is Daniel in the garden", "A": "yes", "C": "Daniel went to the office.
+Mary went back to the garden.
+Daniel is no longer in the office.
+Daniel moved to the bedroom.
+Sandra is in the hallway.
+Mary is no longer in the garden.
+Sandra travelled to the garden.
+John is in the kitchen.
+John is in the bedroom.
+Daniel is in the garden.
+"},
+ {"Q": "Is Daniel in the hallway", "A": "no", "C": "Daniel moved to the office.
+Mary is no longer in the bedroom.
+"},
+ {"Q": "Is Bill in the school", "A": "maybe", "C": "Mary journeyed to the school.
+Mary journeyed to the kitchen.
+Julie went to the office.
+Bill journeyed to the bedroom.
+Bill is in the cinema.
+Bill is either in the kitchen or the school.
+"},
+ {"Q": "Is Bill in the kitchen", "A": "yes", "C": "Mary went to the school.
+Fred travelled to the school.
+Julie travelled to the office.
+Mary moved to the kitchen.
+Mary is either in the park or the bedroom.
+Fred moved to the cinema.
+Fred is either in the school or the bedroom.
+Bill is in the kitchen.
+"},
+ {"Q": "Is Fred in the park", "A": "yes", "C": "Bill went to the park.
+Fred journeyed to the park.
+Julie is in the park.
+Mary is in the bedroom.
+"},
+ {"Q": "Is Bill in the bedroom", "A": "yes", "C": "Fred is either in the school or the kitchen.
+Julie is in the kitchen.
+Fred is either in the school or the cinema.
+Mary went back to the office.
+Bill is either in the park or the kitchen.
+Fred went to the office.
+Mary is in the cinema.
+Fred went back to the kitchen.
+Bill went back to the school.
+Bill is in the bedroom.
+"},
+ {"Q": "Is Fred in the kitchen", "A": "no", "C": "Fred is in the park.
+Mary is either in the park or the office.
+Julie went back to the park.
+Mary is either in the office or the bedroom.
+Mary went back to the cinema.
+Julie is either in the kitchen or the bedroom.
+Julie journeyed to the bedroom.
+Fred is either in the office or the kitchen.
+Mary travelled to the kitchen.
+Fred is either in the school or the park.
+"},
+ {"Q": "Is Mary in the cinema", "A": "no", "C": "Fred is in the bedroom.
+Mary moved to the park.
+"},
+ {"Q": "Is Bill in the cinema", "A": "no", "C": "Fred went back to the school.
+Bill journeyed to the office.
+Fred moved to the park.
+Julie journeyed to the office.
+Bill went to the bedroom.
+Mary moved to the cinema.
+"},
+ {"Q": "Is Bill in the kitchen", "A": "no", "C": "Bill travelled to the bedroom.
+Fred is in the kitchen.
+Julie is in the park.
+Julie travelled to the kitchen.
+Julie is either in the school or the school.
+Bill went to the office.
+Bill went to the school.
+Julie moved to the bedroom.
+"},
+ {"Q": "Is Mary in the bedroom", "A": "yes", "C": "Bill went back to the office.
+Fred is either in the cinema or the cinema.
+Julie is either in the cinema or the bedroom.
+Bill travelled to the kitchen.
+Mary is either in the park or the kitchen.
+Julie is in the office.
+Fred is in the park.
+Mary is in the bedroom.
+"},
+ {"Q": "Is Bill in the cinema", "A": "maybe", "C": "Mary moved to the kitchen.
+Fred moved to the kitchen.
+Mary travelled to the cinema.
+Bill is either in the bedroom or the cinema.
+"},
+ {"Q": "Where is Mary", "A": "office", "C": "Mary went back to the kitchen.
+Then she journeyed to the office.
+"},
+ {"Q": "Where is John", "A": "bedroom", "C": "John journeyed to the kitchen.
+After that he went to the bedroom.
+"},
+ {"Q": "Where is Mary", "A": "office", "C": "Mary went back to the kitchen.
+Then she journeyed to the office.
+Sandra journeyed to the bathroom.
+Following that she moved to the hallway.
+Sandra moved to the bathroom.
+Afterwards she travelled to the garden.
+Mary journeyed to the hallway.
+Following that she went to the office.
+"},
+ {"Q": "Where is John", "A": "bedroom", "C": "John went to the garden.
+Afterwards he travelled to the bedroom.
+"},
+ {"Q": "Where is Mary", "A": "bedroom", "C": "Daniel moved to the kitchen.
+Following that he went back to the bedroom.
+Mary went back to the hallway.
+After that she went back to the office.
+Mary journeyed to the kitchen.
+Following that she moved to the bedroom.
+Daniel went to the garden.
+Following that he went back to the bedroom.
+"},
+ {"Q": "Where is Sandra", "A": "garden", "C": "Mary travelled to the bathroom.
+Following that she journeyed to the office.
+Sandra went to the kitchen.
+After that she journeyed to the bedroom.
+Daniel journeyed to the hallway.
+Afterwards he went back to the bathroom.
+Sandra went back to the garden.
+Following that she went to the bedroom.
+Sandra went to the kitchen.
+Afterwards she went to the garden.
+"},
+ {"Q": "Where is Mary", "A": "kitchen", "C": "John travelled to the hallway.
+After that he moved to the bathroom.
+Mary went to the bathroom.
+Then she journeyed to the bedroom.
+Mary went back to the office.
+Following that she travelled to the hallway.
+Mary went back to the bedroom.
+Afterwards she travelled to the kitchen.
+"},
+ {"Q": "Where is Daniel", "A": "kitchen", "C": "Daniel went to the bathroom.
+Following that he went back to the kitchen.
+"},
+ {"Q": "Where is Mary", "A": "bedroom", "C": "Mary went to the garden.
+Following that she journeyed to the bedroom.
+"},
+ {"Q": "Where is Mary", "A": "kitchen", "C": "Mary went back to the bathroom.
+Afterwards she went back to the kitchen.
+"},
+ {"Q": "Where is Mary", "A": "hallway", "C": "Daniel and John moved to the garden.
+Sandra and Mary moved to the hallway.
+"},
+ {"Q": "Where is John", "A": "bathroom", "C": "John and Sandra went to the bedroom.
+Sandra and John moved to the garden.
+John and Daniel moved to the kitchen.
+Mary and Sandra journeyed to the office.
+Sandra and John travelled to the bedroom.
+Mary and John moved to the kitchen.
+John and Sandra went back to the bathroom.
+Daniel and Mary moved to the garden.
+"},
+ {"Q": "Where is Daniel", "A": "bathroom", "C": "Mary and Sandra journeyed to the kitchen.
+Sandra and John journeyed to the hallway.
+John and Daniel went back to the office.
+Sandra and Mary moved to the bathroom.
+Mary and John moved to the kitchen.
+Daniel and Mary went back to the bathroom.
+"},
+ {"Q": "Where is John", "A": "garden", "C": "Mary and John journeyed to the hallway.
+Sandra and John travelled to the office.
+Sandra and Daniel moved to the hallway.
+Mary and John journeyed to the bedroom.
+Sandra and John went to the kitchen.
+John and Mary went back to the garden.
+"},
+ {"Q": "Where is Daniel", "A": "kitchen", "C": "Daniel and Mary journeyed to the bedroom.
+Sandra and John went back to the bedroom.
+Sandra and Daniel went to the kitchen.
+Daniel and Sandra went to the hallway.
+Mary and Sandra moved to the bathroom.
+Daniel and Sandra went back to the kitchen.
+"},
+ {"Q": "Where is Sandra", "A": "hallway", "C": "Mary and John journeyed to the bedroom.
+Daniel and John travelled to the bathroom.
+Sandra and Daniel moved to the kitchen.
+Mary and Sandra moved to the hallway.
+John and Mary went to the office.
+Daniel and John journeyed to the bedroom.
+"},
+ {"Q": "Where is Daniel", "A": "hallway", "C": "Daniel and Mary moved to the bedroom.
+John and Sandra went to the hallway.
+John and Mary moved to the kitchen.
+John and Sandra travelled to the garden.
+Daniel and John moved to the hallway.
+John and Daniel travelled to the garden.
+Mary and Daniel went to the office.
+John and Daniel moved to the hallway.
+John and Mary moved to the garden.
+John and Sandra went back to the bathroom.
+"},
+ {"Q": "Where is John", "A": "office", "C": "Mary and Sandra went back to the kitchen.
+Sandra and John travelled to the garden.
+Daniel and Sandra went to the hallway.
+John and Mary went back to the bathroom.
+Daniel and John travelled to the bedroom.
+Daniel and Mary journeyed to the hallway.
+Daniel and Sandra journeyed to the office.
+Mary and John went back to the office.
+John and Sandra went to the garden.
+Sandra and John went to the office.
+"},
+ {"Q": "Where is Mary", "A": "office", "C": "Sandra and Daniel journeyed to the bedroom.
+John and Mary went back to the bedroom.
+Mary and Sandra journeyed to the office.
+Daniel and Mary moved to the bathroom.
+Sandra and Mary travelled to the garden.
+John and Daniel journeyed to the office.
+Mary and Daniel travelled to the kitchen.
+Mary and Daniel went back to the office.
+"},
+ {"Q": "Where is Sandra", "A": "garden", "C": "John and Daniel went back to the bedroom.
+Sandra and Mary went back to the garden.
+"},
+ {"Q": "Where is John", "A": "bedroom", "C": "Mary and Sandra went to the office.
+Following that they moved to the bedroom.
+John and Sandra went to the office.
+After that they went to the garden.
+Sandra and Daniel went back to the hallway.
+Following that they went back to the kitchen.
+Daniel and Sandra went to the bathroom.
+Then they travelled to the kitchen.
+John and Sandra moved to the bathroom.
+Afterwards they went to the bedroom.
+"},
+ {"Q": "Where is Mary", "A": "office", "C": "Daniel and Mary travelled to the bedroom.
+After that they went to the bathroom.
+Mary and Daniel journeyed to the hallway.
+Afterwards they went back to the office.
+"},
+ {"Q": "Where is John", "A": "bathroom", "C": "Daniel and Sandra moved to the kitchen.
+Following that they went back to the garden.
+Daniel and Mary travelled to the kitchen.
+Afterwards they moved to the hallway.
+Daniel and John went to the garden.
+Following that they travelled to the bathroom.
+Mary and Sandra journeyed to the office.
+Following that they went to the bedroom.
+"},
+ {"Q": "Where is Sandra", "A": "hallway", "C": "John and Mary went to the office.
+Following that they travelled to the bedroom.
+Sandra and Daniel travelled to the bathroom.
+After that they journeyed to the hallway.
+"},
+ {"Q": "Where is Daniel", "A": "office", "C": "Daniel and Mary travelled to the hallway.
+After that they went to the garden.
+Mary and Daniel went to the hallway.
+Following that they journeyed to the office.
+Mary and Sandra moved to the hallway.
+Afterwards they went to the office.
+"},
+ {"Q": "Where is Sandra", "A": "garden", "C": "Sandra and Daniel went back to the kitchen.
+Afterwards they went back to the garden.
+"},
+ {"Q": "Where is Sandra", "A": "kitchen", "C": "Sandra and Daniel moved to the bedroom.
+Afterwards they went to the kitchen.
+"},
+ {"Q": "Where is Daniel", "A": "bathroom", "C": "Mary and John went to the bathroom.
+Following that they moved to the garden.
+John and Mary journeyed to the hallway.
+Then they went back to the bedroom.
+Daniel and Mary moved to the hallway.
+Afterwards they moved to the bathroom.
+"},
+ {"Q": "Where is Daniel", "A": "office", "C": "Mary and John went back to the office.
+Following that they moved to the hallway.
+Sandra and Mary moved to the bedroom.
+Afterwards they went back to the kitchen.
+Mary and Sandra went back to the bathroom.
+Following that they journeyed to the hallway.
+Sandra and Daniel travelled to the bedroom.
+Afterwards they journeyed to the office.
+Daniel and John went to the bedroom.
+Afterwards they went to the office.
+"},
+ {"Q": "Where is Sandra", "A": "garden", "C": "Sandra and John journeyed to the office.
+Then they went to the garden.
+"},
+ {"Q": "Where was Mary before the park", "A": "school", "C": "This morning Mary journeyed to the park.
+Yesterday Mary moved to the school.
+"},
+ {"Q": "Where was Fred before the school", "A": "bedroom", "C": "This morning Mary journeyed to the park.
+Yesterday Mary moved to the school.
+This morning Fred moved to the cinema.
+Fred journeyed to the kitchen yesterday.
+Fred went back to the school this evening.
+Fred travelled to the bedroom this afternoon.
+"},
+ {"Q": "Where was Fred before the park", "A": "bedroom", "C": "Mary went to the bedroom yesterday.
+Yesterday Fred journeyed to the bedroom.
+This morning Fred went back to the park.
+Yesterday Bill journeyed to the kitchen.
+"},
+ {"Q": "Where was Fred before the cinema", "A": "school", "C": "Mary went back to the park this morning.
+Yesterday Mary moved to the cinema.
+Bill went to the office yesterday.
+Julie moved to the kitchen yesterday.
+Yesterday Fred travelled to the park.
+Mary went to the school this afternoon.
+This afternoon Fred went to the cinema.
+Fred journeyed to the school this morning.
+This evening Mary went to the office.
+Fred went back to the park this evening.
+"},
+ {"Q": "Where was Julie before the cinema", "A": "kitchen", "C": "This morning Julie went to the cinema.
+Julie journeyed to the kitchen yesterday.
+Fred travelled to the cinema yesterday.
+Bill travelled to the office yesterday.
+"},
+ {"Q": "Where was Julie before the cinema", "A": "bedroom", "C": "Yesterday Bill went back to the bedroom.
+Yesterday Julie went to the bedroom.
+Mary journeyed to the bedroom this morning.
+Mary moved to the kitchen yesterday.
+This afternoon Mary went back to the kitchen.
+Julie journeyed to the cinema this morning.
+"},
+ {"Q": "Where was Fred before the bedroom", "A": "kitchen", "C": "Mary went to the cinema yesterday.
+Bill journeyed to the office this morning.
+Bill journeyed to the school yesterday.
+Yesterday Fred travelled to the kitchen.
+Bill went to the cinema this evening.
+Bill went back to the kitchen this afternoon.
+Julie went to the cinema this morning.
+Yesterday Julie went back to the park.
+Julie moved to the school this afternoon.
+This morning Fred moved to the bedroom.
+This morning Mary journeyed to the kitchen.
+Fred went to the kitchen this afternoon.
+"},
+ {"Q": "Where was Mary before the kitchen", "A": "bedroom", "C": "Mary went back to the school yesterday.
+Mary went back to the bedroom this morning.
+This afternoon Mary journeyed to the kitchen.
+Fred went to the school yesterday.
+Julie went back to the kitchen yesterday.
+Fred journeyed to the kitchen this morning.
+"},
+ {"Q": "Where was Fred before the kitchen", "A": "school", "C": "This morning Mary travelled to the kitchen.
+Mary went back to the park yesterday.
+Bill journeyed to the school yesterday.
+Yesterday Julie moved to the park.
+This afternoon Bill moved to the school.
+This morning Bill travelled to the park.
+Bill moved to the office this evening.
+Yesterday Fred went to the kitchen.
+This afternoon Fred moved to the kitchen.
+Fred travelled to the school this morning.
+This afternoon Julie went back to the school.
+This morning Julie travelled to the office.
+"},
+ {"Q": "Where was Bill before the cinema", "A": "kitchen", "C": "This morning Mary went to the office.
+Mary moved to the kitchen yesterday.
+Bill journeyed to the office this morning.
+Bill travelled to the cinema yesterday.
+This evening Bill moved to the cinema.
+Bill went back to the kitchen this afternoon.
+Mary travelled to the park this afternoon.
+Fred journeyed to the school yesterday.
+"},
+ {"Q": "What is jessica afraid of", "A": "cat", "C": "Cats are afraid of wolves.
+Mice are afraid of cats.
+Jessica is a mouse.
+Sheep are afraid of wolves.
+Winona is a sheep.
+Emily is a sheep.
+Wolves are afraid of sheep.
+Gertrude is a sheep.
+"},
+ {"Q": "What is winona afraid of", "A": "cat", "C": "Cats are afraid of wolves.
+Wolves are afraid of cats.
+Jessica is a cat.
+Winona is a wolf.
+Sheep are afraid of cats.
+Mice are afraid of sheep.
+Gertrude is a wolf.
+Emily is a cat.
+"},
+ {"Q": "What is gertrude afraid of", "A": "mouse", "C": "Cats are afraid of mice.
+Sheep are afraid of cats.
+Mice are afraid of sheep.
+Emily is a sheep.
+Gertrude is a cat.
+Wolves are afraid of cats.
+Winona is a wolf.
+Jessica is a mouse.
+"},
+ {"Q": "What is gertrude afraid of", "A": "cat", "C": "Cats are afraid of mice.
+Emily is a cat.
+Wolves are afraid of sheep.
+Mice are afraid of cats.
+Jessica is a wolf.
+Sheep are afraid of cats.
+Winona is a sheep.
+Gertrude is a sheep.
+"},
+ {"Q": "What is winona afraid of", "A": "wolf", "C": "Cats are afraid of wolves.
+Emily is a cat.
+Wolves are afraid of mice.
+Gertrude is a cat.
+Mice are afraid of sheep.
+Winona is a cat.
+Sheep are afraid of cats.
+Jessica is a wolf.
+"},
+ {"Q": "What is jessica afraid of", "A": "cat", "C": "Cats are afraid of sheep.
+Mice are afraid of cats.
+Sheep are afraid of cats.
+Jessica is a sheep.
+Emily is a mouse.
+Wolves are afraid of sheep.
+Winona is a mouse.
+Gertrude is a mouse.
+"},
+ {"Q": "What is winona afraid of", "A": "mouse", "C": "Cats are afraid of wolves.
+Wolves are afraid of mice.
+Sheep are afraid of cats.
+Winona is a wolf.
+Gertrude is a wolf.
+Mice are afraid of sheep.
+Jessica is a sheep.
+Emily is a cat.
+"},
+ {"Q": "What is emily afraid of", "A": "cat", "C": "Wolves are afraid of cats.
+Mice are afraid of wolves.
+Cats are afraid of sheep.
+Sheep are afraid of cats.
+Gertrude is a mouse.
+Jessica is a mouse.
+Emily is a sheep.
+Winona is a wolf.
+"},
+ {"Q": "What is emily afraid of", "A": "sheep", "C": "Cats are afraid of mice.
+Mice are afraid of sheep.
+Winona is a cat.
+Emily is a mouse.
+Wolves are afraid of mice.
+Jessica is a cat.
+Gertrude is a wolf.
+Sheep are afraid of wolves.
+"},
+ {"Q": "What is jessica afraid of", "A": "wolf", "C": "Cats are afraid of wolves.
+Sheep are afraid of wolves.
+Mice are afraid of cats.
+Winona is a mouse.
+Jessica is a cat.
+Wolves are afraid of sheep.
+Emily is a cat.
+Gertrude is a sheep.
+"},
+ {"Q": "What color is Julius", "A": "white", "C": "Lily is a swan.
+Bernhard is a swan.
+Lily is green.
+Greg is a lion.
+Bernhard is green.
+Brian is a swan.
+Brian is white.
+Greg is green.
+Julius is a swan.
+"},
+ {"Q": "What color is Lily", "A": "gray", "C": "Julius is a swan.
+Greg is a lion.
+Julius is gray.
+Lily is a swan.
+Greg is green.
+Bernhard is a frog.
+Brian is a frog.
+Brian is green.
+Bernhard is green.
+"},
+ {"Q": "What color is Brian", "A": "white", "C": "Bernhard is a frog.
+Greg is a frog.
+Bernhard is green.
+Lily is a rhino.
+Lily is white.
+Julius is a swan.
+Greg is green.
+Brian is a rhino.
+Julius is white.
+"},
+ {"Q": "What color is Brian", "A": "gray", "C": "Julius is a rhino.
+Greg is a rhino.
+Greg is gray.
+Bernhard is a swan.
+Julius is gray.
+Bernhard is gray.
+Lily is a frog.
+Lily is gray.
+Brian is a frog.
+"},
+ {"Q": "What color is Bernhard", "A": "gray", "C": "Greg is a frog.
+Brian is a lion.
+Julius is a frog.
+Bernhard is a frog.
+Julius is gray.
+Lily is a frog.
+Brian is white.
+Greg is gray.
+Lily is gray.
+"},
+ {"Q": "What color is Greg", "A": "green", "C": "Julius is a frog.
+Lily is a rhino.
+Julius is green.
+Bernhard is a swan.
+Brian is a frog.
+Bernhard is green.
+Lily is green.
+Greg is a swan.
+Brian is gray.
+"},
+ {"Q": "What color is Brian", "A": "gray", "C": "Greg is a frog.
+Greg is white.
+Lily is a swan.
+Julius is a frog.
+Julius is white.
+Bernhard is a frog.
+Bernhard is white.
+Lily is gray.
+Brian is a swan.
+"},
+ {"Q": "What color is Bernhard", "A": "gray", "C": "Brian is a swan.
+Brian is white.
+Greg is a lion.
+Lily is a rhino.
+Bernhard is a lion.
+Julius is a rhino.
+Julius is yellow.
+Greg is gray.
+Lily is yellow.
+"},
+ {"Q": "What color is Julius", "A": "yellow", "C": "Bernhard is a lion.
+Greg is a swan.
+Brian is a rhino.
+Greg is white.
+Brian is yellow.
+Bernhard is gray.
+Lily is a frog.
+Julius is a rhino.
+Lily is gray.
+"},
+ {"Q": "What color is Lily", "A": "green", "C": "Bernhard is a rhino.
+Lily is a frog.
+Greg is a frog.
+Greg is green.
+Bernhard is green.
+Julius is a rhino.
+Brian is a swan.
+Julius is green.
+Brian is green.
+"},
+ {"Q": "Is the triangle above the pink rectangle", "A": "yes", "C": "The triangle is above the red square.
+The red square is above the pink rectangle.
+"},
+ {"Q": "Is the triangle to the right of the pink rectangle", "A": "no", "C": "The pink rectangle is below the red square.
+The triangle is to the left of the red square.
+"},
+ {"Q": "Is the red square above the red sphere", "A": "no", "C": "The blue square is to the left of the red square.
+The red sphere is to the left of the blue square.
+"},
+ {"Q": "Is the pink rectangle to the left of the red square", "A": "yes", "C": "The red sphere is below the red square.
+The pink rectangle is to the left of the red sphere.
+"},
+ {"Q": "Is the pink rectangle to the right of the triangle", "A": "yes", "C": "The red square is to the right of the triangle.
+The pink rectangle is below the red square.
+"},
+ {"Q": "Is the red square to the right of the pink rectangle", "A": "no", "C": "The yellow square is below the red square.
+The pink rectangle is below the yellow square.
+"},
+ {"Q": "Is the yellow square below the red square", "A": "no", "C": "The triangle is to the left of the yellow square.
+The red square is to the left of the triangle.
+"},
+ {"Q": "Is the red square below the pink rectangle", "A": "yes", "C": "The red square is below the red sphere.
+The red sphere is to the left of the pink rectangle.
+"},
+ {"Q": "Is the red sphere to the left of the blue square", "A": "no", "C": "The blue square is above the red square.
+The red square is to the left of the red sphere.
+"},
+ {"Q": "Is the pink rectangle below the red square", "A": "yes", "C": "The red sphere is below the red square.
+The pink rectangle is to the left of the red sphere.
+"},
+ {"Q": "Does the suitcase fit in the box of chocolates", "A": "no", "C": "The box of chocolates fits inside the chest.
+The container is bigger than the box.
+The chest fits inside the suitcase.
+The container is bigger than the box.
+The box of chocolates is bigger than the chocolate.
+"},
+ {"Q": "Does the box of chocolates fit in the box", "A": "yes", "C": "The suitcase fits inside the box.
+The chest fits inside the box.
+The chocolate fits inside the box.
+The box is bigger than the container.
+The suitcase is bigger than the box of chocolates.
+"},
+ {"Q": "Does the container fit in the suitcase", "A": "yes", "C": "The box of chocolates fits inside the chest.
+The box is bigger than the container.
+The chest is bigger than the container.
+The chest is bigger than the chocolate.
+The suitcase is bigger than the box.
+"},
+ {"Q": "Does the chest fit in the suitcase", "A": "no", "C": "The suitcase fits inside the container.
+The chest is bigger than the chocolate.
+The container fits inside the chest.
+The suitcase fits inside the box.
+The chest is bigger than the suitcase.
+"},
+ {"Q": "Does the chocolate fit in the box", "A": "yes", "C": "The box is bigger than the box of chocolates.
+The box is bigger than the chocolate.
+The chest is bigger than the chocolate.
+The box is bigger than the box of chocolates.
+The chocolate fits inside the chest.
+The box is bigger than the suitcase.
+The chest is bigger than the suitcase.
+The box is bigger than the box of chocolates.
+The box is bigger than the suitcase.
+The container is bigger than the suitcase.
+The box is bigger than the chest.
+The box of chocolates fits inside the container.
+The box of chocolates fits inside the box.
+The chest is bigger than the box of chocolates.
+The box of chocolates fits inside the chest.
+"},
+ {"Q": "Does the chocolate fit in the box", "A": "yes", "C": "The box is bigger than the box of chocolates.
+The box is bigger than the chocolate.
+The chest is bigger than the chocolate.
+The box is bigger than the box of chocolates.
+The chocolate fits inside the chest.
+The box is bigger than the suitcase.
+The chest is bigger than the suitcase.
+The box is bigger than the box of chocolates.
+The box is bigger than the suitcase.
+The container is bigger than the suitcase.
+The box is bigger than the chest.
+The box of chocolates fits inside the container.
+The box of chocolates fits inside the box.
+The chest is bigger than the box of chocolates.
+The box of chocolates fits inside the chest.
+"},
+ {"Q": "Does the chest fit in the chocolate", "A": "no", "C": "The chest is bigger than the chocolate.
+The chest is bigger than the suitcase.
+The chocolate fits inside the suitcase.
+The suitcase fits inside the box.
+The box is bigger than the suitcase.
+"},
+ {"Q": "Is the chest bigger than the box", "A": "yes", "C": "The chest is bigger than the box.
+The chest is bigger than the chocolate.
+The chest is bigger than the chocolate.
+The chest is bigger than the container.
+The container is bigger than the box.
+"},
+ {"Q": "Does the box of chocolates fit in the suitcase", "A": "yes", "C": "The suitcase is bigger than the chocolate.
+The box of chocolates fits inside the chest.
+The box is bigger than the box of chocolates.
+The suitcase is bigger than the chest.
+The suitcase is bigger than the chocolate.
+"},
+ {"Q": "Does the suitcase fit in the box of chocolates", "A": "no", "C": "The chest fits inside the suitcase.
+The box is bigger than the chest.
+The box is bigger than the chocolate.
+The box is bigger than the chocolate.
+The chest fits inside the suitcase.
+The chest is bigger than the box of chocolates.
+The chest is bigger than the chocolate.
+The box fits inside the suitcase.
+The box is bigger than the chocolate.
+The suitcase is bigger than the box.
+"},
+ {"Q": "How do you go from the kitchen to the bathroom", "A": "w,s", "C": "The hallway is east of the kitchen.
+The bathroom is west of the office.
+The bedroom is west of the kitchen.
+The bathroom is east of the garden.
+The bedroom is north of the bathroom.
+"},
+ {"Q": "How do you go from the garden to the hallway", "A": "n,n", "C": "The hallway is west of the bathroom.
+The kitchen is south of the garden.
+The hallway is north of the bedroom.
+The garden is south of the bedroom.
+The office is east of the garden.
+"},
+ {"Q": "How do you go from the hallway to the kitchen", "A": "w,s", "C": "The bedroom is north of the bathroom.
+The bathroom is west of the hallway.
+The garden is east of the hallway.
+The bathroom is east of the office.
+The bathroom is north of the kitchen.
+"},
+ {"Q": "How do you go from the hallway to the office", "A": "n,w", "C": "The kitchen is south of the hallway.
+The garden is south of the office.
+The bedroom is east of the hallway.
+The bathroom is north of the hallway.
+The bathroom is east of the office.
+"},
+ {"Q": "How do you go from the office to the bedroom", "A": "w,s", "C": "The bathroom is east of the bedroom.
+The bedroom is south of the hallway.
+The garden is north of the office.
+The hallway is west of the office.
+The bedroom is north of the kitchen.
+"},
+ {"Q": "How do you go from the bathroom to the garden", "A": "s,e", "C": "The bedroom is east of the bathroom.
+The hallway is west of the kitchen.
+The bathroom is south of the office.
+The garden is east of the kitchen.
+The bathroom is north of the kitchen.
+"},
+ {"Q": "How do you go from the bedroom to the hallway", "A": "e,e", "C": "The bedroom is west of the office.
+The bedroom is north of the kitchen.
+The bathroom is south of the hallway.
+The office is west of the hallway.
+The garden is north of the hallway.
+"},
+ {"Q": "How do you go from the office to the bathroom", "A": "e,s", "C": "The hallway is west of the office.
+The kitchen is east of the garden.
+The garden is north of the bathroom.
+The bedroom is north of the garden.
+The office is west of the garden.
+"},
+ {"Q": "How do you go from the hallway to the bedroom", "A": "w,w", "C": "The bathroom is south of the bedroom.
+The bedroom is west of the kitchen.
+The garden is east of the hallway.
+The kitchen is west of the hallway.
+The office is south of the hallway.
+"},
+ {"Q": "How do you go from the office to the garden", "A": "n,w", "C": "The garden is west of the hallway.
+The office is north of the kitchen.
+The bathroom is north of the hallway.
+The bedroom is east of the office.
+The office is south of the hallway.
+"},
+ {"Q": "Why did sumit get the milk", "A": "thirsty", "C": "Jason is tired.
+Yann is bored.
+Sumit is thirsty.
+Antoine is hungry.
+Sumit travelled to the kitchen.
+Yann moved to the garden.
+Yann grabbed the football there.
+Sumit took the milk there.
+"},
+ {"Q": "Why did antoine get the pajamas", "A": "tired", "C": "Antoine is tired.
+Antoine went back to the bedroom.
+Sumit is hungry.
+Yann is bored.
+Sumit journeyed to the kitchen.
+Sumit picked up the apple there.
+Antoine picked up the pajamas there.
+"},
+ {"Q": "Why did antoine get the apple", "A": "hungry", "C": "Jason is tired.
+Jason moved to the bedroom.
+Sumit is thirsty.
+Antoine is hungry.
+Antoine journeyed to the kitchen.
+Sumit journeyed to the kitchen.
+Jason grabbed the pajamas there.
+Antoine got the apple there.
+"},
+ {"Q": "Where will sumit go", "A": "garden", "C": "Yann is tired.
+Antoine is thirsty.
+Sumit is bored.
+"},
+ {"Q": "Why did antoine go to the kitchen", "A": "hungry", "C": "Sumit is thirsty.
+Antoine is hungry.
+Yann is thirsty.
+Sumit travelled to the kitchen.
+Yann journeyed to the kitchen.
+Jason is tired.
+Yann took the milk there.
+Jason went back to the bedroom.
+Antoine went back to the kitchen.
+"},
+ {"Q": "Why did sumit go to the garden", "A": "bored", "C": "Sumit is bored.
+Sumit moved to the garden.
+"},
+ {"Q": "Why did yann get the milk", "A": "thirsty", "C": "Yann is thirsty.
+Antoine is bored.
+Yann went back to the kitchen.
+Yann grabbed the milk there.
+"},
+ {"Q": "Why did antoine get the milk", "A": "thirsty", "C": "Yann is bored.
+Sumit is tired.
+Antoine is thirsty.
+Jason is tired.
+Sumit journeyed to the bedroom.
+Antoine travelled to the kitchen.
+Yann travelled to the garden.
+Sumit grabbed the pajamas there.
+Yann grabbed the football there.
+Jason journeyed to the bedroom.
+Antoine took the milk there.
+"},
+ {"Q": "Why did sumit go to the kitchen", "A": "thirsty", "C": "Jason is tired.
+Jason moved to the bedroom.
+Antoine is hungry.
+Yann is hungry.
+Yann moved to the kitchen.
+Sumit is thirsty.
+Antoine went to the kitchen.
+Jason took the pajamas there.
+Sumit travelled to the kitchen.
+"},
+ {"Q": "Where will yann go", "A": "garden", "C": "Sumit is tired.
+Jason is thirsty.
+Sumit went back to the bedroom.
+Jason moved to the kitchen.
+Sumit got the pajamas there.
+Antoine is tired.
+Antoine went to the bedroom.
+Yann is bored.
+"}],
 
   "vocab": [
     "jason", 
