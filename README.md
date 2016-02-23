@@ -3,8 +3,11 @@ The aim of this repository is to implement Dynamic memory networks
 as described in the [paper by Kumar et al.](http://arxiv.org/abs/1506.07285)
 and to experiment with its various extensions.
 
+**Pretrained models on bAbI tasks can be tested [online](http://yerevann.com/dmn-ui/).**
+
 We will cover the process in a series of blog posts.
 * [The first post](http://yerevann.github.io/2016/02/05/implementing-dynamic-memory-networks/) describes the details of the basic architecture and presents our first results on [bAbI tasks](http://fb.ai/babi) v1.2.
+* [The second post](http://yerevann.github.io/2016/02/23/playground-for-babi-tasks/) describes our second model called `dmn_smooth` and introduces our [playground for bAbI tasks](http://yerevann.com/dmn-ui/).
 
 ## Repository contents
 
@@ -18,7 +21,8 @@ We will cover the process in a series of blog posts.
 | `utils.py` | tools for working with bAbI tasks and GloVe vectors |
 | `nn_utils.py` | helper functions on top of Theano and Lasagne |
 | `fetch_babi_data.sh` | shell script to fetch bAbI tasks (adapted from [MemN2N](https://github.com/npow/MemN2N)) |
-| `fetch_glove_data.sh` | shell script to fetch GloVe vectors (by [5-vision](https://github.com/5vision/kaggle_allen)) |
+| `fetch_glove_data.sh` | shell script to fetch GloVe vectors (by [5vision](https://github.com/5vision/kaggle_allen)) |
+| `server/` | contains Flask-based restful api server |
 
 
 ## Usage
@@ -45,10 +49,10 @@ There is one pretrained state on the 1st bAbI task. It should give 100% accuracy
 
 ## Roadmap
 
-* Mini-batch training (done, 08/02/2016)
-* Web interface (work in progress)
-* Visualization of episodic memory module (work in progress)
-* Regularization (work in progress, L2 doesn't help at all!)
-* Support for multiple-choice questions (work in progress: `dmn_qa_draft.py`)
+* Mini-batch training ([done](https://github.com/YerevaNN/Dynamic-memory-networks-in-Theano/blob/master/dmn_batch.py), 08/02/2016)
+* Web interface ([done](https://github.com/YerevaNN/dmn-ui), 08/23/2016)
+* Visualization of episodic memory module ([done](https://github.com/YerevaNN/dmn-ui), 08/23/2016)
+* Regularization (work in progress, L2 doesn't help at all, dropout and batch normalization help a little)
+* Support for multiple-choice questions ([work in progress](https://github.com/YerevaNN/Dynamic-memory-networks-in-Theano/blob/master/dmn_qa_draft.py))
 * Evaluation on more complex datasets
 * Import some ideas from [Neural Reasoner](http://arxiv.org/abs/1508.05508)
