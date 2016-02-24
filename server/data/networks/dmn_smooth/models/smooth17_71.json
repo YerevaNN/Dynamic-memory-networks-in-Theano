@@ -9,7 +9,7 @@
   "answer_module": "feedforward", 
   "normalize_attention": false, 
   "babi_id": "17", 
-  "load_state": "states/_dmn_smooth.mh5.n100.bs10.babi17.epoch72.test2.35567.state", 
+  "load_state": "../states/_dmn_smooth.mh5.n100.bs10.babi17.epoch72.test2.35567.state", 
   "input_mask_mode": "sentence", 
   "dropout": 0.0, 
   "batch_size": 1, 
