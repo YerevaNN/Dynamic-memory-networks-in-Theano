@@ -1,0 +1,5 @@
+git+git://github.com/Theano/Theano.git
+https://github.com/Lasagne/Lasagne/archive/master.zip
+flask
+flask_restful
+scikit-learn

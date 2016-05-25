@@ -6,7 +6,7 @@ import argparse
 from flask import Flask
 from flask_restful import reqparse, Api, Resource
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='ui', static_url_path='')
 api = Api(app)
 
 api_prefix = '/api/v1'
@@ -18,6 +18,9 @@ request_parser = reqparse.RequestParser()
 request_parser.add_argument('question', type=str, required=True, help='Question of the task')
 request_parser.add_argument('story', type=str, required=True, help='Story of the task')
 
+@app.route('/')
+def root():
+    return app.send_static_file('index.html')
 
 class NetworksList(Resource):
     def get(self):
@@ -55,6 +58,11 @@ api.add_resource(NetworksList, api_prefix + '/networks', endpoint='networks')
 api.add_resource(ModelsList, api_prefix + '/networks/<string:network>/models', endpoint='models_by_networks')
 api.add_resource(Model, api_prefix + '/networks/<string:network>/models/<string:model>', endpoint='model')
 api.add_resource(Predict, api_prefix + '/networks/<string:network>/models/<string:model>/_predict', endpoint='predict')
+
+@app.route('/')
+def root():
+    return app.send_static_file('index.html')
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
