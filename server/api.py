@@ -59,10 +59,6 @@ api.add_resource(ModelsList, api_prefix + '/networks/<string:network>/models', e
 api.add_resource(Model, api_prefix + '/networks/<string:network>/models/<string:model>', endpoint='model')
 api.add_resource(Predict, api_prefix + '/networks/<string:network>/models/<string:model>/_predict', endpoint='predict')
 
-@app.route('/')
-def root():
-    return app.send_static_file('index.html')
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
