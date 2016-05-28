@@ -46,6 +46,24 @@ There is one pretrained state on the 1st bAbI task. It should give 100% accuracy
 
     python main.py --network dmn_basic --mode test --babi_id 1 --load_state states/dmn_basic.mh5.n40.babi1.epoch4.test0.00033.state
 
+### Server
+
+If you want to start a server which will return the predication for bAbi tasks, you should do the following:
+
+1. Generate UI files as described in [YerevaNN/dmn-ui](YerevaNN/dmn-ui)
+2. Copy the UI files to `server/ui`
+3. Run the server 
+
+```bash
+cd server && python api.py
+```
+
+If have Docker installed, you can pull our Docker image with ready DMN server.
+
+```bash
+docker pull yerevann/docker
+docker run --name dmn_1 -it --rm -p 5000:5000 yerevann/dmn
+```
 
 ## Roadmap
 
