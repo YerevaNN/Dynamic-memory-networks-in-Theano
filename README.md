@@ -74,3 +74,7 @@ docker run --name dmn_1 -it --rm -p 5000:5000 yerevann/dmn
 * Support for multiple-choice questions ([work in progress](https://github.com/YerevaNN/Dynamic-memory-networks-in-Theano/blob/master/dmn_qa_draft.py))
 * Evaluation on more complex datasets
 * Import some ideas from [Neural Reasoner](http://arxiv.org/abs/1508.05508)
+
+## License
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
+Copyright (c) 2016 YerevaNN
