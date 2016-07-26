@@ -76,5 +76,5 @@ docker run --name dmn_1 -it --rm -p 5000:5000 yerevann/dmn
 * Import some ideas from [Neural Reasoner](http://arxiv.org/abs/1508.05508)
 
 ## License
-[The MIT License (MIT)](https://opensource.org/licenses/MIT)
+[The MIT License (MIT)](./LICENSE)
 Copyright (c) 2016 YerevaNN
