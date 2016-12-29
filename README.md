@@ -61,7 +61,7 @@ cd server && python api.py
 If have Docker installed, you can pull our Docker image with ready DMN server.
 
 ```bash
-docker pull yerevann/docker
+docker pull yerevann/dmn
 docker run --name dmn_1 -it --rm -p 5000:5000 yerevann/dmn
 ```
 
